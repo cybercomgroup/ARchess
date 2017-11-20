@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Game
 {
-    public const string PIECE_MOVED = "Piece moved";
+
 
     public string Name { get; private set; }
     private static Dictionary<string, GameSet> gameSets = new Dictionary<string, GameSet>();
@@ -54,17 +54,19 @@ public class Game
         AddGameSet(gameName, test);
     }
 
+    /* Consider if this shouldn't be in GameController instead 
     public void MovePiece(int fromCol, int fromRow, int toCol, int toRow)
     {
         // Check arguments if necessary
         if(CheckMPArguments(fromCol, fromRow, toCol, toRow))
         {
             Board[toCol, toRow] = Board[fromCol, fromRow];
-
             Board[fromCol, fromRow] = null;
-            // TODO: Notify
+
+            this.PostNotification(PIECE_MOVED, new MoveMSG(fromCol, fromRow, toCol, toRow));
         }
     }
+    */
 
     // Test version
     // Only execute move when there is a piece in the from position
@@ -74,8 +76,11 @@ public class Game
     }
 
     // Test method
-    public void PlaceSomePieceAt(int col, int row)
+    public string PutSomePieceAt(int col, int row)
     {
-        Board[col, row] = GameSets[Name].PieceTypes[0];
+        string pieceType = GameSets[Name].PieceTypes[0];
+        Board[col, row] = pieceType;
+
+        return pieceType;
     }
 }

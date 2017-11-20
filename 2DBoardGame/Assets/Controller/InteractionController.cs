@@ -4,45 +4,57 @@ using UnityEngine;
 
 public class InteractionController : MonoBehaviour
 {
-    // Some testing
-    public const string CLICK = "Click";
-    private int count;
+    public bool BoardPositioned { get; private set; }
 
+    public const string LMB_CLICK = "LMB click";
+    public const string RMB_CLICK = "RMB click";
+    public const string BOARD_POSITIONED = "Board position selected";
+    private int count;
 
 
     // Use this for initialization
     void Start()
     {
+        BoardPositioned = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
         if (Input.GetMouseButtonDown(0))
         {
-            count++;
-            this.PostNotification(CLICK, count);
+            HandleLMBClick();
         }
-    }
-
-    /*
-    public class LMBClickArgs : EventArgs
-    {
-        public string Test { get; set; }
-    }
-
-
-    protected virtual void OnLMBCLick(EventArgs e)
-    {
-        EventHandler handler = ThresholdReached;
-
-        if (handler != null)
+        else if(Input.GetMouseButtonDown(1))
         {
-            handler(this, e);
+            HandleRMBClick();
         }
     }
-    */
 
+    public void HandleLMBClick()
+    {
+        Vector3 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (BoardPositioned == false)
+        {
+            this.PostNotification(BOARD_POSITIONED, cursorPos);
+
+            BoardPositioned = true;
+        }
+        else
+        {
+            this.PostNotification(LMB_CLICK, cursorPos);
+        }
+
+    }
+
+    public void HandleRMBClick()
+    {
+        if (BoardPositioned == true)
+        {
+            Vector3 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            this.PostNotification(RMB_CLICK, cursorPos);
+        }
+    }
 }
