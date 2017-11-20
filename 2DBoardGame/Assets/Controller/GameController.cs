@@ -43,7 +43,7 @@ public class GameController : MonoBehaviour
 
         // NOTE: Temp solution - this info needs to come from the menu
         string gameName = "test";
-        
+
         // Creates the singular game instance
         GameInstance = Game.StartGame(gameName);
 
@@ -76,7 +76,7 @@ public class GameController : MonoBehaviour
 
         string pieceType = GameInstance.PutSomePieceAt(squarePos.Col, squarePos.Row);
 
-        this.PostNotification(PIECE_PUT, new PiecePutMSG(pieceType, squarePos) );
+        this.PostNotification(PIECE_PUT, new PiecePutMSG(pieceType, squarePos));
     }
 
     public void OnSquareLMBClicked(object sender, object args)
@@ -85,12 +85,16 @@ public class GameController : MonoBehaviour
 
         if (fromPos != null)
         {
-            GameInstance.Board[squarePos.Col, squarePos.Row] = GameInstance.Board[fromPos.Col, fromPos.Row];
-            GameInstance.Board[fromPos.Col, fromPos.Row] = null;
-            this.PostNotification(PIECE_MOVED, new Move(fromPos, squarePos));
+            if (!fromPos.Equals(squarePos))
+            {
+                GameInstance.Board[squarePos.Col, squarePos.Row] = GameInstance.Board[fromPos.Col, fromPos.Row];
+                GameInstance.Board[fromPos.Col, fromPos.Row] = null;
+                this.PostNotification(PIECE_MOVED, new Move(fromPos, squarePos));
+                Debug.Log("From pos (col, row): " + "(" + fromPos.Col + ", " + fromPos.Row + ")  " + "To pos (col, row): " + "(" + squarePos.Col + ", " + squarePos.Row + ")" );
+            }
             fromPos = null;
         }
-        else if(GameInstance.Board[squarePos.Col, squarePos.Row] != null)
+        else if (GameInstance.Board[squarePos.Col, squarePos.Row] != null)
         {
             fromPos = squarePos;
         }
@@ -128,6 +132,6 @@ public class GameController : MonoBehaviour
         int row = 2;
         string pieceType = GameInstance.PutSomePieceAt(col, row);
 
-        this.PostNotification(PIECE_PUT, new PiecePutMSG(pieceType, new SquarePos(col, row)) );
+        this.PostNotification(PIECE_PUT, new PiecePutMSG(pieceType, new SquarePos(col, row)));
     }
 }

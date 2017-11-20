@@ -14,4 +14,21 @@ public class SquarePos
         Col = col;
         Row = row;
     }
+
+    public override bool Equals(object obj)
+    {
+        SquarePos squarePos = (SquarePos)obj;
+
+        return Col == squarePos.Col && Row == squarePos.Row;
+    }
+
+    public override int GetHashCode()
+    {
+        int hashCode = 17;
+
+        hashCode = 31 * hashCode + Col;
+        hashCode = 31 * hashCode + Row;
+
+        return hashCode;
+    }
 }
