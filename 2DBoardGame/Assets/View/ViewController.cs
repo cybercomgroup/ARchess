@@ -24,8 +24,9 @@ public class ViewController : MonoBehaviour
     private Vector3 boardPos;
 
 
-    // Display layers
-    private const int PIECE_LAYER = 0; 
+    // Layers
+    private const string PIECE_LAYER = "PieceLayer";
+    private const string BOARD_LAYER = "BoardLayer";
 
 
 
@@ -86,10 +87,11 @@ public class ViewController : MonoBehaviour
         boardGO = new GameObject();
         boardGO.name = "Board";
 
-        // NOTE: Check how to set layer. Prob not super important for project though since not 2D
         boardGO.transform.position = pos;
-        boardGO.transform.SetParent(this.transform, true);
+        boardGO.transform.SetParent(this.transform, true);        
         boardGO.AddComponent<SpriteRenderer>().sprite = chessBoardSprite;
+        // Setting layer for sorting order. Probably not very important for our future real 3D view
+        boardGO.GetComponent<Renderer>().sortingLayerName = BOARD_LAYER;
     }
 
     public void OnLMBClick(object sender, object args)
@@ -156,7 +158,10 @@ public class ViewController : MonoBehaviour
         pieceGO.transform.position = pos;
         pieceGO.transform.SetParent(this.transform, true);
         pieceGO.AddComponent<SpriteRenderer>().sprite =  gamePieceTypeToSpriteMap[pieceType];
-        pieceGO.layer = PIECE_LAYER;
+
+        // Setting layer for sorting order. Probably not very important for our future real 3D view
+        pieceGO.GetComponent<Renderer>().sortingLayerName = PIECE_LAYER;
+
 
         int col = piecePutMSG.SquarePos.Col;
         int row = piecePutMSG.SquarePos.Row;

@@ -17,9 +17,20 @@ public class SquarePos
 
     public override bool Equals(object obj)
     {
-        SquarePos squarePos = (SquarePos)obj;
+        if (this == obj)
+        {
+            return true;
+        }
 
-        return Col == squarePos.Col && Row == squarePos.Row;
+        SquarePos squarePos = obj as SquarePos;
+        if (squarePos != null)
+        {
+            return Col == squarePos.Col && Row == squarePos.Row;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public override int GetHashCode()
