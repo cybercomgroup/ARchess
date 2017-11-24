@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="ARBoardgame.sln" t="IncludeFlat" />
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="_MK" t="Include">
+          <e p="MKGlowFree" t="Include">
+            <e p="Editor" t="Include">
+              <e p="MKGlowFreeEditor.cs" t="Include" />
+            </e>
+            <e p="Legacy_2_0_7" t="Include">
+              <e p="ReadMe.txt" t="Include" />
+            </e>
+            <e p="MKGlowFree.cs" t="Include" />
+            <e p="Shader" t="Include">
+              <e p="Render" t="Include">
+                <e p="MKGlowBlur.shader" t="Include" />
+                <e p="MKGlowBlurInc.cginc" t="Include" />
+                <e p="MKGlowComposite.shader" t="Include" />
+                <e p="MKGlowCompositeInc.cginc" t="Include" />
+                <e p="MKGlowSelectiveRender.shader" t="Include" />
+              </e>
+              <e p="Variants_SelectiveMode" t="Include">
+                <e p="Cutout" t="Include">
+                  <e p="MK_Cutout-Diffuse.shader" t="Include" />
+                  <e p="MK_Cutout-DiffuseBumped.shader" t="Include" />
+                  <e p="MK_Cutout-DiffuseBumpSpec.shader" t="Include" />
+                  <e p="MK_Cutout-Glossy.shader" t="Include" />
+                </e>
+                <e p="Illumin" t="Include">
+                  <e p="MK_Illumin-Diffuse.shader" t="Include" />
+                  <e p="MK_Illumin-DiffuseBumped.shader" t="Include" />
+                  <e p="MK_Illumin-DiffuseBumpSpec.shader" t="Include" />
+                  <e p="MK_Illumin-Glossy.shader" t="Include" />
+                </e>
+                <e p="Normal" t="Include">
+                  <e p="MK_Normal-Diffuse.shader" t="Include" />
+                  <e p="MK_Normal-DiffuseBumped.shader" t="Include" />
+                  <e p="MK_Normal-DiffuseBumpSpec.shader" t="Include" />
+                  <e p="MK_Normal-Glossy.shader" t="Include" />
+                </e>
+                <e p="Other" t="Include">
+                  <e p="MK_Illumin-Diffuse.shader" t="Include" />
+                  <e p="MK_Mobile-Diffuse.shader" t="Include" />
+                  <e p="MK_Unlit-Normal.shader" t="Include" />
+                </e>
+                <e p="Particle" t="Include">
+                  <e p="MK_Particle Add.shader" t="Include" />
+                  <e p="MK_Particle AddMultiply.shader" t="Include" />
+                  <e p="MK_Particle Alpha Blend.shader" t="Include" />
+                  <e p="MK_Particle Multiply.shader" t="Include" />
+                </e>
+                <e p="Sprites" t="Include">
+                  <e p="MK_Sprite-Default.shader" t="Include" />
+                  <e p="MK_Sprite-Diffuse.shader" t="Include" />
+                  <e p="MK_UnitySprites.cginc" t="Include" />
+                </e>
+                <e p="Transparent" t="Include">
+                  <e p="MK_Transparent-Diffuse.shader" t="Include" />
+                  <e p="MK_Transparent-DiffuseBumped.shader" t="Include" />
+                  <e p="MK_Transparent-DiffuseBumpSpec.shader" t="Include" />
+                  <e p="MK_Transparent-Glossy.shader" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="GoogleARCore" t="Include">
+          <e p="HelloARExample" t="Include">
+            <e p="Materials" t="Include">
+              <e p="Shaders" t="Include">
+                <e p="MobileDiffuseWithLightEstimation.shader" t="Include" />
+                <e p="MobileSpecularWithLightEstimation.shader" t="Include" />
+                <e p="PlaneGrid.shader" t="Include" />
+                <e p="PointCloud.shader" t="Include" />
+              </e>
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="HelloARController.cs" t="Include" />
+              <e p="PlaneAttachment.cs" t="Include" />
+              <e p="PointcloudVisualizer.cs" t="Include" />
+              <e p="TrackedPlaneVisualizer.cs" t="Include" />
+            </e>
+          </e>
+          <e p="SDK" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="Anchor.cs" t="Include" />
+              <e p="AnchorTrackingState.cs" t="Include" />
+              <e p="AndroidPermissionsManager.cs" t="Include" />
+              <e p="AndroidPermissionsRequestResult.cs" t="Include" />
+              <e p="Api" t="Include">
+                <e p="ApiCoordinateFramePair.cs" t="Include" />
+                <e p="ApiCoordinateFrameType.cs" t="Include" />
+                <e p="ApiCoordinateFrameTypeExtensions.cs" t="Include" />
+                <e p="ApiPlaneData.cs" t="Include" />
+                <e p="ApiPoseData.cs" t="Include" />
+                <e p="ApiPoseStatusType.cs" t="Include" />
+                <e p="ApiPoseStatusTypeExtensions.cs" t="Include" />
+                <e p="ApiServiceErrorStatus.cs" t="Include" />
+                <e p="ApiServiceErrorStatusExtensions.cs" t="Include" />
+                <e p="ApiTangoEvent.cs" t="Include" />
+                <e p="ApiTangoEventType.cs" t="Include" />
+                <e p="TangoClientApi.cs" t="Include" />
+              </e>
+              <e p="Async" t="Include">
+                <e p="WaitForTaskCompletionYieldInstruction.cs" t="Include" />
+              </e>
+              <e p="AsyncTask.cs" t="Include" />
+              <e p="EnvironmentalLight.cs" t="Include" />
+              <e p="Frame.cs" t="Include" />
+              <e p="FrameTrackingState.cs" t="Include" />
+              <e p="InvalidSessionAccessException.cs" t="Include" />
+              <e p="LightEstimate.cs" t="Include" />
+              <e p="Managers" t="Include">
+                <e p="AnchorManager.cs" t="Include" />
+                <e p="LightEstimateManager.cs" t="Include" />
+                <e p="MotionTrackingManager.cs" t="Include" />
+                <e p="PointCloudManager.cs" t="Include" />
+                <e p="RaycastManager.cs" t="Include" />
+                <e p="SessionManager.cs" t="Include" />
+                <e p="TrackedPlaneManager.cs" t="Include" />
+              </e>
+              <e p="Math" t="Include">
+                <e p="DMatrix4x4.cs" t="Include" />
+                <e p="DVector3.cs" t="Include" />
+                <e p="DVector4.cs" t="Include" />
+              </e>
+              <e p="PointCloud.cs" t="Include" />
+              <e p="Session.cs" t="Include" />
+              <e p="SessionComponent.cs" t="Include" />
+              <e p="SessionConfig.cs" t="Include" />
+              <e p="SessionConnectionState.cs" t="Include" />
+              <e p="TrackableHit.cs" t="Include" />
+              <e p="TrackableHitFlag.cs" t="Include" />
+              <e p="TrackedPlane.cs" t="Include" />
+              <e p="Utility" t="Include">
+                <e p="ARDebug.cs" t="Include" />
+                <e p="Constants.cs" t="Include" />
+                <e p="EnvironmentBasedProvider.cs" t="Include" />
+                <e p="MarshalingHelper.cs" t="Include" />
+                <e p="ProvidedSingleton.cs" t="Include" />
+                <e p="SingletonComponentProvider.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="Editor" t="Include">
+            <e p="JetBrains" t="Include">
+              <e p="Unity3DRider.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Common" t="Include">
+            <e p="Move.cs" t="Include" />
+            <e p="NotificationCenter" t="Include">
+              <e p="NotificationCenter.cs" t="Include" />
+              <e p="NotificationExtensions.cs" t="Include" />
+            </e>
+            <e p="PiecePutMSG.cs" t="Include" />
+            <e p="SquarePos.cs" t="Include" />
+          </e>
+          <e p="Controller" t="Include">
+            <e p="ArInteractionController.cs" t="Include" />
+            <e p="GameController.cs" t="Include" />
+            <e p="IMenuController.cs" t="Include" />
+            <e p="InteractionController.cs" t="Include" />
+            <e p="MainMenuController.cs" t="Include" />
+          </e>
+          <e p="EventManager.cs" t="Include" />
+          <e p="Menu.cs" t="Include" />
+          <e p="Model" t="Include">
+            <e p="BoardType.cs" t="Include" />
+            <e p="Game.cs" t="Include" />
+            <e p="GameSet.cs" t="Include" />
+            <e p="MainMenuModel.cs" t="Include" />
+            <e p="MenuButtonModel.cs" t="Include" />
+          </e>
+          <e p="View" t="Include">
+            <e p="ArViewController.cs" t="Include" />
+            <e p="HighlightView.cs" t="Include" />
+            <e p="MainMenuView.cs" t="Include" />
+            <e p="MenuButtonView.cs" t="Include" />
+            <e p="ViewController.cs" t="Include" />
+          </e>
+        </e>
+        <e p="UnityARInterface" t="Include">
+          <e p="ARRemote" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="ARRemoteDevice.cs" t="Include" />
+              <e p="ARRemoteEditor.cs" t="Include" />
+              <e p="ARRemoteEditorInterface.cs" t="Include" />
+              <e p="ARRemoteVideo.cs" t="Include" />
+              <e p="ARSerializableObjects.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Examples" t="Include">
+            <e p="ARBallz" t="Include">
+              <e p="ARBallMaker.cs" t="Include" />
+              <e p="ARBallMover.cs" t="Include" />
+              <e p="ARBallzGO.cs" t="Include" />
+              <e p="BallzModeSwitcher.cs" t="Include" />
+            </e>
+            <e p="ARFocusSquare" t="Include">
+              <e p="ARFocusSquare.cs" t="Include" />
+            </e>
+            <e p="Common" t="Include">
+              <e p="Shaders" t="Include">
+                <e p="InstancedSurfaceShader.shader" t="Include" />
+                <e p="MobileARShadow.shader" t="Include" />
+                <e p="MobileOcclusion.shader" t="Include" />
+              </e>
+            </e>
+            <e p="Multiplayer" t="Include">
+              <e p="ARPlaneChooser.cs" t="Include" />
+              <e p="StartARSession.cs" t="Include" />
+              <e p="SyncPointsHolder.cs" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="DemoGUI.cs" t="Include" />
+              <e p="MatchingScalePicker.cs" t="Include" />
+              <e p="ObjectShooter.cs" t="Include" />
+              <e p="OptionsGUI.cs" t="Include" />
+              <e p="PlaceOnPlane.cs" t="Include" />
+              <e p="RemoveRigidbody.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="ARBase.cs" t="Include" />
+            <e p="ARController.cs" t="Include" />
+            <e p="ARCoreInterface.cs" t="Include" />
+            <e p="AREditorInterface.cs" t="Include" />
+            <e p="ARInterface.cs" t="Include" />
+            <e p="ARKitInterface.cs" t="Include" />
+            <e p="ARLightEstimate.cs" t="Include" />
+            <e p="ARMessageIds.cs" t="Include" />
+            <e p="ARPlaneVisualizer.cs" t="Include" />
+            <e p="ARPointCloudVisualizer.cs" t="Include" />
+            <e p="BoundedPlane.cs" t="Include" />
+          </e>
+        </e>
+        <e p="UnityARKitPlugin" t="Include">
+          <e p="ARKitRemote" t="Include">
+            <e p="ARKITREMOTE.txt" t="Include" />
+            <e p="ARKitRemoteConnection.cs" t="Include" />
+            <e p="ConnectionMessageIds.cs" t="Include" />
+            <e p="ConnectToEditor.cs" t="Include" />
+            <e p="EditorHitTest.cs" t="Include" />
+            <e p="ObjectSerializationExtension.cs" t="Include" />
+            <e p="SerializableObjects.cs" t="Include" />
+            <e p="UnityRemoteVideo.cs" t="Include" />
+          </e>
+          <e p="Examples" t="Include">
+            <e p="AddRemoveAnchorExample" t="Include">
+              <e p="UnityARUserAnchorExample.cs" t="Include" />
+            </e>
+            <e p="Common" t="Include">
+              <e p="Shaders" t="Include">
+                <e p="InstancedSurfaceShader.shader" t="Include" />
+                <e p="MobileARShadow.shader" t="Include" />
+                <e p="MobileOcclusion.shader" t="Include" />
+              </e>
+            </e>
+            <e p="FocusSquare" t="Include">
+              <e p="FocusSquare.cs" t="Include" />
+            </e>
+            <e p="UnityARBallz" t="Include">
+              <e p="BallMaker.cs" t="Include" />
+              <e p="BallMover.cs" t="Include" />
+              <e p="Ballz.cs" t="Include" />
+              <e p="ModeSwitcher.cs" t="Include" />
+            </e>
+            <e p="UnityParticlePainter" t="Include">
+              <e p="HSVPicker" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="BoxSliderEditor.cs" t="Include" />
+                </e>
+                <e p="Enums" t="Include">
+                  <e p="ColorValues.cs" t="Include" />
+                </e>
+                <e p="Events" t="Include">
+                  <e p="ColorChangedEvent.cs" t="Include" />
+                  <e p="HSVChangedEvent.cs" t="Include" />
+                </e>
+                <e p="Other" t="Include">
+                  <e p="ColorPickerTester.cs" t="Include" />
+                  <e p="TiltWindow.cs" t="Include" />
+                </e>
+                <e p="UI" t="Include">
+                  <e p="ColorImage.cs" t="Include" />
+                  <e p="ColorLabel.cs" t="Include" />
+                  <e p="ColorPicker.cs" t="Include" />
+                  <e p="ColorPresets.cs" t="Include" />
+                  <e p="ColorSlider.cs" t="Include" />
+                  <e p="ColorSliderImage.cs" t="Include" />
+                  <e p="HexColorField.cs" t="Include" />
+                  <e p="SVBoxSlider.cs" t="Include" />
+                </e>
+                <e p="UtilityScripts" t="Include">
+                  <e p="BoxSlider.cs" t="Include" />
+                  <e p="HSVUtil.cs" t="Include" />
+                </e>
+              </e>
+              <e p="ParticlePainter.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Plugins" t="Include">
+            <e p="iOS" t="Include">
+              <e p="UnityARKit" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="UnityARBuildPostprocessor.cs" t="Include" />
+                </e>
+                <e p="Helpers" t="Include">
+                  <e p="AR3DOFCameraManager.cs" t="Include" />
+                  <e p="ARPlaneAnchorGameObject.cs" t="Include" />
+                  <e p="DontDestroyOnLoad.cs" t="Include" />
+                  <e p="PointCloudParticleExample.cs" t="Include" />
+                  <e p="UnityARAmbient.cs" t="Include" />
+                  <e p="UnityARAnchorManager.cs" t="Include" />
+                  <e p="UnityARCameraManager.cs" t="Include" />
+                  <e p="UnityARCameraNearFar.cs" t="Include" />
+                  <e p="UnityARGeneratePlane.cs" t="Include" />
+                  <e p="UnityARHitTestExample.cs" t="Include" />
+                  <e p="UnityARKitControl.cs" t="Include" />
+                  <e p="UnityARMatrixOps.cs" t="Include" />
+                  <e p="UnityARUserAnchorComponent.cs" t="Include" />
+                  <e p="UnityARUtility.cs" t="Include" />
+                  <e p="UnityARVideo.cs" t="Include" />
+                  <e p="UnityPointCloudExample.cs" t="Include" />
+                </e>
+                <e p="NativeInterface" t="Include">
+                  <e p="ARAnchor.cs" t="Include" />
+                  <e p="ARCamera.cs" t="Include" />
+                  <e p="ARErrorCode.cs" t="Include" />
+                  <e p="ARFrame.cs" t="Include" />
+                  <e p="ARHitTestResult.cs" t="Include" />
+                  <e p="ARHitTestResultType.cs" t="Include" />
+                  <e p="ARLightEstimate.cs" t="Include" />
+                  <e p="ARPlaneAnchor.cs" t="Include" />
+                  <e p="ARPlaneAnchorAlignment.cs" t="Include" />
+                  <e p="ARPoint.cs" t="Include" />
+                  <e p="ARRect.cs" t="Include" />
+                  <e p="ARSize.cs" t="Include" />
+                  <e p="ARTextureHandles.cs" t="Include" />
+                  <e p="ARTrackingQuality.cs" t="Include" />
+                  <e p="ARTrackingState.cs" t="Include" />
+                  <e p="ARTrackingStateReason.cs" t="Include" />
+                  <e p="ARUserAnchor.cs" t="Include" />
+                  <e p="UnityARSessionNativeInterface.cs" t="Include" />
+                </e>
+                <e p="Shaders" t="Include">
+                  <e p="YUVShader.shader" t="Include" />
+                  <e p="YUVShaderLinear.shader" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2017.2/resharper-host/local/Transient/ReSharperHost/v10/SolutionCaches/_ARBoardgame.-588369638.00" t="ExcludeRecursive" />
+  </component>
+</project>
