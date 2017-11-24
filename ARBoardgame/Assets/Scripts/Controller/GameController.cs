@@ -4,34 +4,32 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    private static Game gameInstance;
+    //private static Game gameInstance;
     public static Game GameInstance { get; private set; }
 
     public const string PIECE_PUT = "Piece put";
     public const string PIECE_MOVED = "Piece moved";
     public const string PIECE_REMOVED = "Piece removed";
+    public const string GAME_SELECTED = "Game selected";
+    public const string GAME_CREATED = "Game created";
     private SquarePos fromPos;
 
 
     void OnEnable()
     {
-        // For testing
-        // this.AddObserver(OnLMBClick, InteractionController.LMB_CLICK);
-
         this.AddObserver(OnSquareRMBClicked, ViewController.SQUARE_RMB_CLICKED);
         this.AddObserver(OnSquareLMBClicked, ViewController.SQUARE_LMB_CLICKED);
         this.AddObserver(OnOutsideLMBClicked, ViewController.OUTSIDE_LMB_CLICKED);
+        this.AddObserver(OnGameSelected, GAME_SELECTED);
 
     }
 
     void OnDisable()
     {
-        // For testing
-        // this.RemoveObserver(OnLMBClick, InteractionController.LMB_CLICK);
-
-        this.AddObserver(OnSquareRMBClicked, ViewController.SQUARE_RMB_CLICKED);
-        this.AddObserver(OnSquareLMBClicked, ViewController.SQUARE_LMB_CLICKED);
-        this.AddObserver(OnOutsideLMBClicked, ViewController.OUTSIDE_LMB_CLICKED);
+        this.RemoveObserver(OnSquareRMBClicked, ViewController.SQUARE_RMB_CLICKED);
+        this.RemoveObserver(OnSquareLMBClicked, ViewController.SQUARE_LMB_CLICKED);
+        this.RemoveObserver(OnOutsideLMBClicked, ViewController.OUTSIDE_LMB_CLICKED);
+        this.RemoveObserver(OnGameSelected, GAME_SELECTED);
     }
 
 
@@ -41,27 +39,10 @@ public class GameController : MonoBehaviour
         // NOTE: Temp solution for creating and adding a game set
         Game.AddTestSet();
 
-        // NOTE: Temp solution - this info needs to come from the menu
-        string gameName = "test";
-
-        // Creates the singular game instance
-        GameInstance = Game.StartGame(gameName);
-
-        fromPos = null;
-
-
-
-        // Test
-        // doAPutPieceTest();
-        //doATestWithAPiece();
+        // NOTE: Temp solution - this need to come as a notification from the menu
+        // --> this.PostNotification(OnGameSelected, "Game name");
+        OnGameSelected(this, "test");
     }
-
-    public void OnLMBClick(object sender, object args)
-    {
-        Debug.Log("Hallo! GameController has been notified that there has been a LMB click at position " + (Vector3)args);
-    }
-
-
 
     // Update is called once per frame
     void Update()
@@ -69,7 +50,11 @@ public class GameController : MonoBehaviour
 
     }
 
-
+    // Method commenting convention in C# :
+    /// <summary>  
+    ///  Handles the Square RMB clicked event.
+    ///  ...
+    /// </summary> 
     public void OnSquareRMBClicked(object sender, object args)
     {
         SquarePos squarePos = (SquarePos)args;
@@ -79,6 +64,10 @@ public class GameController : MonoBehaviour
         this.PostNotification(PIECE_PUT, new PiecePut(pieceType, squarePos));
     }
 
+    /// <summary>  
+    ///  Handles the Square LMB clicked event.
+    ///  ...
+    /// </summary> 
     public void OnSquareLMBClicked(object sender, object args)
     {
         SquarePos squarePos = (SquarePos)args;
@@ -90,7 +79,7 @@ public class GameController : MonoBehaviour
                 GameInstance.Board[squarePos.Col, squarePos.Row] = GameInstance.Board[fromPos.Col, fromPos.Row];
                 GameInstance.Board[fromPos.Col, fromPos.Row] = null;
                 this.PostNotification(PIECE_MOVED, new Move(fromPos, squarePos));
-                Debug.Log("From pos (col, row): " + "(" + fromPos.Col + ", " + fromPos.Row + ")  " + "To pos (col, row): " + "(" + squarePos.Col + ", " + squarePos.Row + ")" );
+                Debug.Log("From pos (col, row): " + "(" + fromPos.Col + ", " + fromPos.Row + ")  " + "To pos (col, row): " + "(" + squarePos.Col + ", " + squarePos.Row + ")");
             }
             fromPos = null;
         }
@@ -100,6 +89,10 @@ public class GameController : MonoBehaviour
         }
     }
 
+    /// <summary>  
+    ///  Handles the Outside LMB clicked event.
+    ///  If a piece has been clicked previously that piece is removed, otherwise nothing happens.
+    /// </summary>  
     public void OnOutsideLMBClicked(object sender, object args)
     {
         if (fromPos != null)
@@ -110,28 +103,19 @@ public class GameController : MonoBehaviour
         }
     }
 
-
-
-    // Simple test - disabled
-    public void doATestWithAPiece()
+    /// <summary>  
+    ///  Handles the Game selected event.
+    ///  ...
+    /// </summary>  
+    public void OnGameSelected(object sender, object args)
     {
-        GameInstance.PutSomePieceAt(2, 2);
+        string gameName = (string)args;
 
-        // disabled
-        // GameInstance.MovePiece(2, 2, 3, 3);
+        // Creates the singular game instance
+        GameInstance = Game.StartGame(gameName);
 
-        Debug.Log("Piece at 3, 3:" + GameInstance.Board[3, 3]);
+        fromPos = null;
 
-        Debug.Log("Piece at 2, 2:" + GameInstance.Board[2, 2]);
-    }
-
-    // Simple create and put piece test
-    public void doAPutPieceTest()
-    {
-        int col = 2;
-        int row = 2;
-        string pieceType = GameInstance.PutSomePieceAt(col, row);
-
-        this.PostNotification(PIECE_PUT, new PiecePut(pieceType, new SquarePos(col, row)));
+        this.PostNotification(GAME_CREATED, new GameStarted(gameName, Game.GameSets[gameName]) );
     }
 }

@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BoardLayer
+    uniqueID: 2422715541
+    locked: 0
+  - name: PieceLayer
+    uniqueID: 997751765
+    locked: 0
