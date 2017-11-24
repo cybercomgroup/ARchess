@@ -146,10 +146,10 @@ public class ViewController : MonoBehaviour
     //
     public void OnPiecePut(object sender, object args)
     {
-        PiecePutMSG piecePutMSG = (PiecePutMSG)args;
-        string pieceType = piecePutMSG.PieceType;
+        PiecePut piecePut = (PiecePut)args;
+        string pieceType = piecePut.PieceType;
 
-        Vector3 pos = GetVectPosOfSquarePos( piecePutMSG.SquarePos );
+        Vector3 pos = GetVectPosOfSquarePos( piecePut.SquarePos );
 
         GameObject pieceGO = new GameObject();
         pieceGO.name = "Piece_" + numPiecesCreated;
@@ -163,8 +163,8 @@ public class ViewController : MonoBehaviour
         pieceGO.GetComponent<Renderer>().sortingLayerName = PIECE_LAYER;
 
 
-        int col = piecePutMSG.SquarePos.Col;
-        int row = piecePutMSG.SquarePos.Row;
+        int col = piecePut.SquarePos.Col;
+        int row = piecePut.SquarePos.Row;
 
         if (board[col, row] != null)
         {

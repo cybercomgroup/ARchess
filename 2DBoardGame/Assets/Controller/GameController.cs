@@ -49,8 +49,6 @@ public class GameController : MonoBehaviour
 
         fromPos = null;
 
-
-
         // Test
         // doAPutPieceTest();
         //doATestWithAPiece();
@@ -76,7 +74,7 @@ public class GameController : MonoBehaviour
 
         string pieceType = GameInstance.PutSomePieceAt(squarePos.Col, squarePos.Row);
 
-        this.PostNotification(PIECE_PUT, new PiecePutMSG(pieceType, squarePos));
+        this.PostNotification(PIECE_PUT, new PiecePut(pieceType, squarePos));
     }
 
     public void OnSquareLMBClicked(object sender, object args)
@@ -132,6 +130,6 @@ public class GameController : MonoBehaviour
         int row = 2;
         string pieceType = GameInstance.PutSomePieceAt(col, row);
 
-        this.PostNotification(PIECE_PUT, new PiecePutMSG(pieceType, new SquarePos(col, row)));
+        this.PostNotification(PIECE_PUT, new PiecePut(pieceType, new SquarePos(col, row)));
     }
 }
