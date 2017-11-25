@@ -10,8 +10,28 @@ public class MainMenuController : IMenuController {
 	}
 
 	public void action(string identifier) {
-		// TODO 
-		Debug.Log("Recieved action " + identifier);
+		// Remove current menu
+		// TODO Make sure that the current View removes itself from NotificationCenter
+		GameObject canvas = GameObject.Find("Canvas");
+		foreach(Transform t in canvas.transform) {
+			Object.Destroy(t.gameObject);
+		}
+
+		// Prepare for the new menu
+		Transform canvasTransform = (Transform) GameObject.Find("Canvas").GetComponent(typeof(Transform));
+		GameObject menuButtonObject = Menu.fixme;
+
+		if(identifier == "startGameButton") {
+			StartGameMenuModel model = new StartGameMenuModel();
+			StartGameMenuController controller = new StartGameMenuController(model);
+			StartGameMenuView view = new StartGameMenuView(model, controller, canvasTransform, menuButtonObject);
+			
+			controller.init();
+		} else if(identifier == "joinGameButton") {
+			// TODO
+		} else if(identifier == "helpButton") {
+			// TODO
+		}
 	}
 
 	public void init() {
