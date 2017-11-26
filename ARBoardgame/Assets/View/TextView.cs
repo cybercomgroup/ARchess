@@ -17,9 +17,12 @@ public class TextView {
 
 		GameObject canvasObject = (GameObject) GameObject.Find("Canvas");
 		GameObject textObject = new GameObject(model.identifier);
-		textObject.transform.SetParent(canvasObject.transform);
+		/*textObject.transform.SetParent(canvasObject.transform);
 		text = textObject.AddComponent<Text>();
-		text.font = (Font)Resources.GetBuiltinResource(typeof(Font), "Arial.ttf");
+		text.font = (Font)Resources.GetBuiltinResource(typeof(Font), "Arial.ttf");*/
+		GameObject obj = GameObject.Instantiate(Resources.Load("MenuText", typeof(GameObject))) as GameObject;
+		text = obj.GetComponent(typeof(Text)) as Text;
+		obj.transform.SetParent(canvasObject.transform);
 	}
 
 	public void onUpdate(object sender, object args) {

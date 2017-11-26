@@ -28,5 +28,6 @@ public class MenuButtonView {
 
 	public void onUpdate(object sender, object args) {
 		((Text) button.GetComponentInChildren(typeof(Text))).text = model.text;
+		button.interactable = model.enabled;
 	}
 }

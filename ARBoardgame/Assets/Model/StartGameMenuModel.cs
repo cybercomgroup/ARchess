@@ -13,8 +13,11 @@ public class StartGameMenuModel {
 		heading = new TextModel("heading", "Select a game");
 		chessButton = new MenuButtonModel("chessButton", "Chess");
 		goButton = new MenuButtonModel("goButton", "Go");
+		goButton.enabled = false;
 		diplomacyButton = new MenuButtonModel("diplomacyButton", "Diplomacy");
+		diplomacyButton.enabled = false;
 		reversiButton = new MenuButtonModel("reversiButton", "Reversi");
+		reversiButton.enabled = false;
 	}
 
 	public void init() {
