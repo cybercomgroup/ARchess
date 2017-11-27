@@ -8,14 +8,15 @@ public class MenuButtonView {
 	private MenuButtonModel model;
 	private IMenuController controller;
 
-	public MenuButtonView(MenuButtonModel model, IMenuController controller, Transform canvasTransform, GameObject menuButtonObject) {
+	public MenuButtonView(MenuButtonModel model, IMenuController controller) {
 		this.model = model;
 		// Subscribe to updates from "buttonObject"
 		model.AddObserver(onUpdate, "menuButtonUpdate");
 
 		this.controller = controller;
 
-		GameObject buttonObject = (GameObject) GameObject.Instantiate(menuButtonObject, canvasTransform);
+		Transform canvasTransform = GameObject.Find("Canvas").transform;
+		GameObject buttonObject = (GameObject) GameObject.Instantiate(Resources.Load("MenuButton"), canvasTransform);
 
 		this.button = (Button) buttonObject.GetComponentInChildren(typeof(Button));
 		// Add click listener for the button

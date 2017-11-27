@@ -9,11 +9,11 @@ public class StartGameMenuView {
 	private MenuButtonView diplomacyButtonView;
 	private MenuButtonView reversiButtonView;
 
-	public StartGameMenuView(StartGameMenuModel model, StartGameMenuController controller, Transform canvasTransform, GameObject menuButtonObject) {
+	public StartGameMenuView(StartGameMenuModel model, StartGameMenuController controller) {
 		headingView = new TextView(model.heading, controller);
-		chessButtonView = new MenuButtonView(model.chessButton, controller, canvasTransform, menuButtonObject);
-		goButtonView = new MenuButtonView(model.goButton, controller, canvasTransform, menuButtonObject);
-		diplomacyButtonView = new MenuButtonView(model.diplomacyButton, controller, canvasTransform, menuButtonObject);
-		reversiButtonView = new MenuButtonView(model.reversiButton, controller, canvasTransform, menuButtonObject);
+		chessButtonView = new MenuButtonView(model.chessButton, controller);
+		goButtonView = new MenuButtonView(model.goButton, controller);
+		diplomacyButtonView = new MenuButtonView(model.diplomacyButton, controller);
+		reversiButtonView = new MenuButtonView(model.reversiButton, controller);
 	}
 }
