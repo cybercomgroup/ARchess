@@ -22,10 +22,10 @@ public class IngameMenuView {
 		GameObject canvasObject = GameObject.Find("Canvas") as GameObject;
 		Object.DestroyImmediate(canvasObject.GetComponent(typeof(VerticalLayoutGroup)));
 		HorizontalLayoutGroup layoutGroup = canvasObject.AddComponent<HorizontalLayoutGroup>();
-		layoutGroup.childControlWidth = true;
-		layoutGroup.childControlHeight = true;
-		layoutGroup.childForceExpandWidth = false;
-		layoutGroup.childForceExpandHeight = false;
+		layoutGroup.childControlWidth = false;
+		layoutGroup.childControlHeight = false;
+		layoutGroup.childForceExpandWidth = true;
+		layoutGroup.childForceExpandHeight = true;
 		layoutGroup.childAlignment = TextAnchor.LowerCenter;
 	}
 

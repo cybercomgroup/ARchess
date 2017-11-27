@@ -18,4 +18,10 @@ public class MainMenuModel {
 		joinGameButtonModel.init();
 		helpButtonModel.init();
 	}
+
+	public void terminate() {
+		startGameButtonModel.terminate();
+		joinGameButtonModel.terminate();
+		helpButtonModel.terminate();
+	}
 }

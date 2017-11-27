@@ -11,11 +11,7 @@ public class MainMenuController : IMenuController {
 
 	public void action(string identifier) {
 		// Remove current menu
-		// TODO Make sure that the current View removes itself from NotificationCenter
-		GameObject canvas = GameObject.Find("Canvas");
-		foreach(Transform t in canvas.transform) {
-			Object.Destroy(t.gameObject);
-		}
+		model.terminate();
 
 		if(identifier == "startGameButton") {
 			StartGameMenuModel model = new StartGameMenuModel();

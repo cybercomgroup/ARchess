@@ -17,4 +17,8 @@ public class TextModel {
 	public void init() {
 		this.PostNotification("textUpdate");
 	}
+
+	public void terminate() {
+		this.PostNotification("textTerminate");
+	}
 }

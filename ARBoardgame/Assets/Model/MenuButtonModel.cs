@@ -19,4 +19,8 @@ public class MenuButtonModel {
 	public void init() {
 		this.PostNotification("menuButtonUpdate");
 	}
+
+	public void terminate() {
+		this.PostNotification("menuButtonTerminate");
+	}
 }

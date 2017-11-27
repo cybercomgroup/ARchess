@@ -27,4 +27,12 @@ public class StartGameMenuModel {
 		diplomacyButton.init();
 		reversiButton.init();
 	}
+
+	public void terminate() {
+		heading.terminate();
+		chessButton.terminate();
+		goButton.terminate();
+		diplomacyButton.terminate();
+		reversiButton.terminate();
+	}
 }
