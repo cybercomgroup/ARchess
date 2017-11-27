@@ -10,19 +10,15 @@ public class TextView {
 
 	public TextView(TextModel model, IMenuController controller) {
 		this.model = model;
-		// Subscribe to updates from "buttonObject"
+		// Subscribe to updates from "text"
 		model.AddObserver(onUpdate, "textUpdate");
 
 		this.controller = controller;
 
-		GameObject canvasObject = (GameObject) GameObject.Find("Canvas");
-		GameObject textObject = new GameObject(model.identifier);
-		/*textObject.transform.SetParent(canvasObject.transform);
-		text = textObject.AddComponent<Text>();
-		text.font = (Font)Resources.GetBuiltinResource(typeof(Font), "Arial.ttf");*/
-		GameObject obj = GameObject.Instantiate(Resources.Load("MenuText", typeof(GameObject))) as GameObject;
-		text = obj.GetComponent(typeof(Text)) as Text;
-		obj.transform.SetParent(canvasObject.transform);
+		Transform canvasTransform = GameObject.Find("Canvas").transform;
+		GameObject textObject = GameObject.Instantiate(Resources.Load("MenuText", typeof(GameObject))) as GameObject;
+		text = textObject.GetComponent(typeof(Text)) as Text;
+		textObject.transform.SetParent(canvasTransform);
 	}
 
 	public void onUpdate(object sender, object args) {
