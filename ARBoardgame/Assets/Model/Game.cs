@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class Game
 {
@@ -82,5 +83,85 @@ public class Game
         Board[col, row] = pieceType;
 
         return pieceType;
+    }
+
+    /// <summary>
+    /// Loads all GameSets in the Resources directory.
+    /// </summary>
+    public static void LoadGameSets()
+    {
+        List<string> gameSetNames = GetListOfGameSets();
+
+        foreach(string gameSetName in gameSetNames)
+        {
+            BoardType boardType = ImportBoardType(gameSetName);
+            List<string> pieceTypes = ImportPieceTypes(gameSetName);
+
+            // Do not add a game set for which creating a boardType has filed (missing boardType.json)
+            if (boardType != null)
+            {
+                GameSet gameSet = new GameSet(boardType, pieceTypes);
+            
+                AddGameSet(gameSetName, gameSet);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Get all GameSets in the Resources directory.
+    /// </summary>
+    public static List<string> GetListOfGameSets()
+    {
+        List<string> gamesList = new List<string>();
+
+        foreach (string gamesSubDir in (Directory.GetDirectories(Application.dataPath + "/Resources/Games/")))
+        {
+            gamesList.Add(Path.GetFileName(gamesSubDir));
+        }
+
+        return gamesList;
+    }
+
+    /// <summary>
+    /// Import board type data for a specific game set from json specification file.
+    /// </summary>
+    public static BoardType ImportBoardType(string gameSetName)
+    {
+        string filePath = Path.Combine(Application.dataPath, "Resources/Games/" + gameSetName + "/boardType.json");
+
+        BoardType boardType;
+
+        if (File.Exists(filePath))
+        {
+            boardType = JsonUtility.FromJson<BoardType>(File.ReadAllText(filePath));
+            return boardType;
+        }
+        else
+        {
+            // Consider what to do if expected game set resources do not exist.
+            // Currently just refraining from adding the set.
+            Debug.LogError("No boardType.json exists for game set " + gameSetName);
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Import the pieces for the specified game set.
+    /// </summary>
+    public static List<string> ImportPieceTypes(string gameSetName)
+    {
+        string fileExt = "*.png";
+
+        string piecesPath = Path.Combine(Application.dataPath, "Resources/Games/" + gameSetName + "/Pieces/");
+
+        List<string> pieceTypes = new List<string>();
+
+        foreach (string file in Directory.GetFiles(piecesPath, fileExt))
+        {
+            pieceTypes.Add(Path.GetFileNameWithoutExtension(file));
+        }
+
+        return pieceTypes;
     }
 }

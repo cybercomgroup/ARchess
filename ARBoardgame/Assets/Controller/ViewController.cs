@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class ViewController : MonoBehaviour
 {
-    // NOTE: temp solution for handling graphical resources - consider how to import
-    public Sprite chessBoardSprite;
-
-
     private string gameName;
 
     private int numPiecesCreated;
@@ -19,8 +15,6 @@ public class ViewController : MonoBehaviour
 
     private Dictionary<string, Sprite> gamePieceTypeToSpriteMap;
 
-    // Do we need to keep track of the board sprite (later model)?
-    // private Sprite boardSprite;
     private GameObject[,] board;
     private GameObject boardGO;
     // Not really required, just for quicker access
@@ -82,15 +76,11 @@ public class ViewController : MonoBehaviour
         // Create the board 
         board = new GameObject[gameStarted.GameSet.BoardType.NumCols, gameStarted.GameSet.BoardType.NumRows];
 
-        // NOTE: Some testing - remove
-
-        Debug.Log("ViewController - GameCreated: " + gamePieceTypeToSpriteMap);
-
-
         // Map every available pieceTypes to their respective sprite, later model
         foreach (string pieceType in gameStarted.GameSet.PieceTypes)
         {
-            gamePieceTypeToSpriteMap[pieceType] = Resources.Load<Sprite>(pieceType);
+            // Use the selected game set's sprite resources for the pieces
+            gamePieceTypeToSpriteMap[pieceType] = Resources.Load<Sprite>("Games/" + gameName + "/Pieces/" + pieceType);
         }
     }
 
@@ -103,17 +93,13 @@ public class ViewController : MonoBehaviour
         // Not really required, just for quicker access
         boardPos = pos;
 
-        // Debug.Log("Board postion selected: " + pos);
-
         boardGO = new GameObject();
         boardGO.name = "Board";
 
         boardGO.transform.position = pos;
         boardGO.transform.SetParent(this.transform, true);
-        // This means that the name of the board sprite, and later model, needs to be the game name + Board. For exampel: chessBoard
-        // NOTE: Temp - remove
-        Debug.Log("Here: " + gameName + "Board");
-        boardGO.AddComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(gameName + "Board");
+        // Use the selected game set's board sprite resource. This method means that the board sprite needs to be in Resources/Games/<gameName>/ and have the name board
+        boardGO.AddComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Games/" + gameName + "/board");
         // Setting layer for sorting order. Probably not very important for our future real 3D view
         boardGO.GetComponent<Renderer>().sortingLayerName = BOARD_LAYER;
     }
@@ -245,18 +231,14 @@ public class ViewController : MonoBehaviour
     // to the Vector3 x and y positions if there is one, otherwise null
     private SquarePos GetSquarePosOfVectPos(Vector3 pos)
     {
-        float squareWidth = boardGO.GetComponent<Renderer>().bounds.size.x / 8;
-        float squareHeight = boardGO.GetComponent<Renderer>().bounds.size.y / 8;
+        float squareWidth = boardGO.GetComponent<Renderer>().bounds.size.x / (board.GetUpperBound(0) + 1);
+        float squareHeight = boardGO.GetComponent<Renderer>().bounds.size.y / (board.GetUpperBound(1) + 1);
 
-
-
-        // temp
-        // NOTE: Update source of size info. Should be info in class members, info supplied by game created notification
         // (0, 0) lower left currently
-        int col = (int)Mathf.Floor(2 * (pos.x - boardPos.x + 4 * squareWidth));
-        int row = (int)Mathf.Floor(2 * (pos.y - boardPos.y + 4 * squareHeight));
+        int col = (int)Mathf.Floor(2 * (pos.x - boardPos.x + (board.GetUpperBound(0) + 1)/2 * squareWidth));
+        int row = (int)Mathf.Floor(2 * (pos.y - boardPos.y + (board.GetUpperBound(1) + 1)/2 * squareHeight));
         
-        if (col >= 0 && row >= 0 && col <= 7 && row <= 7)
+        if (col >= 0 && row >= 0 && col <= board.GetUpperBound(0) && row <= board.GetUpperBound(1))
         {
             return new SquarePos(col, row);
         }
@@ -272,8 +254,8 @@ public class ViewController : MonoBehaviour
     // to the Square positions
     private Vector3 GetVectPosOfSquarePos(SquarePos pos)
     {
-        float squareWidth = boardGO.GetComponent<Renderer>().bounds.size.x / 8;
-        float squareHeight = boardGO.GetComponent<Renderer>().bounds.size.y / 8;
+        float squareWidth = boardGO.GetComponent<Renderer>().bounds.size.x / (board.GetUpperBound(0) + 1);
+        float squareHeight = boardGO.GetComponent<Renderer>().bounds.size.y / (board.GetUpperBound(1) + 1);
 
         float x = ((float)pos.Col) * squareWidth + boardPos.x - 3.5f * squareWidth;
         float y = ((float)pos.Row) * squareHeight + boardPos.y - 3.5f * squareHeight;

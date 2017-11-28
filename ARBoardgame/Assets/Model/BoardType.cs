@@ -5,14 +5,40 @@ using UnityEngine;
 
 
 /**
- * BoarType keeps track of board attributes.
+ * BoardType keeps track of board attributes.
  * Currently the only attribute is the size.
  * 
  */
+[System.Serializable]
 public class BoardType
 {
-    public int NumCols { get; private set; }
-    public int NumRows { get; private set; }
+    [SerializeField]
+    private int numCols;
+    public int NumCols
+    {
+        get
+        {
+            return numCols;
+        }
+        private set
+        {
+            numCols = value;
+        }
+    }
+
+    [SerializeField]
+    private int numRows;
+    public int NumRows
+    {
+        get
+        {
+            return numRows;
+        }
+        private set
+        {
+            numRows = value;
+        }
+    }
 
     public BoardType(int numCols, int numRows)
     {

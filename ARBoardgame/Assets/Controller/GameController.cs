@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class GameController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GameController : MonoBehaviour
     public const string PIECE_REMOVED = "Piece removed";
     public const string GAME_REQUESTED = "gameRequest";
     public const string GAME_CREATED = "Game created";
+    public const string GAME_SETS_LOADED = "Game sets loaded";
     private SquarePos fromPos;
 
 
@@ -36,12 +38,10 @@ public class GameController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        // NOTE: Temp solution for creating and adding a game set
-        Game.AddTestSet();
+        // Imports game sets from the resources dir
+        Game.LoadGameSets();
 
-        // NOTE: Temp solution - this need to come as a notification from the menu
-        // --> this.PostNotification(OnGameSelected, "Game name");
-        // OnGameSelected(this, "test");
+        this.PostNotification(GAME_SETS_LOADED, new List<string>(Game.GameSets.Keys));
     }
 
     // Update is called once per frame
@@ -50,7 +50,6 @@ public class GameController : MonoBehaviour
 
     }
 
-    // Method commenting convention in C# :
     /// <summary>  
     ///  Handles the Square RMB clicked event.
     ///  ...
@@ -105,14 +104,11 @@ public class GameController : MonoBehaviour
 
     /// <summary>  
     ///  Handles the Game requested event.
-    ///  ...
+    ///  Starts a new game of the given game type and notifies observers that a game has been created.
     /// </summary>  
     public void OnGameRequested(object sender, object args)
     {
         string gameName = (string)args;
-
-        // NOTE: temp - remove
-        Debug.Log("OnGameRequested reached, game name: " + gameName);
 
         // Creates the singular game instance
         GameInstance = Game.StartGame(gameName);
