@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Text;
 using System;
+
 #if UNITY_ANDROID
 /// <summary>
 /// The base class of the library
@@ -171,5 +172,53 @@ public class WifiDirectBase : MonoBehaviour {
 	public virtual void onMessage (string message) {
 
 	}
+}
+#elif UNITY_STANDALONE
+public class WifiDirectBase : MonoBehaviour
+{
+    public void initialize(string gameObjectName)
+    {  }
+
+    public void terminate()
+    {  }
+
+    public void broadcastService(string service, Dictionary<string, string> record)
+    {  }
+
+    public void discoverServices()
+    {  }
+
+    public void stopDiscovering()
+    {  }
+
+    public void connectToService(string addr)
+    {  }
+
+    public void sendMessage(string msg)
+    {  }
+
+    public bool isReady()
+    { return false; }
+
+    public virtual void onServiceConnected()
+    {  }
+
+    public virtual void onServiceDisconnected()
+    {  }
+
+    public virtual void onServiceFound(string addr)
+    {  }
+
+    public void onUglyTxtRecord(string uglyRecord)
+    {  }
+
+    public virtual void onTxtRecord(string addr, Dictionary<string, string> record)
+    {  }
+
+    public virtual void onConnect()
+    {  }
+
+    public virtual void onMessage(string message)
+    {  }
 }
 #endif
