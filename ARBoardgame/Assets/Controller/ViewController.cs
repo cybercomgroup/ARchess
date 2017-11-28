@@ -109,8 +109,10 @@ public class ViewController : MonoBehaviour
         boardGO.name = "Board";
 
         boardGO.transform.position = pos;
-        boardGO.transform.SetParent(this.transform, true);        
+        boardGO.transform.SetParent(this.transform, true);
         // This means that the name of the board sprite, and later model, needs to be the game name + Board. For exampel: chessBoard
+        // NOTE: Temp - remove
+        Debug.Log("Here: " + gameName + "Board");
         boardGO.AddComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(gameName + "Board");
         // Setting layer for sorting order. Probably not very important for our future real 3D view
         boardGO.GetComponent<Renderer>().sortingLayerName = BOARD_LAYER;
@@ -179,9 +181,6 @@ public class ViewController : MonoBehaviour
 
         pieceGO.transform.position = pos;
         pieceGO.transform.SetParent(this.transform, true);
-
-        //NOTE: temp test - remove
-        Debug.Log("Here : " + gamePieceTypeToSpriteMap[pieceType]);
 
         pieceGO.AddComponent<SpriteRenderer>().sprite =  gamePieceTypeToSpriteMap[pieceType];
 

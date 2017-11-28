@@ -41,7 +41,7 @@ public class Game
     // NOTE: Temp solution for creating and adding a game set
     public static void AddTestSet()
     {
-        string gameName = "test";
+        string gameName = "chess";
         BoardType testBoard = new BoardType(8, 8);
 
         List<string> testPieces = new List<string>();

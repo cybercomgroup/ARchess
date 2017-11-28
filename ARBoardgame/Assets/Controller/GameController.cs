@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     public const string PIECE_PUT = "Piece put";
     public const string PIECE_MOVED = "Piece moved";
     public const string PIECE_REMOVED = "Piece removed";
-    public const string GAME_SELECTED = "Game selected";
+    public const string GAME_REQUESTED = "gameRequest";
     public const string GAME_CREATED = "Game created";
     private SquarePos fromPos;
 
@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
         this.AddObserver(OnSquareRMBClicked, ViewController.SQUARE_RMB_CLICKED);
         this.AddObserver(OnSquareLMBClicked, ViewController.SQUARE_LMB_CLICKED);
         this.AddObserver(OnOutsideLMBClicked, ViewController.OUTSIDE_LMB_CLICKED);
-        this.AddObserver(OnGameSelected, GAME_SELECTED);
+        this.AddObserver(OnGameRequested, GAME_REQUESTED);
 
     }
 
@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour
         this.RemoveObserver(OnSquareRMBClicked, ViewController.SQUARE_RMB_CLICKED);
         this.RemoveObserver(OnSquareLMBClicked, ViewController.SQUARE_LMB_CLICKED);
         this.RemoveObserver(OnOutsideLMBClicked, ViewController.OUTSIDE_LMB_CLICKED);
-        this.RemoveObserver(OnGameSelected, GAME_SELECTED);
+        this.RemoveObserver(OnGameRequested, GAME_REQUESTED);
     }
 
 
@@ -41,7 +41,7 @@ public class GameController : MonoBehaviour
 
         // NOTE: Temp solution - this need to come as a notification from the menu
         // --> this.PostNotification(OnGameSelected, "Game name");
-        OnGameSelected(this, "test");
+        // OnGameSelected(this, "test");
     }
 
     // Update is called once per frame
@@ -104,12 +104,15 @@ public class GameController : MonoBehaviour
     }
 
     /// <summary>  
-    ///  Handles the Game selected event.
+    ///  Handles the Game requested event.
     ///  ...
     /// </summary>  
-    public void OnGameSelected(object sender, object args)
+    public void OnGameRequested(object sender, object args)
     {
         string gameName = (string)args;
+
+        // NOTE: temp - remove
+        Debug.Log("OnGameRequested reached, game name: " + gameName);
 
         // Creates the singular game instance
         GameInstance = Game.StartGame(gameName);
