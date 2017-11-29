@@ -21,7 +21,6 @@ public class JoinGameMenuView {
 		Image maskImage = viewport.AddComponent<Image>();
 		maskImage.sprite = Resources.Load("background", typeof(Sprite)) as Sprite;
 		maskImage.type = Image.Type.Sliced;
-		viewport.GetComponent<RectTransform>().sizeDelta = new Vector2(180, 100);
 
 		GameObject content = new GameObject("content");
 		content.transform.SetParent(viewport.transform, false);
