@@ -10,6 +10,7 @@ public class StartGameMenuView {
 	private MenuButtonView reversiButtonView;
 
 	public StartGameMenuView(StartGameMenuModel model, StartGameMenuController controller) {
+		GameObject.Find("Panel").AddComponent(typeof(FadeIn));
 		headingView = new TextView(model.heading, controller);
 		chessButtonView = new MenuButtonView(model.chessButton, controller);
 		goButtonView = new MenuButtonView(model.goButton, controller);
