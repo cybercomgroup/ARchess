@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 
 
@@ -9,7 +10,7 @@ using UnityEngine;
  * Currently the only attribute is the size.
  * 
  */
-[System.Serializable]
+[Serializable]
 public class BoardType
 {
     [SerializeField]
