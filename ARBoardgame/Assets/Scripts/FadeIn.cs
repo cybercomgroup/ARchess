@@ -9,8 +9,10 @@ public class FadeIn : MonoBehaviour {
 	void Start () {
 		// Set initial alpha to 0 (full transparency)
 		GetComponent<CanvasRenderer>().SetAlpha(0f);
-		// Schedule the fade-in (mostly to let the previous menu fade out)
-		Invoke("fadeIn", 1);
+		// During 1 second, fade to alpha 1 (zero transparency)
+		if(GetComponent<Graphic>() != null) {
+			GetComponent<Graphic>().CrossFadeAlpha(1f, 1f, false);
+		}
 		// Destroy this script after 1 seconds, it has served its purpose by then
 		Object.Destroy(this, 1);
 	}
@@ -18,12 +20,5 @@ public class FadeIn : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-	}
-
-	private void fadeIn() {
-		// During 1 second, fade to alpha 1 (zero transparency)
-		if(GetComponent<Graphic>() != null) {
-			GetComponent<Graphic>().CrossFadeAlpha(1f, 1f, false);
-		}
 	}
 }
