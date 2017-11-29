@@ -8,6 +8,7 @@ public class IngameMenuView {
 	private IMenuController controller;
 
 	public IngameMenuView(IngameMenuModel model, IngameMenuController controller) {
+		GameObject.Find("Panel").SetActive(false);
 		changeToHorizontalLayout();
 
 		this.model = model;

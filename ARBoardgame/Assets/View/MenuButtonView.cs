@@ -16,16 +16,17 @@ public class MenuButtonView {
 
 		this.controller = controller;
 
-		Transform canvasTransform = GameObject.Find("Canvas").transform;
-		GameObject buttonObject = (GameObject) GameObject.Instantiate(Resources.Load("MenuButton"), canvasTransform);
+		Transform panelTransform = GameObject.Find("Panel").transform;
+		GameObject buttonObject = (GameObject) GameObject.Instantiate(Resources.Load("MenuButton"), panelTransform);
+		buttonObject.name = model.identifier;
+		buttonObject.AddComponent(typeof(FadeIn));
+		foreach(Transform child in buttonObject.transform) {
+			child.gameObject.AddComponent(typeof(FadeIn));
+		}
 
 		// Add click listener for the button
 		this.button = (Button) buttonObject.GetComponentInChildren(typeof(Button));
 		this.button.onClick.AddListener(onClick);
-
-		// Fade in from transparency
-		/*buttonObject.GetComponent<CanvasRenderer>().SetAlpha(0f);
-		buttonObject.GetComponent<Image>().CrossFadeAlpha(1f, 1f, false);*/
 	}
 
 	public void onClick() {
@@ -40,8 +41,7 @@ public class MenuButtonView {
 	public void onTerminate(object sender, object args) {
 		model.RemoveObserver(onUpdate, "menuButtonUpdate");
 		model.RemoveObserver(onTerminate, "menuButtonTerminate");
-		/*button.GetComponent<Image>().CrossFadeAlpha(0f, 1f, false);
-		Object.Destroy(button.gameObject, 1f);*/
-		Object.Destroy(button.gameObject);
+		button.gameObject.AddComponent(typeof(FadeOut));
+		Object.Destroy(button.gameObject, 1f);
 	}
 }

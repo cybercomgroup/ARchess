@@ -16,11 +16,10 @@ public class TextView {
 
 		this.controller = controller;
 
-		Transform canvasTransform = GameObject.Find("Canvas").transform;
-		GameObject textObject = GameObject.Instantiate(Resources.Load("MenuText", typeof(GameObject))) as GameObject;
+		Transform panelTransform = GameObject.Find("Panel").transform;
+		GameObject textObject = GameObject.Instantiate(Resources.Load("MenuText", typeof(GameObject)), panelTransform) as GameObject;
 		text = textObject.GetComponent(typeof(Text)) as Text;
-		textObject.transform.SetParent(canvasTransform);
-		textObject.transform.localScale = new Vector3(1f, 1f, 1f);
+		textObject.AddComponent(typeof(FadeIn));
 	}
 
 	public void onUpdate(object sender, object args) {
@@ -30,6 +29,7 @@ public class TextView {
 	public void onTerminate(object sender, object args) {
 		model.RemoveObserver(onUpdate, "textUpdate");
 		model.RemoveObserver(onTerminate, "textTerminate");
-		Object.Destroy(text.gameObject);
+		text.gameObject.AddComponent(typeof(FadeOut));
+		Object.Destroy(text.gameObject, 1f);
 	}
 }
