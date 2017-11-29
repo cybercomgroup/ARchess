@@ -42,6 +42,9 @@ public class MenuButtonView {
 		model.RemoveObserver(onUpdate, "menuButtonUpdate");
 		model.RemoveObserver(onTerminate, "menuButtonTerminate");
 		button.gameObject.AddComponent(typeof(FadeOut));
+		foreach(Transform child in button.gameObject.transform) {
+			child.gameObject.AddComponent(typeof(FadeOut));
+		}
 		Object.Destroy(button.gameObject, 1f);
 	}
 }
