@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
 
 public class Game
 {
@@ -39,36 +38,6 @@ public class Game
     }
 
 
-    // NOTE: Temp solution for creating and adding a game set
-    public static void AddTestSet()
-    {
-        string gameName = "chess";
-        BoardType testBoard = new BoardType(8, 8);
-
-        List<string> testPieces = new List<string>();
-
-        testPieces.Add("pawn");
-        testPieces.Add("rook");
-
-        GameSet test = new GameSet(testBoard, testPieces);
-
-        AddGameSet(gameName, test);
-    }
-
-    /* Consider if this shouldn't be in GameController instead 
-    public void MovePiece(int fromCol, int fromRow, int toCol, int toRow)
-    {
-        // Check arguments if necessary
-        if(CheckMPArguments(fromCol, fromRow, toCol, toRow))
-        {
-            Board[toCol, toRow] = Board[fromCol, fromRow];
-            Board[fromCol, fromRow] = null;
-
-            this.PostNotification(PIECE_MOVED, new MoveMSG(fromCol, fromRow, toCol, toRow));
-        }
-    }
-    */
-
     // Test version
     // Only execute move when there is a piece in the from position
     private bool CheckMPArguments(int fromCol, int fromRow, int toCol, int toRow)
@@ -95,9 +64,10 @@ public class Game
         foreach(string gameSetName in gameSetNames)
         {
             BoardType boardType = ImportBoardType(gameSetName);
+
             List<string> pieceTypes = ImportPieceTypes(gameSetName);
 
-            // Do not add a game set for which creating a boardType has filed (missing boardType.json)
+            // Do not add a game set for which creating a boardType has failed (missing boardType.json)
             if (boardType != null)
             {
                 GameSet gameSet = new GameSet(boardType, pieceTypes);
@@ -107,61 +77,43 @@ public class Game
         }
     }
 
+
+    // Refactor: Combine with ImportPieceTypes to avoid code duplication 
     /// <summary>
     /// Get all GameSets in the Resources directory.
     /// </summary>
-    public static List<string> GetListOfGameSets()
+    private static List<string> GetListOfGameSets()
     {
-        List<string> gamesList = new List<string>();
-
-        foreach (string gamesSubDir in (Directory.GetDirectories(Application.dataPath + "/Resources/Games/")))
-        {
-            gamesList.Add(Path.GetFileName(gamesSubDir));
-        }
-
-        return gamesList;
+        return ImportStringListFromJSON("Games/gameSets");
     }
 
     /// <summary>
     /// Import board type data for a specific game set from json specification file.
     /// </summary>
-    public static BoardType ImportBoardType(string gameSetName)
+    private static BoardType ImportBoardType(string gameSetName)
     {
-        string filePath = Path.Combine(Application.dataPath, "Resources/Games/" + gameSetName + "/boardType.json");
+        TextAsset file = Resources.Load("Games/" + gameSetName + "/boardType") as TextAsset;
+        BoardType boardType = JsonUtility.FromJson<BoardType>(file.ToString());
 
-        BoardType boardType;
-
-        if (File.Exists(filePath))
-        {
-            boardType = JsonUtility.FromJson<BoardType>(File.ReadAllText(filePath));
-            return boardType;
-        }
-        else
-        {
-            // Consider what to do if expected game set resources do not exist.
-            // Currently just refraining from adding the set.
-            Debug.LogError("No boardType.json exists for game set " + gameSetName);
-        }
-
-        return null;
+        return boardType;
     }
 
     /// <summary>
     /// Import the pieces for the specified game set.
     /// </summary>
-    public static List<string> ImportPieceTypes(string gameSetName)
+    private static List<string> ImportPieceTypes(string gameSetName)
     {
-        string fileExt = "*.png";
+        return ImportStringListFromJSON("Games/" + gameSetName + "/pieceTypes");
+    }
 
-        string piecesPath = Path.Combine(Application.dataPath, "Resources/Games/" + gameSetName + "/Pieces/");
+    /// <summary>
+    /// Import the pieces for the specified game set.
+    /// </summary>
+    private static List<string> ImportStringListFromJSON(string jsonFilePath)
+    {
+        TextAsset file = Resources.Load(jsonFilePath) as TextAsset;
+        StringsJSON stringJSON = JsonUtility.FromJson<StringsJSON>(file.ToString());
 
-        List<string> pieceTypes = new List<string>();
-
-        foreach (string file in Directory.GetFiles(piecesPath, fileExt))
-        {
-            pieceTypes.Add(Path.GetFileNameWithoutExtension(file));
-        }
-
-        return pieceTypes;
+        return new List<string>(stringJSON.strings);
     }
 }
