@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f92b5f2-53f7-461f-8c75-6c5725a7cb60" name="Default" comment="" />
+    <list default="true" id="2f92b5f2-53f7-461f-8c75-6c5725a7cb60" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.ARBoardgame/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.ARBoardgame/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.ARBoardgame/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Prefabs/ChessBoard.prefab" afterPath="$PROJECT_DIR$/Assets/Prefabs/ChessBoard.prefab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scenes/PickupDev.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/PickupDev.unity" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/View/ArViewController.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/View/ArViewController.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/View/HighlightView.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/View/HighlightView.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/UnityARInterface/Examples/Common/Prefabs/ParticlePrefab.prefab" afterPath="$PROJECT_DIR$/Assets/UnityARInterface/Examples/Common/Prefabs/ParticlePrefab.prefab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,30 +24,98 @@
       <file leaf-file-name="ArViewController.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/View/ArViewController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="83" column="27" lean-forward="false" selection-start-line="83" selection-start-column="27" selection-end-line="83" selection-end-column="27" />
+            <state relative-caret-position="379">
+              <caret line="157" column="22" lean-forward="true" selection-start-line="157" selection-start-column="22" selection-end-line="157" selection-end-column="22" />
               <folding>
-                <marker date="1511886395000" expanded="true" signature="6:126" ph="..." />
-                <marker date="1511886395000" expanded="true" signature="173:5422" ph="{...}" />
-                <marker date="1511886395000" expanded="true" signature="480:1020" ph="{...}" />
-                <marker date="1511886395000" expanded="true" signature="1227:1525" ph="/* NOTE: Should each class handle its notification subcsriptions? Handle subscriptions in GameController maybe? ... */" />
-                <marker date="1511886395000" expanded="true" signature="1542:1886" ph="{...}" />
-                <marker date="1511886395000" expanded="true" signature="1694:1883" ph="/* this.AddObserver(OnPiecePut, GameController.PIECE_PUT); ... */" />
-                <marker date="1511886395000" expanded="true" signature="1905:2264" ph="{...}" />
-                <marker date="1511886395000" expanded="true" signature="2063:2261" ph="/* this.RemoveObserver(OnPiecePut, GameController.PIECE_PUT); ... */" />
-                <marker date="1511886395000" expanded="true" signature="2287:3622" ph="{...}" />
-                <marker date="1511886395000" expanded="true" signature="2438:2558" ph="{...}" />
-                <marker date="1511886395000" expanded="true" signature="2800:3619" ph="{...}" />
-                <marker date="1511886395000" expanded="true" signature="2808:3028" ph="/* Instantiate a plane visualization prefab and set it to track the new plane. The transform is set to ... */" />
-                <marker date="1511886395000" expanded="true" signature="3679:4079" ph="{...}" />
-                <marker date="1511886395000" expanded="true" signature="3921:4076" ph="{...}" />
-                <marker date="1511886395000" expanded="true" signature="3984:4072" ph="{...}" />
-                <marker date="1511886395000" expanded="true" signature="4133:5420" ph="{...}" />
-                <marker date="1511886395000" expanded="true" signature="4264:4798" ph="{...}" />
-                <marker date="1511886395000" expanded="true" signature="4462:4783" ph="{...}" />
-                <marker date="1511886395000" expanded="true" signature="4805:5026" ph="{...}" />
-                <marker date="1511886395000" expanded="true" signature="4952:5022" ph="{...}" />
-                <marker date="1511886395000" expanded="true" signature="5104:5371" ph="/* SquarePos squarePos = GetSquarePosOfVectPos(pos); ... */" />
+                <marker date="1512074502000" expanded="false" signature="6:126" ph="..." />
+                <marker date="1512074502000" expanded="true" signature="173:6171" ph="{...}" />
+                <marker date="1512074502000" expanded="true" signature="494:1034" ph="{...}" />
+                <marker date="1512074502000" expanded="true" signature="1397:1581" ph="/* Handling subscribing and unsubscribing to the notifications in OnEnable and OnDisable is a &quot;better practice&quot; m ... */" />
+                <marker date="1512074502000" expanded="true" signature="1598:1942" ph="{...}" />
+                <marker date="1512074502000" expanded="true" signature="1750:1939" ph="/* this.AddObserver(OnPiecePut, GameController.PIECE_PUT); ... */" />
+                <marker date="1512074502000" expanded="true" signature="1961:2320" ph="{...}" />
+                <marker date="1512074502000" expanded="true" signature="2119:2317" ph="/* this.RemoveObserver(OnPiecePut, GameController.PIECE_PUT); ... */" />
+                <marker date="1512074502000" expanded="true" signature="2343:3678" ph="{...}" />
+                <marker date="1512074502000" expanded="true" signature="2494:2614" ph="{...}" />
+                <marker date="1512074502000" expanded="true" signature="2856:3675" ph="{...}" />
+                <marker date="1512074502000" expanded="true" signature="2864:3084" ph="/* Instantiate a plane visualization prefab and set it to track the new plane. The transform is set to ... */" />
+                <marker date="1512074502000" expanded="true" signature="3735:4187" ph="{...}" />
+                <marker date="1512074502000" expanded="true" signature="3977:4184" ph="{...}" />
+                <marker date="1512074502000" expanded="true" signature="4092:4180" ph="{...}" />
+                <marker date="1512074502000" expanded="true" signature="4241:6169" ph="{...}" />
+                <marker date="1512074502000" expanded="true" signature="4372:5117" ph="{...}" />
+                <marker date="1512074502000" expanded="true" signature="4540:5102" ph="{...}" />
+                <marker date="1512074502000" expanded="true" signature="5124:5775" ph="{...}" />
+                <marker date="1512074502000" expanded="true" signature="5270:5771" ph="{...}" />
+                <marker date="1512074502000" expanded="true" signature="5428:5505" ph="{...}" />
+                <marker date="1512074502000" expanded="true" signature="5541:5702" ph="{...}" />
+                <marker date="1512074502000" expanded="true" signature="5553:5615" ph="/* Find position of placement ... */" />
+                <marker date="1512074502000" expanded="true" signature="5621:5669" ph="/* if (hitObj) ... */" />
+                <marker date="1512074502000" expanded="true" signature="5853:6120" ph="/* SquarePos squarePos = GetSquarePosOfVectPos(pos); ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArInteractionController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Controller/ArInteractionController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="5" column="42" lean-forward="false" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+              <folding>
+                <marker date="1511871460000" expanded="false" signature="6:102" ph="..." />
+                <marker date="1511871460000" expanded="true" signature="149:1277" ph="{...}" />
+                <marker date="1511871460000" expanded="true" signature="409:637" ph="{...}" />
+                <marker date="1511871460000" expanded="true" signature="456:506" ph="{...}" />
+                <marker date="1511871460000" expanded="true" signature="551:601" ph="{...}" />
+                <marker date="1511871460000" expanded="true" signature="675:923" ph="{...}" />
+                <marker date="1511871460000" expanded="true" signature="727:835" ph="/* Vector3 fwd = camera.transform.forward; ... */" />
+                <marker date="1511871460000" expanded="true" signature="958:1093" ph="{...}" />
+                <marker date="1511871460000" expanded="true" signature="1128:1275" ph="{...}" />
+                <marker date="1511871460000" expanded="true" signature="1138:1269" ph="/* Vector3 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition); ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HighlightView.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/View/HighlightView.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+              <folding>
+                <marker date="1512055187000" expanded="false" signature="6:78" ph="..." />
+                <marker date="1512055187000" expanded="true" signature="123:763" ph="{...}" />
+                <marker date="1512055187000" expanded="true" signature="285:555" ph="{...}" />
+                <marker date="1512055187000" expanded="true" signature="354:420" ph="{...}" />
+                <marker date="1512055187000" expanded="true" signature="427:463" ph="{...}" />
+                <marker date="1512055187000" expanded="true" signature="507:552" ph="{...}" />
+                <marker date="1512055187000" expanded="true" signature="578:761" ph="{...}" />
+                <marker date="1512055187000" expanded="true" signature="598:659" ph="{...}" />
+                <marker date="1512055187000" expanded="true" signature="666:735" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PointcloudVisualizer.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/GoogleARCore/HelloARExample/Scripts/PointcloudVisualizer.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="945">
+              <caret line="66" column="24" lean-forward="false" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+              <folding>
+                <marker date="1503558418000" expanded="true" signature="0:763" ph="/* &lt;copyright file=&quot;PointcloudVisualizer.cs&quot; company=&quot;Google&quot;&gt; ... */" />
+                <marker date="1503558418000" expanded="false" signature="808:915" ph="..." />
+                <marker date="1503558418000" expanded="true" signature="921:988" ph="/// Visualize the point cloud. ... " />
+                <marker date="1503558418000" expanded="true" signature="1042:2675" ph="{...}" />
+                <marker date="1503558418000" expanded="true" signature="1258:1319" ph="/// Unity start. ... " />
+                <marker date="1503558418000" expanded="true" signature="1347:1449" ph="{...}" />
+                <marker date="1503558418000" expanded="true" signature="1459:1521" ph="/// Unity update. ... " />
+                <marker date="1503558418000" expanded="true" signature="1550:2669" ph="{...}" />
+                <marker date="1503558418000" expanded="true" signature="1684:1736" ph="{...}" />
+                <marker date="1503558418000" expanded="true" signature="1943:2659" ph="{...}" />
+                <marker date="1503558418000" expanded="true" signature="2088:2182" ph="{...}" />
+                <marker date="1503558418000" expanded="true" signature="2362:2434" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -46,7 +124,7 @@
       <file leaf-file-name="ARPlaneVisualizer.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/UnityARInterface/Scripts/ARPlaneVisualizer.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
+            <state relative-caret-position="390">
               <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
               <folding>
                 <marker date="1509725180000" expanded="false" signature="6:78" ph="..." />
@@ -65,96 +143,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ARInterface.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/UnityARInterface/Scripts/ARInterface.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="74" column="30" lean-forward="false" selection-start-line="74" selection-start-column="30" selection-end-line="74" selection-end-column="30" />
-              <folding>
-                <marker date="1509725180000" expanded="false" signature="6:66" ph="..." />
-                <marker date="1509725180000" expanded="true" signature="94:3039" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="134:3037" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="171:326" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="361:501" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="535:596" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="659:786" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="823:995" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="1321:1390" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="1458:1585" ph="/* This is to perform any per-frame updates for the camera, ... */" />
-                <marker date="1509725180000" expanded="true" signature="2070:2161" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="2220:2315" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="2374:2469" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="2568:2906" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="2615:2863" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="2972:3031" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ARCoreInterface.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/UnityARInterface/Scripts/ARCoreInterface.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-35">
-              <caret line="279" column="25" lean-forward="false" selection-start-line="279" selection-start-column="25" selection-end-line="279" selection-end-column="25" />
-              <folding>
-                <marker date="1509725180000" expanded="false" signature="6:217" ph="..." />
-                <marker date="1509725180000" expanded="true" signature="245:12240" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="294:12238" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="847:2240" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="892:2109" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="1010:1164" ph="/* We're going to manage the camera separately, but this needs to be true ... */" />
-                <marker date="1509725180000" expanded="true" signature="1472:1652" ph="/* Deactivate the GameObject before adding the SessionComponent ... */" />
-                <marker date="1509725180000" expanded="true" signature="1901:1997" ph="/* We are going to manage the camera separately, so ... */" />
-                <marker date="1509725180000" expanded="true" signature="2284:2366" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="2430:3100" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="2904:3063" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="3177:5741" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="3352:5704" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="4033:4171" ph="/* UV planes are not deterministic, but we want all the data in one go ... */" />
-                <marker date="1509725180000" expanded="true" signature="4480:4618" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="5178:5411" ph="/* The data is usually provided as VU rather than UV, ... */" />
-                <marker date="1509725180000" expanded="true" signature="5467:5660" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="5815:6376" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="6243:6340" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="6434:6956" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="6528:6789" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="6602:6774" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="6806:6946" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="7007:7045" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="7095:8043" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="7208:7843" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="8100:8510" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="8568:9966" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="8929:9438" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="8989:9089" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="9110:9424" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="9249:9406" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="9455:9956" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="9513:9611" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="9632:9942" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="9769:9924" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="10005:12232" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="10282:11488" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="10340:11474" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="10490:10910" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="10573:10683" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="10712:10888" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="10935:11456" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="11040:11307" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="11690:12096" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="11823:12082" ph="{...}" />
-                <marker date="1509725180000" expanded="true" signature="11910:12010" ph="/* Add to list here to avoid mutating the dictionary ... */" />
-                <marker date="1509725180000" expanded="true" signature="12147:12222" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="HelloARController.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/GoogleARCore/HelloARExample/Scripts/HelloARController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
+            <state relative-caret-position="1440">
               <caret line="99" column="31" lean-forward="false" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
               <folding>
                 <marker date="1503642422000" expanded="true" signature="0:834" ph="/* ----------------------------------------------------------------------- ... */" />
@@ -196,7 +188,7 @@
       <file leaf-file-name="Session.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/GoogleARCore/SDK/Scripts/Session.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
+            <state relative-caret-position="1005">
               <caret line="69" column="63" lean-forward="false" selection-start-line="69" selection-start-column="63" selection-end-line="69" selection-end-column="63" />
               <folding>
                 <marker date="1503642422000" expanded="true" signature="0:824" ph="/* ----------------------------------------------------------------------- ... */" />
@@ -218,11 +210,10 @@
       <file leaf-file-name="RaycastManager.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/GoogleARCore/SDK/Scripts/Managers/RaycastManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
+            <state relative-caret-position="630">
               <caret line="44" column="42" lean-forward="false" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
               <folding>
                 <marker date="1503642422000" expanded="true" signature="0:831" ph="/* ----------------------------------------------------------------------- ... */" />
-                <marker date="1503642422000" expanded="true" signature="863:8805" ph="{...}" />
                 <marker date="1503642422000" expanded="false" signature="876:950" ph="..." />
                 <marker date="1503642422000" expanded="true" signature="983:8803" ph="{...}" />
                 <marker date="1503642422000" expanded="true" signature="1147:1759" ph="/// Hit test against all detected planes. If point cloud hit flag is enabled, it will return point ... " />
@@ -266,7 +257,7 @@
       <file leaf-file-name="TrackableHitFlag.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/GoogleARCore/SDK/Scripts/TrackableHitFlag.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
+            <state relative-caret-position="600">
               <caret line="40" column="8" lean-forward="false" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
               <folding>
                 <marker date="1503642422000" expanded="true" signature="0:833" ph="/* ----------------------------------------------------------------------- ... */" />
@@ -283,27 +274,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArInteractionController.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Controller/ArInteractionController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding>
-                <marker date="1511871460000" expanded="false" signature="6:102" ph="..." />
-                <marker date="1511871460000" expanded="true" signature="149:1277" ph="{...}" />
-                <marker date="1511871460000" expanded="true" signature="409:637" ph="{...}" />
-                <marker date="1511871460000" expanded="true" signature="456:506" ph="{...}" />
-                <marker date="1511871460000" expanded="true" signature="551:601" ph="{...}" />
-                <marker date="1511871460000" expanded="true" signature="675:923" ph="{...}" />
-                <marker date="1511871460000" expanded="true" signature="727:835" ph="/* Vector3 fwd = camera.transform.forward; ... */" />
-                <marker date="1511871460000" expanded="true" signature="958:1093" ph="{...}" />
-                <marker date="1511871460000" expanded="true" signature="1128:1275" ph="{...}" />
-                <marker date="1511871460000" expanded="true" signature="1138:1269" ph="/* Vector3 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition); ... */" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -312,6 +282,9 @@
       <find>OnPieceMoved</find>
       <find>m_trackedPlanePrefab</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/GoogleARCore/HelloARExample/Scripts/PointcloudVisualizer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -343,15 +316,20 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/Move.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/View/HighlightView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GoogleARCore/SDK/Scripts/Managers/RaycastManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/NotificationCenter/NotificationExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityARInterface/Scripts/ARPointCloudVisualizer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityARInterface/Scripts/AREditorInterface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityARInterface/Scripts/ARController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4ACE57B-84B8-4894-924F-C66FAC55A4E8/c7/56a9f320/Resources.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityARInterface/Scripts/ARBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A2748CB-8DB8-4A56-B1DB-8F59D9BDA51F/c2/85fc1e9b/Single.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4ACE57B-84B8-4894-924F-C66FAC55A4E8/d8/e2720b6c/Camera.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityARInterface/Scripts/ARInterface.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4ACE57B-84B8-4894-924F-C66FAC55A4E8/0a/eba9cb11/Physics.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/View/ViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4ACE57B-84B8-4894-924F-C66FAC55A4E8/45/3adcb9e8/GameObject.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityARInterface/Scripts/ARCoreInterface.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GoogleARCore/SDK/Scripts/Managers/SessionManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityARInterface/Scripts/ARPlaneVisualizer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -387,6 +365,7 @@
     <option name="width" value="1400" />
     <option name="height" value="780" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="SolutionExplorer" proportions="" version="1">
       <flattenPackages />
@@ -402,6 +381,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -409,13 +389,38 @@
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
               <item name="ARBoardgame (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="ARBoardgame (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="ARBoardgame (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="ARBoardgame (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Scripts" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="ARBoardgame (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Scripts" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="View" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
           </expand>
           <select />
         </subPane>
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -434,7 +439,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Unity Debug.Attach to Unity Editor">
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" pid="318" />
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -448,12 +453,15 @@
       <updated>1511463133633</updated>
       <workItem from="1511463135711" duration="2052000" />
       <workItem from="1511476028793" duration="17111000" />
-      <workItem from="1511871455221" duration="6580000" />
+      <workItem from="1511871455221" duration="7002000" />
+      <workItem from="1512052983406" duration="2758000" />
+      <workItem from="1512065424072" duration="43000" />
+      <workItem from="1512065493698" duration="4183000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25743000" />
+    <option name="totallyTimeSpent" value="33149000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -466,27 +474,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="2" y="29" width="1400" height="780" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26067746" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27172312" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -496,6 +503,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Updated some placment and fixed editor testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated some placment and fixed editor testing" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <option name="time" value="11" />
@@ -503,122 +514,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/View/ArViewController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="31" column="63" lean-forward="false" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
-          <folding>
-            <marker date="1511886395000" expanded="true" signature="6:126" ph="..." />
-            <marker date="1511886395000" expanded="true" signature="173:5422" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="480:1020" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="1227:1525" ph="/* NOTE: Should each class handle its notification subcsriptions? Handle subscriptions in GameController maybe? ... */" />
-            <marker date="1511886395000" expanded="true" signature="1542:1886" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="1694:1883" ph="/* this.AddObserver(OnPiecePut, GameController.PIECE_PUT); ... */" />
-            <marker date="1511886395000" expanded="true" signature="1905:2264" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="2063:2261" ph="/* this.RemoveObserver(OnPiecePut, GameController.PIECE_PUT); ... */" />
-            <marker date="1511886395000" expanded="true" signature="2287:3622" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="2438:2558" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="2800:3619" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="2808:3028" ph="/* Instantiate a plane visualization prefab and set it to track the new plane. The transform is set to ... */" />
-            <marker date="1511886395000" expanded="true" signature="3679:4079" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="3921:4076" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="3984:4072" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="4133:5420" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="4264:4798" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="4462:4783" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="4805:5026" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="4952:5022" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="5104:5371" ph="/* SquarePos squarePos = GetSquarePosOfVectPos(pos); ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/View/HighlightView.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <marker date="1511875618000" expanded="false" signature="6:78" ph="..." />
-            <marker date="1511875618000" expanded="true" signature="123:607" ph="{...}" />
-            <marker date="1511875618000" expanded="true" signature="258:399" ph="{...}" />
-            <marker date="1511875618000" expanded="true" signature="422:605" ph="{...}" />
-            <marker date="1511875618000" expanded="true" signature="442:503" ph="{...}" />
-            <marker date="1511875618000" expanded="true" signature="510:579" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/View/ViewController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1511458559000" expanded="false" signature="6:78" ph="..." />
-            <marker date="1511458559000" expanded="true" signature="931:1235" ph="/* NOTE: Should each class handle its notification subcsriptions? Handle subscriptions in GameController maybe? ... */" />
-            <marker date="1511458559000" expanded="true" signature="1255:1697" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="1719:2179" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="2232:2539" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="2545:2676" ph="/* Not implemented ... */" />
-            <marker date="1511458559000" expanded="true" signature="2734:2746" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="2808:3601" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="2860:3013" ph="/* The currently used solution for determining cursor postion results in a z axis pos on the &quot;camera cutoff plane ... */" />
-            <marker date="1511458559000" expanded="true" signature="3657:4165" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="3871:4070" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="4083:4159" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="4292:4352" ph="/* Notify observers which square has been RMB clicked ... */" />
-            <marker date="1511458559000" expanded="true" signature="4407:4824" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="4542:4628" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="4641:4711" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="4830:4877" ph="/* When notified that piece has been put ... */" />
-            <marker date="1511458559000" expanded="true" signature="4932:5840" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="5740:5798" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="5846:5895" ph="/* When notified that piece has been moved ... */" />
-            <marker date="1511458559000" expanded="true" signature="5952:6801" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="6186:6226" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="6343:6423" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="6807:6858" ph="/* When notified that piece has been removed ... */" />
-            <marker date="1511458559000" expanded="true" signature="6917:7170" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="7176:7373" ph="/* Takes any Vector3 position ... */" />
-            <marker date="1511458559000" expanded="true" signature="7430:8132" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="7609:7776" ph="/* temp ... */" />
-            <marker date="1511458559000" expanded="true" signature="8004:8068" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="8081:8126" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="8139:8245" ph="/* Takes any Square position ... */" />
-            <marker date="1511458559000" expanded="true" signature="8302:8684" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/View/ArViewController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1511886395000" expanded="true" signature="6:126" ph="..." />
-            <marker date="1511886395000" expanded="true" signature="173:5422" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="480:1020" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="1227:1525" ph="/* NOTE: Should each class handle its notification subcsriptions? Handle subscriptions in GameController maybe? ... */" />
-            <marker date="1511886395000" expanded="true" signature="1542:1886" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="1694:1883" ph="/* this.AddObserver(OnPiecePut, GameController.PIECE_PUT); ... */" />
-            <marker date="1511886395000" expanded="true" signature="1905:2264" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="2063:2261" ph="/* this.RemoveObserver(OnPiecePut, GameController.PIECE_PUT); ... */" />
-            <marker date="1511886395000" expanded="true" signature="2287:3622" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="2438:2558" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="2800:3619" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="2808:3028" ph="/* Instantiate a plane visualization prefab and set it to track the new plane. The transform is set to ... */" />
-            <marker date="1511886395000" expanded="true" signature="3679:4079" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="3921:4076" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="3984:4072" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="4133:5420" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="4264:4798" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="4462:4783" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="4805:5026" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="4952:5022" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="5104:5371" ph="/* SquarePos squarePos = GetSquarePosOfVectPos(pos); ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/UnityARInterface/ARRemote/Scripts/ARSerializableObjects.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -630,47 +525,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <marker date="1509725180000" expanded="true" signature="6:177" ph="..." />
-            <marker date="1509725180000" expanded="true" signature="282:8336" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="339:8334" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="409:795" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="475:785" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="572:771" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="1621:3381" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="1935:2283" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="2491:2852" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="2958:3242" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="3457:3663" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="3740:3949" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="4021:4121" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="4195:4297" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="4371:4473" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="4545:4870" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="4945:5050" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="5117:5206" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="5306:5422" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="5490:5698" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="5547:5688" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="5771:6007" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="6066:6318" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="6359:6489" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="6499:6544" ph="/* From the ARInterface ... */" />
-            <marker date="1509725180000" expanded="true" signature="6605:6650" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="6694:6715" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="6772:6829" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="6893:7142" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="6936:7105" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="7219:7265" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="7339:7647" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="7705:7761" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="7812:7931" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="7841:7884" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="7970:7991" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="8049:8327" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="8092:8317" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="8205:8303" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -724,13 +578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Common/NotificationCenter/NotificationExtensions.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Common/NotificationCenter/NotificationCenter.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -763,13 +610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="60" column="15" lean-forward="false" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/UnityARInterface/Scripts/ARBase.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="25" lean-forward="false" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -831,103 +671,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/View/ViewController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="173" column="34" lean-forward="false" selection-start-line="173" selection-start-column="34" selection-end-line="173" selection-end-column="34" />
-          <folding>
-            <marker date="1511458559000" expanded="false" signature="6:78" ph="..." />
-            <marker date="1511458559000" expanded="true" signature="931:1235" ph="/* NOTE: Should each class handle its notification subcsriptions? Handle subscriptions in GameController maybe? ... */" />
-            <marker date="1511458559000" expanded="true" signature="1255:1697" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="1719:2179" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="2232:2539" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="2545:2676" ph="/* Not implemented ... */" />
-            <marker date="1511458559000" expanded="true" signature="2734:2746" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="2808:3601" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="2860:3013" ph="/* The currently used solution for determining cursor postion results in a z axis pos on the &quot;camera cutoff plane ... */" />
-            <marker date="1511458559000" expanded="true" signature="3657:4165" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="3871:4070" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="4083:4159" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="4292:4352" ph="/* Notify observers which square has been RMB clicked ... */" />
-            <marker date="1511458559000" expanded="true" signature="4407:4824" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="4542:4628" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="4641:4711" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="4830:4877" ph="/* When notified that piece has been put ... */" />
-            <marker date="1511458559000" expanded="true" signature="4932:5840" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="5740:5798" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="5846:5895" ph="/* When notified that piece has been moved ... */" />
-            <marker date="1511458559000" expanded="true" signature="5952:6801" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="6186:6226" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="6343:6423" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="6807:6858" ph="/* When notified that piece has been removed ... */" />
-            <marker date="1511458559000" expanded="true" signature="6917:7170" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="7176:7373" ph="/* Takes any Vector3 position ... */" />
-            <marker date="1511458559000" expanded="true" signature="7430:8132" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="7609:7776" ph="/* temp ... */" />
-            <marker date="1511458559000" expanded="true" signature="8004:8068" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="8081:8126" ph="{...}" />
-            <marker date="1511458559000" expanded="true" signature="8139:8245" ph="/* Takes any Square position ... */" />
-            <marker date="1511458559000" expanded="true" signature="8302:8684" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Controller/ArInteractionController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <marker date="1511871460000" expanded="false" signature="6:102" ph="..." />
-            <marker date="1511871460000" expanded="true" signature="149:1277" ph="{...}" />
-            <marker date="1511871460000" expanded="true" signature="409:637" ph="{...}" />
-            <marker date="1511871460000" expanded="true" signature="456:506" ph="{...}" />
-            <marker date="1511871460000" expanded="true" signature="551:601" ph="{...}" />
-            <marker date="1511871460000" expanded="true" signature="675:923" ph="{...}" />
-            <marker date="1511871460000" expanded="true" signature="727:835" ph="/* Vector3 fwd = camera.transform.forward; ... */" />
-            <marker date="1511871460000" expanded="true" signature="958:1093" ph="{...}" />
-            <marker date="1511871460000" expanded="true" signature="1128:1275" ph="{...}" />
-            <marker date="1511871460000" expanded="true" signature="1138:1269" ph="/* Vector3 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition); ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/GoogleARCore/SDK/Scripts/TrackedPlane.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
           <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding>
-            <marker date="1503642422000" expanded="true" signature="0:829" ph="/* ----------------------------------------------------------------------- ... */" />
-            <marker date="1503642422000" expanded="true" signature="853:7175" ph="{...}" />
-            <marker date="1503642422000" expanded="false" signature="866:1008" ph="..." />
-            <marker date="1503642422000" expanded="true" signature="1014:1098" ph="/// A real-world plane being tracked by ARCore. ... " />
-            <marker date="1503642422000" expanded="true" signature="1128:7173" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="1143:1221" ph="/// Center position of the plane. ... " />
-            <marker date="1503642422000" expanded="true" signature="1285:1356" ph="/// Rotation of the plane. ... " />
-            <marker date="1503642422000" expanded="true" signature="1423:1524" ph="/// Bounding box size aligned with plane's x and z axis. ... " />
-            <marker date="1503642422000" expanded="true" signature="1554:1713" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="1580:1703" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="1723:1859" ph="/// Gets a value indicating if the plane data has been updated in the current ARCore Frame. ... " />
-            <marker date="1503642422000" expanded="true" signature="1889:2015" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="1915:2005" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="2025:2169" ph="/// Gets a value indicating the plane is valid. If this is false, the plane should not be rendered. ... " />
-            <marker date="1503642422000" expanded="true" signature="2197:2308" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="2223:2298" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="2318:2519" ph="/// Gets a reference to the plane subsuming this plane, if any.  If not null, only the subsuming plane should be ... " />
-            <marker date="1503642422000" expanded="true" signature="2840:3220" ph="/// Construct PlaneData from APIPlaneData. ... " />
-            <marker date="1503642422000" expanded="true" signature="3333:3461" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="3470:3777" ph="/// Gets a list of points (in clockwise order) in Unity world space representing a boundary polygon for ... " />
-            <marker date="1503642422000" expanded="true" signature="3857:4126" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="3914:4003" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="4136:4534" ph="/// Update the plane's data with APIPlaneData ... " />
-            <marker date="1503642422000" expanded="true" signature="4646:7167" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="4727:4856" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="4963:5015" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="5052:5121" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="5440:5655" ph="/* Because startServiceTplane is a Pose (position, orientation), the multiplication of the first two terms ... */" />
-            <marker date="1503642422000" expanded="true" signature="6339:6939" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="6639:6925" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="6953:7110" ph="/* Reverse the m_boundaryPolygonPoints because the raw data is in counter-clockwise. ... */" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -935,78 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1503709625000" expanded="true" signature="0:833" ph="/* ----------------------------------------------------------------------- ... */" />
-            <marker date="1503709625000" expanded="true" signature="857:14368" ph="{...}" />
-            <marker date="1503709625000" expanded="false" signature="870:1080" ph="..." />
-            <marker date="1503709625000" expanded="true" signature="1085:1205" ph="/// A component that manages the ARCore Session in a Unity scene. ... " />
-            <marker date="1503709625000" expanded="true" signature="1255:14366" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="1270:1384" ph="/// A scriptable object specifying tango service connection settings. ... " />
-            <marker date="1503709625000" expanded="true" signature="1529:1653" ph="/// A camera used to render the scene from a first person view from the device. ... " />
-            <marker date="1503709625000" expanded="true" signature="1796:1924" ph="/// Toggles whether the tango service should be automatically connected upon Awake. ... " />
-            <marker date="1503709625000" expanded="true" signature="2080:2163" ph="/// The last known screen orientation. ... " />
-            <marker date="1503709625000" expanded="true" signature="2262:2352" ph="/// Indicates if the AR background is set up. ... " />
-            <marker date="1503709625000" expanded="true" signature="2461:2576" ph="/// Gets a value indicating whether the first person camera is active. ... " />
-            <marker date="1503709625000" expanded="true" signature="2623:2791" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="2649:2781" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="2801:2869" ph="/// Unity Awake method. ... " />
-            <marker date="1503709625000" expanded="true" signature="2897:3489" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="2973:3221" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="3424:3479" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="3499:3568" ph="/// Unity Update method. ... " />
-            <marker date="1503709625000" expanded="true" signature="3597:4490" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="3620:3907" ph="/* Unity defaults to targeting 30fps on Android which makes the color image look stuttery since it does ... */" />
-            <marker date="1503709625000" expanded="true" signature="4121:4173" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="4416:4480" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="4545:4768" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="4639:4691" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="4778:5123" ph="/// Connects an ARSession using &lt;c&gt;m_arSessionConfig&lt;/c&gt; configuration. Note that if user permissions are needed ... " />
-            <marker date="1503709625000" expanded="true" signature="5183:5250" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="5260:5636" ph="/// Connects an ARSession.  Note that if user permissions are needed they will be requested and thus this is an ... " />
-            <marker date="1503709625000" expanded="true" signature="5722:8901" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="5859:6180" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="6353:6653" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="6683:6966" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="7111:7517" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="7945:8074" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="8349:8857" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="8398:8504" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="8525:8843" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="8911:9194" ph="/// Connects to the ARCore service. ... " />
-            <marker date="1503709625000" expanded="true" signature="9305:10062" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="9505:9798" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="9850:9916" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="10072:10205" ph="/// Updates the first person camera FOV to match the field of view of the video overlay. ... " />
-            <marker date="1503709625000" expanded="true" signature="10245:10915" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="10471:10587" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="10604:10718" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="10750:10905" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="10925:11010" ph="/// Sets up the video overlay rendering. ... " />
-            <marker date="1503709625000" expanded="true" signature="11052:11905" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="11099:11151" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="11196:11346" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="11694:11785" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="11966:12941" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="12223:12931" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="12315:12881" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="12782:12863" ph="{...}" />
-            <marker date="1503709625000" expanded="true" signature="13035:14360" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/View/HighlightView.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding>
-            <marker date="1511875618000" expanded="false" signature="6:78" ph="..." />
-            <marker date="1511875618000" expanded="true" signature="123:607" ph="{...}" />
-            <marker date="1511875618000" expanded="true" signature="258:399" ph="{...}" />
-            <marker date="1511875618000" expanded="true" signature="422:605" ph="{...}" />
-            <marker date="1511875618000" expanded="true" signature="442:503" ph="{...}" />
-            <marker date="1511875618000" expanded="true" signature="510:579" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1014,31 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
           <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-          <folding>
-            <marker date="1503392185000" expanded="true" signature="0:838" ph="/* ----------------------------------------------------------------------- ... */" />
-            <marker date="1503392185000" expanded="true" signature="870:6064" ph="{...}" />
-            <marker date="1503392185000" expanded="false" signature="883:965" ph="..." />
-            <marker date="1503392185000" expanded="true" signature="971:1057" ph="/// Visualizes a TrackedPlane in the Unity scene. ... " />
-            <marker date="1503392185000" expanded="true" signature="1113:6062" ph="{...}" />
-            <marker date="1503392185000" expanded="true" signature="1128:1215" ph="/// The ARCore tracked plane to represent. ... " />
-            <marker date="1503392185000" expanded="true" signature="1538:1612" ph="/// The Unity Awake() method. ... " />
-            <marker date="1503392185000" expanded="true" signature="1641:1786" ph="{...}" />
-            <marker date="1503392185000" expanded="true" signature="1796:1871" ph="/// The Unity Update() method. ... " />
-            <marker date="1503392185000" expanded="true" signature="1901:2528" ph="{...}" />
-            <marker date="1503392185000" expanded="true" signature="1951:2003" ph="{...}" />
-            <marker date="1503392185000" expanded="true" signature="2059:2148" ph="{...}" />
-            <marker date="1503392185000" expanded="true" signature="2248:2350" ph="{...}" />
-            <marker date="1503392185000" expanded="true" signature="2436:2518" ph="{...}" />
-            <marker date="1503392185000" expanded="true" signature="2538:2690" ph="/// Update the TrackedPlane reference. ... " />
-            <marker date="1503392185000" expanded="true" signature="2746:2852" ph="{...}" />
-            <marker date="1503392185000" expanded="true" signature="2911:6056" ph="{...}" />
-            <marker date="1503392185000" expanded="true" signature="3199:3828" ph="/* The following code convert a polygon to a mesh with two polygons, inner ... */" />
-            <marker date="1503392185000" expanded="true" signature="3977:4074" ph="{...}" />
-            <marker date="1503392185000" expanded="true" signature="4386:4795" ph="{...}" />
-            <marker date="1503392185000" expanded="true" signature="5074:5236" ph="{...}" />
-            <marker date="1503392185000" expanded="true" signature="5250:5371" ph="/* Generate triangle (0, 1, 4), (4, 1, 5), (5, 1, 2), (5, 2, 6), (6, 2, 3), (6, 3, 7) ... */" />
-            <marker date="1503392185000" expanded="true" signature="5427:5842" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1046,35 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-          <folding>
-            <marker date="1503642422000" expanded="true" signature="0:829" ph="/* ----------------------------------------------------------------------- ... */" />
-            <marker date="1503642422000" expanded="true" signature="853:4638" ph="{...}" />
-            <marker date="1503642422000" expanded="false" signature="866:948" ph="..." />
-            <marker date="1503642422000" expanded="true" signature="954:1379" ph="/// Provides a snapshot of the state of ARCore at a specific timestamp ... " />
-            <marker date="1503642422000" expanded="true" signature="1402:4636" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="1417:1503" ph="/// Gets the tracking state of the frame. ... " />
-            <marker date="1503642422000" expanded="true" signature="1558:2279" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="1584:2269" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="1686:1792" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="2046:2138" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="2159:2255" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="2289:2461" ph="/// Gets the pose of the device's camera in the world coordinate frame ... " />
-            <marker date="1503642422000" expanded="true" signature="2493:2752" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="2519:2742" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="2762:2858" ph="/// Gets the current light estimate for this frame. ... " />
-            <marker date="1503642422000" expanded="true" signature="2908:3066" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="2934:3056" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="3076:3190" ph="/// Get the ARCore device's point cloud for the current ARCore frame. ... " />
-            <marker date="1503642422000" expanded="true" signature="3234:3386" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="3260:3376" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="3396:3501" ph="/// Gets the hardware timestamp of the current ARCore frame. ... " />
-            <marker date="1503642422000" expanded="true" signature="3540:3804" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="3566:3794" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="3814:4053" ph="/// Gets planes newly detected in the current ARCore frame. ... " />
-            <marker date="1503642422000" expanded="true" signature="4127:4232" ph="{...}" />
-            <marker date="1503642422000" expanded="true" signature="4242:4457" ph="/// Gets all TrackedPlane objects that have been detected in the session. ... " />
-            <marker date="1503642422000" expanded="true" signature="4528:4630" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1082,37 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
           <caret line="66" column="63" lean-forward="false" selection-start-line="66" selection-start-column="63" selection-end-line="66" selection-end-column="63" />
-          <folding>
-            <marker date="1509725180000" expanded="false" signature="6:130" ph="..." />
-            <marker date="1509725180000" expanded="true" signature="165:7038" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="214:7036" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="327:573" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="393:563" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="733:918" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="960:2033" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="2073:3468" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="2426:2594" ph="/* These EditorConnection callbacks can only be on UnityEngine.Objects ... */" />
-            <marker date="1509725180000" expanded="true" signature="3498:3549" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="3623:3717" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="3787:3877" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="3946:4035" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="4100:4185" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="4252:4339" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="4406:4493" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="4553:4633" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="4698:4783" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="4851:4939" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="4995:5106" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="5165:5259" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="5281:6560" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="5364:6042" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="5646:5819" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="5840:6028" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="6059:6169" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="6415:6550" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="6612:6921" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="6955:7023" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1120,78 +710,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="109" column="20" lean-forward="false" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="44" />
-          <folding>
-            <marker date="1509725180000" expanded="true" signature="6:177" ph="..." />
-            <marker date="1509725180000" expanded="true" signature="282:8336" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="339:8334" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="409:795" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="475:785" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="572:771" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="1621:3381" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="1935:2283" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="2491:2852" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="2958:3242" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="3457:3663" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="3740:3949" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="4021:4121" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="4195:4297" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="4371:4473" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="4545:4870" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="4945:5050" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="5117:5206" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="5306:5422" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="5490:5698" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="5547:5688" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="5771:6007" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="6066:6318" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="6359:6489" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="6499:6544" ph="/* From the ARInterface ... */" />
-            <marker date="1509725180000" expanded="true" signature="6605:6650" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="6694:6715" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="6772:6829" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="6893:7142" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="6936:7105" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="7219:7265" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="7339:7647" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="7705:7761" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="7812:7931" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="7841:7884" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="7970:7991" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="8049:8327" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="8092:8317" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="8205:8303" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/UnityARInterface/Scripts/ARInterface.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
+        <state relative-caret-position="1080">
           <caret line="74" column="30" lean-forward="false" selection-start-line="74" selection-start-column="30" selection-end-line="74" selection-end-column="30" />
-          <folding>
-            <marker date="1509725180000" expanded="false" signature="6:66" ph="..." />
-            <marker date="1509725180000" expanded="true" signature="94:3039" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="134:3037" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="171:326" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="361:501" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="535:596" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="659:786" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="823:995" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="1321:1390" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="1458:1585" ph="/* This is to perform any per-frame updates for the camera, ... */" />
-            <marker date="1509725180000" expanded="true" signature="2070:2161" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="2220:2315" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="2374:2469" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="2568:2906" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="2615:2863" ph="{...}" />
-            <marker date="1509725180000" expanded="true" signature="2972:3031" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/UnityARInterface/Scripts/ARCoreInterface.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-35">
+        <state relative-caret-position="4080">
           <caret line="279" column="25" lean-forward="false" selection-start-line="279" selection-start-column="25" selection-end-line="279" selection-end-column="25" />
           <folding>
             <marker date="1509725180000" expanded="false" signature="6:217" ph="..." />
@@ -1248,7 +779,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/UnityARInterface/Scripts/ARPlaneVisualizer.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
+        <state relative-caret-position="390">
           <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
           <folding>
             <marker date="1509725180000" expanded="false" signature="6:78" ph="..." />
@@ -1266,39 +797,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/GoogleARCore/HelloARExample/Scripts/PointcloudVisualizer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-70">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1503558418000" expanded="true" signature="0:763" ph="/* &lt;copyright file=&quot;PointcloudVisualizer.cs&quot; company=&quot;Google&quot;&gt; ... */" />
-            <marker date="1503558418000" expanded="true" signature="795:2677" ph="{...}" />
-            <marker date="1503558418000" expanded="false" signature="808:915" ph="..." />
-            <marker date="1503558418000" expanded="true" signature="921:988" ph="/// Visualize the point cloud. ... " />
-            <marker date="1503558418000" expanded="true" signature="1042:2675" ph="{...}" />
-            <marker date="1503558418000" expanded="true" signature="1258:1319" ph="/// Unity start. ... " />
-            <marker date="1503558418000" expanded="true" signature="1347:1449" ph="{...}" />
-            <marker date="1503558418000" expanded="true" signature="1459:1521" ph="/// Unity update. ... " />
-            <marker date="1503558418000" expanded="true" signature="1550:2669" ph="{...}" />
-            <marker date="1503558418000" expanded="true" signature="1684:1736" ph="{...}" />
-            <marker date="1503558418000" expanded="true" signature="1943:2659" ph="{...}" />
-            <marker date="1503558418000" expanded="true" signature="2088:2182" ph="{...}" />
-            <marker date="1503558418000" expanded="true" signature="2362:2434" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4ACE57B-84B8-4894-924F-C66FAC55A4E8/5b/66e0aa10/Shader.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
           <caret line="317" column="23" lean-forward="false" selection-start-line="317" selection-start-column="23" selection-end-line="317" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/GoogleARCore/SDK/Scripts/TrackableHitFlag.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
+        <state relative-caret-position="600">
           <caret line="40" column="8" lean-forward="false" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
           <folding>
             <marker date="1503642422000" expanded="true" signature="0:833" ph="/* ----------------------------------------------------------------------- ... */" />
@@ -1316,11 +824,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/GoogleARCore/SDK/Scripts/Managers/RaycastManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
+        <state relative-caret-position="630">
           <caret line="44" column="42" lean-forward="false" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
           <folding>
             <marker date="1503642422000" expanded="true" signature="0:831" ph="/* ----------------------------------------------------------------------- ... */" />
-            <marker date="1503642422000" expanded="true" signature="863:8805" ph="{...}" />
             <marker date="1503642422000" expanded="false" signature="876:950" ph="..." />
             <marker date="1503642422000" expanded="true" signature="983:8803" ph="{...}" />
             <marker date="1503642422000" expanded="true" signature="1147:1759" ph="/// Hit test against all detected planes. If point cloud hit flag is enabled, it will return point ... " />
@@ -1362,7 +869,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/GoogleARCore/SDK/Scripts/Session.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
+        <state relative-caret-position="1005">
           <caret line="69" column="63" lean-forward="false" selection-start-line="69" selection-start-column="63" selection-end-line="69" selection-end-column="63" />
           <folding>
             <marker date="1503642422000" expanded="true" signature="0:824" ph="/* ----------------------------------------------------------------------- ... */" />
@@ -1384,13 +891,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/GoogleARCore/HelloARExample/Scripts/HelloARController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
+        <state relative-caret-position="1440">
           <caret line="99" column="31" lean-forward="false" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
           <folding>
             <marker date="1503642422000" expanded="true" signature="0:834" ph="/* ----------------------------------------------------------------------- ... */" />
@@ -1428,32 +934,188 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/GoogleARCore/SDK/Scripts/Managers/SessionManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="40" column="27" lean-forward="true" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/GoogleARCore/HelloARExample/Scripts/PointcloudVisualizer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="66" column="24" lean-forward="false" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+          <folding>
+            <marker date="1503558418000" expanded="true" signature="0:763" ph="/* &lt;copyright file=&quot;PointcloudVisualizer.cs&quot; company=&quot;Google&quot;&gt; ... */" />
+            <marker date="1503558418000" expanded="false" signature="808:915" ph="..." />
+            <marker date="1503558418000" expanded="true" signature="921:988" ph="/// Visualize the point cloud. ... " />
+            <marker date="1503558418000" expanded="true" signature="1042:2675" ph="{...}" />
+            <marker date="1503558418000" expanded="true" signature="1258:1319" ph="/// Unity start. ... " />
+            <marker date="1503558418000" expanded="true" signature="1347:1449" ph="{...}" />
+            <marker date="1503558418000" expanded="true" signature="1459:1521" ph="/// Unity update. ... " />
+            <marker date="1503558418000" expanded="true" signature="1550:2669" ph="{...}" />
+            <marker date="1503558418000" expanded="true" signature="1684:1736" ph="{...}" />
+            <marker date="1503558418000" expanded="true" signature="1943:2659" ph="{...}" />
+            <marker date="1503558418000" expanded="true" signature="2088:2182" ph="{...}" />
+            <marker date="1503558418000" expanded="true" signature="2362:2434" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A2748CB-8DB8-4A56-B1DB-8F59D9BDA51F/c2/85fc1e9b/Single.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4ACE57B-84B8-4894-924F-C66FAC55A4E8/0a/eba9cb11/Physics.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="303" column="36" lean-forward="false" selection-start-line="303" selection-start-column="36" selection-end-line="303" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4ACE57B-84B8-4894-924F-C66FAC55A4E8/45/3adcb9e8/GameObject.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="300" column="25" lean-forward="false" selection-start-line="300" selection-start-column="25" selection-end-line="300" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/View/HighlightView.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+          <folding>
+            <marker date="1512055187000" expanded="false" signature="6:78" ph="..." />
+            <marker date="1512055187000" expanded="true" signature="123:763" ph="{...}" />
+            <marker date="1512055187000" expanded="true" signature="285:555" ph="{...}" />
+            <marker date="1512055187000" expanded="true" signature="354:420" ph="{...}" />
+            <marker date="1512055187000" expanded="true" signature="427:463" ph="{...}" />
+            <marker date="1512055187000" expanded="true" signature="507:552" ph="{...}" />
+            <marker date="1512055187000" expanded="true" signature="578:761" ph="{...}" />
+            <marker date="1512055187000" expanded="true" signature="598:659" ph="{...}" />
+            <marker date="1512055187000" expanded="true" signature="666:735" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Common/NotificationCenter/NotificationExtensions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/View/ViewController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-901">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1511458559000" expanded="false" signature="6:78" ph="..." />
+            <marker date="1511458559000" expanded="true" signature="123:8686" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="931:1235" ph="/* NOTE: Should each class handle its notification subcsriptions? Handle subscriptions in GameController maybe? ... */" />
+            <marker date="1511458559000" expanded="true" signature="1255:1697" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="1719:2179" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="2232:2539" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="2545:2676" ph="/* Not implemented ... */" />
+            <marker date="1511458559000" expanded="true" signature="2734:2746" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="2808:3601" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="2860:3013" ph="/* The currently used solution for determining cursor postion results in a z axis pos on the &quot;camera cutoff plane ... */" />
+            <marker date="1511458559000" expanded="true" signature="3657:4165" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="3871:4070" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="4083:4159" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="4292:4352" ph="/* Notify observers which square has been RMB clicked ... */" />
+            <marker date="1511458559000" expanded="true" signature="4407:4824" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="4542:4628" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="4641:4711" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="4830:4877" ph="/* When notified that piece has been put ... */" />
+            <marker date="1511458559000" expanded="true" signature="4932:5840" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="5740:5798" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="5846:5895" ph="/* When notified that piece has been moved ... */" />
+            <marker date="1511458559000" expanded="true" signature="5952:6801" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="6186:6226" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="6343:6423" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="6807:6858" ph="/* When notified that piece has been removed ... */" />
+            <marker date="1511458559000" expanded="true" signature="6917:7170" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="7176:7373" ph="/* Takes any Vector3 position ... */" />
+            <marker date="1511458559000" expanded="true" signature="7430:8132" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="7609:7776" ph="/* temp ... */" />
+            <marker date="1511458559000" expanded="true" signature="8004:8068" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="8081:8126" ph="{...}" />
+            <marker date="1511458559000" expanded="true" signature="8139:8245" ph="/* Takes any Square position ... */" />
+            <marker date="1511458559000" expanded="true" signature="8302:8684" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/UnityARInterface/Scripts/ARBase.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-142">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding>
+            <marker date="1509725180000" expanded="true" signature="46:1392" ph="{...}" />
+            <marker date="1509725180000" expanded="true" signature="88:1390" ph="{...}" />
+            <marker date="1509725180000" expanded="true" signature="132:296" ph="{...}" />
+            <marker date="1509725180000" expanded="true" signature="332:492" ph="{...}" />
+            <marker date="1509725180000" expanded="true" signature="612:881" ph="{...}" />
+            <marker date="1509725180000" expanded="true" signature="702:845" ph="{...}" />
+            <marker date="1509725180000" expanded="true" signature="756:831" ph="{...}" />
+            <marker date="1509725180000" expanded="true" signature="919:1384" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Controller/ArInteractionController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="5" column="42" lean-forward="false" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+          <folding>
+            <marker date="1511871460000" expanded="false" signature="6:102" ph="..." />
+            <marker date="1511871460000" expanded="true" signature="149:1277" ph="{...}" />
+            <marker date="1511871460000" expanded="true" signature="409:637" ph="{...}" />
+            <marker date="1511871460000" expanded="true" signature="456:506" ph="{...}" />
+            <marker date="1511871460000" expanded="true" signature="551:601" ph="{...}" />
+            <marker date="1511871460000" expanded="true" signature="675:923" ph="{...}" />
+            <marker date="1511871460000" expanded="true" signature="727:835" ph="/* Vector3 fwd = camera.transform.forward; ... */" />
+            <marker date="1511871460000" expanded="true" signature="958:1093" ph="{...}" />
+            <marker date="1511871460000" expanded="true" signature="1128:1275" ph="{...}" />
+            <marker date="1511871460000" expanded="true" signature="1138:1269" ph="/* Vector3 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition); ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/View/ArViewController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="83" column="27" lean-forward="false" selection-start-line="83" selection-start-column="27" selection-end-line="83" selection-end-column="27" />
+        <state relative-caret-position="379">
+          <caret line="157" column="22" lean-forward="true" selection-start-line="157" selection-start-column="22" selection-end-line="157" selection-end-column="22" />
           <folding>
-            <marker date="1511886395000" expanded="true" signature="6:126" ph="..." />
-            <marker date="1511886395000" expanded="true" signature="173:5422" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="480:1020" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="1227:1525" ph="/* NOTE: Should each class handle its notification subcsriptions? Handle subscriptions in GameController maybe? ... */" />
-            <marker date="1511886395000" expanded="true" signature="1542:1886" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="1694:1883" ph="/* this.AddObserver(OnPiecePut, GameController.PIECE_PUT); ... */" />
-            <marker date="1511886395000" expanded="true" signature="1905:2264" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="2063:2261" ph="/* this.RemoveObserver(OnPiecePut, GameController.PIECE_PUT); ... */" />
-            <marker date="1511886395000" expanded="true" signature="2287:3622" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="2438:2558" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="2800:3619" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="2808:3028" ph="/* Instantiate a plane visualization prefab and set it to track the new plane. The transform is set to ... */" />
-            <marker date="1511886395000" expanded="true" signature="3679:4079" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="3921:4076" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="3984:4072" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="4133:5420" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="4264:4798" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="4462:4783" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="4805:5026" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="4952:5022" ph="{...}" />
-            <marker date="1511886395000" expanded="true" signature="5104:5371" ph="/* SquarePos squarePos = GetSquarePosOfVectPos(pos); ... */" />
+            <marker date="1512074502000" expanded="false" signature="6:126" ph="..." />
+            <marker date="1512074502000" expanded="true" signature="173:6171" ph="{...}" />
+            <marker date="1512074502000" expanded="true" signature="494:1034" ph="{...}" />
+            <marker date="1512074502000" expanded="true" signature="1397:1581" ph="/* Handling subscribing and unsubscribing to the notifications in OnEnable and OnDisable is a &quot;better practice&quot; m ... */" />
+            <marker date="1512074502000" expanded="true" signature="1598:1942" ph="{...}" />
+            <marker date="1512074502000" expanded="true" signature="1750:1939" ph="/* this.AddObserver(OnPiecePut, GameController.PIECE_PUT); ... */" />
+            <marker date="1512074502000" expanded="true" signature="1961:2320" ph="{...}" />
+            <marker date="1512074502000" expanded="true" signature="2119:2317" ph="/* this.RemoveObserver(OnPiecePut, GameController.PIECE_PUT); ... */" />
+            <marker date="1512074502000" expanded="true" signature="2343:3678" ph="{...}" />
+            <marker date="1512074502000" expanded="true" signature="2494:2614" ph="{...}" />
+            <marker date="1512074502000" expanded="true" signature="2856:3675" ph="{...}" />
+            <marker date="1512074502000" expanded="true" signature="2864:3084" ph="/* Instantiate a plane visualization prefab and set it to track the new plane. The transform is set to ... */" />
+            <marker date="1512074502000" expanded="true" signature="3735:4187" ph="{...}" />
+            <marker date="1512074502000" expanded="true" signature="3977:4184" ph="{...}" />
+            <marker date="1512074502000" expanded="true" signature="4092:4180" ph="{...}" />
+            <marker date="1512074502000" expanded="true" signature="4241:6169" ph="{...}" />
+            <marker date="1512074502000" expanded="true" signature="4372:5117" ph="{...}" />
+            <marker date="1512074502000" expanded="true" signature="4540:5102" ph="{...}" />
+            <marker date="1512074502000" expanded="true" signature="5124:5775" ph="{...}" />
+            <marker date="1512074502000" expanded="true" signature="5270:5771" ph="{...}" />
+            <marker date="1512074502000" expanded="true" signature="5428:5505" ph="{...}" />
+            <marker date="1512074502000" expanded="true" signature="5541:5702" ph="{...}" />
+            <marker date="1512074502000" expanded="true" signature="5553:5615" ph="/* Find position of placement ... */" />
+            <marker date="1512074502000" expanded="true" signature="5621:5669" ph="/* if (hitObj) ... */" />
+            <marker date="1512074502000" expanded="true" signature="5853:6120" ph="/* SquarePos squarePos = GetSquarePosOfVectPos(pos); ... */" />
           </folding>
         </state>
       </provider>

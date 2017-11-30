@@ -6,14 +6,26 @@ public class HighlightView : MonoBehaviour {
 
 	public bool Highlighted = false;
 	public string materialName;
+	public Material material;
 	Material glowMaterial;
 	Shader normalShader;
 	
 	private void Awake()
 	{
 		normalShader = Shader.Find("Standard");
-		glowMaterial = Resources.Load<Material>(materialName);
-		gameObject.tag = "Highlightable";
+		if (material == null)
+		{
+			glowMaterial = Resources.Load<Material>(materialName);
+		}
+		else
+		{
+			glowMaterial = material;
+		}
+		
+		if (gameObject.CompareTag("Untagged"))
+		{
+			gameObject.tag = "Highlightable";
+		}
 	}
 	
 	void LateUpdate () {

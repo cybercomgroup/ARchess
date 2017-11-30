@@ -808,6 +808,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1556980072925536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4583926203927508}
+  - component: {fileID: 33481216186916058}
+  - component: {fileID: 65318044698361696}
+  - component: {fileID: 23173023723513196}
+  - component: {fileID: 114375912603488522}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: HighlightPickup
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1563321191196644
 GameObject:
   m_ObjectHideFlags: 1
@@ -1857,6 +1876,7 @@ Transform:
   - {fileID: 4366907554145220}
   - {fileID: 4303984477181476}
   - {fileID: 4833973160070612}
+  - {fileID: 4583926203927508}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1951,6 +1971,19 @@ Transform:
   m_Father: {fileID: 4366907554145220}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!4 &4583926203927508
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1556980072925536}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.438, y: 2.99, z: -0.062}
+  m_LocalScale: {x: 0.1, y: 5, z: 0.1}
+  m_Children: []
+  m_Father: {fileID: 4453511292706972}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4596674086672830
 Transform:
   m_ObjectHideFlags: 1
@@ -2911,6 +2944,40 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: dc7080a0177844541b59bf33cc8fb312, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23173023723513196
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1556980072925536}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4785,6 +4852,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1060038639217614}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &33481216186916058
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1556980072925536}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33484935231182404
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -5947,6 +6021,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65318044698361696
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1556980072925536}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65859481369165706
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -5972,6 +6058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114025641110328348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5985,6 +6072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114031618806768896
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5998,6 +6086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114040616861655488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6011,6 +6100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114048136537486778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6024,6 +6114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114057925777147310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6037,6 +6128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114079840381160960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6050,6 +6142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114083038173201950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6063,6 +6156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114084356524539250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6076,6 +6170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114095082094532444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6089,6 +6184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114099282836941722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6102,6 +6198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114115670769449168
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6115,6 +6212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114121275890656532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6128,6 +6226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114150022282492786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6141,6 +6240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114153887084067428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6154,6 +6254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114183651662725234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6167,6 +6268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114190070699790080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6180,6 +6282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114199423391231870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6193,6 +6296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114237905779015000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6206,6 +6310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114257063083904440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6219,6 +6324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114302616883224008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6232,6 +6338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114335482681118208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6245,6 +6352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114335958238577728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6258,6 +6366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114336064657592964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6271,6 +6380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114372616507383528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6284,6 +6394,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
+--- !u!114 &114375912603488522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1556980072925536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78488c391207b46cbaaf26cd7de1ec56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Highlighted: 0
+  materialName: 
+  material: {fileID: 2100000, guid: 46439dfe8ab3e427a86ea2309c699df1, type: 2}
 --- !u!114 &114383444091901046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6297,6 +6422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114407852166421114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6310,6 +6436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114427792119554430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6323,6 +6450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114434244033974732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6336,6 +6464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114437637056573796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6349,6 +6478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114443688257258468
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6362,6 +6492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114452779648342516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6375,6 +6506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114458001015958082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6388,6 +6520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114469359270686266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6401,6 +6534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114469838337008336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6414,6 +6548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114470291886977510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6427,6 +6562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114478394987759428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6440,6 +6576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114485696879803548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6453,6 +6590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114490659240630626
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6466,6 +6604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114503769435695300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6479,6 +6618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114510077149922440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6492,6 +6632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114514769983800280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6505,6 +6646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114592525143255000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6518,6 +6660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114599570422469384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6531,6 +6674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114639801172855048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6544,6 +6688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114642219245491874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6557,6 +6702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114644744900325876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6570,6 +6716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114649377536864952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6583,6 +6730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114657996214559362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6596,6 +6744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114662388831015374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6609,6 +6758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114720238624241502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6622,6 +6772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114739727923936068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6635,6 +6786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114766260680876384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6648,6 +6800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114782571758455632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6661,6 +6814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114800161657873604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6674,6 +6828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114804292007389280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6687,6 +6842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114806389591166032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6700,6 +6856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114832294821614212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6713,6 +6870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114857956024260634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6726,6 +6884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114866208849880962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6739,6 +6898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114920344056823862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6752,6 +6912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114922600829578304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6765,6 +6926,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114944226637432582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6778,6 +6940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: BlackMaterialGlow
+  material: {fileID: 0}
 --- !u!114 &114992254173224672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6791,3 +6954,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   materialName: WhiteMaterialGlow
+  material: {fileID: 0}

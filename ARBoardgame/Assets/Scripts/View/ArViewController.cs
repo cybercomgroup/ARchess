@@ -6,17 +6,16 @@ using UnityEngine;
 
 public class ArViewController : MonoBehaviour
 {
-
-	public bool BoardPositioned { get; private set; }
 	
 	public GameObject boardPrefab;
-
 	public GameObject planePrefab;
 	
 	private List<TrackedPlane> m_newPlanes = new List<TrackedPlane>();
-
 	private List<TrackedPlane> m_allPlanes = new List<TrackedPlane>();
 
+	private bool BoardPositioned;
+	private GameObject holdingObject;
+	
 	private Color[] m_planeColors = new Color[] {
 		new Color(1.0f, 1.0f, 1.0f),
 		new Color(0.956f, 0.262f, 0.211f),
@@ -38,8 +37,10 @@ public class ArViewController : MonoBehaviour
 	public const string SQUARE_RMB_CLICKED = "Square RMB clicked";
 	public const string SQUARE_LMB_CLICKED = "Square LMB clicked";
 	public const string OUTSIDE_LMB_CLICKED = "Outside board LMB clicked";
-	
-	// NOTE: Should each class handle its notification subcsriptions? Handle subscriptions in GameController maybe?
+
+	public const string HIGHLIGHTABLE = "Highlightable";
+	public const string PICKUPABLE = "Pickup";
+	public const string HIGHLIGHPICKUP = "HighlightPickup"; 
 
 	// Handling subscribing and unsubscribing to the notifications in OnEnable and OnDisable is a "better practice" method to prevent
 	// mem leakage, subscribed no longer existing objects
@@ -101,7 +102,7 @@ public class ArViewController : MonoBehaviour
 		RaycastHit hit;
 		if(Physics.Raycast(ray, out hit, float.MaxValue, layerMask))
 		{
-			if(hit.collider.gameObject.CompareTag("Highlightable"))
+			if(hit.collider.gameObject.CompareTag(HIGHLIGHTABLE) || hit.collider.gameObject.CompareTag(HIGHLIGHPICKUP))
 			{
 				hit.collider.gameObject.GetComponent<HighlightView>().Highlighted = true;
 			}
@@ -115,12 +116,20 @@ public class ArViewController : MonoBehaviour
 		
 		if (!BoardPositioned)
 		{
+#if UNITY_EDITOR
+			int layerMask = 1 << LayerMask.NameToLayer("ARGameObject");
+			RaycastHit hit;
+			if (Physics.Raycast(ray, out hit, float.MaxValue, layerMask))
+			{
+				Vector3 pos = hit.point;
+#else
 			TrackableHitFlag raycastFilter = TrackableHitFlag.PlaneWithinBounds | TrackableHitFlag.PlaneWithinPolygon;
 			TrackableHit trackHit;
 			if (Session.Raycast(ray, raycastFilter, out trackHit))
 			{
-				BoardPositioned = true;
 				Vector3 pos = trackHit.Point;
+#endif
+				BoardPositioned = true;
 				GameObject board = Instantiate(boardPrefab, pos, Quaternion.identity);
 				Vector3 lookPos = new Vector3(transform.position.x, pos.y, transform.position.z);
 				board.transform.LookAt(lookPos);
@@ -132,7 +141,28 @@ public class ArViewController : MonoBehaviour
 		{
 			int layerMask = 1 << LayerMask.NameToLayer("Default");
 			RaycastHit hit;
-			if (Physics.Raycast(ray, out hit, float.MaxValue, layerMask)) {
+			if (Physics.Raycast(ray, out hit, float.MaxValue, layerMask))
+			{
+				GameObject hitObj = hit.collider.gameObject;
+
+				if (holdingObject == null && (hitObj.CompareTag(PICKUPABLE) || hitObj.CompareTag(HIGHLIGHPICKUP)))
+				{
+					holdingObject = hitObj;
+					//TODO more pickup stuff
+					
+				}
+				else if (holdingObject != null)
+				{
+					//Find position of placement
+					//Get a position of a square
+					/*
+					if (hitObj)
+					{
+						
+					}
+					*/
+					holdingObject = null;
+				}
 				
 				this.PostNotification(SQUARE_LMB_CLICKED);
 				return;

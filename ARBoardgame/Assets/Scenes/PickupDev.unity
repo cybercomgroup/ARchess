@@ -153,8 +153,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1930058652298382, guid: dd9530995b3674fd989684a357661862, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23173023723513196, guid: dd9530995b3674fd989684a357661862,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 96ff027ef33c3420984ae6c152bdb8a6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd9530995b3674fd989684a357661862, type: 2}
   m_IsPrefabParent: 0
@@ -196,6 +201,10 @@ Prefab:
     - target: {fileID: 4637868979716030, guid: 764441ce52c9c44c0bb3f45dc1a2ca18, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103736505723964, guid: 764441ce52c9c44c0bb3f45dc1a2ca18, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 764441ce52c9c44c0bb3f45dc1a2ca18, type: 2}
@@ -412,6 +421,7 @@ GameObject:
   - component: {fileID: 1067626034}
   - component: {fileID: 1067626033}
   - component: {fileID: 1067626032}
+  - component: {fileID: 1067626037}
   m_Layer: 0
   m_Name: AR Root
   m_TagString: Untagged
@@ -453,12 +463,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1067626031}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d15554ba01a81b43836c6e4770c204f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlanePrefab: {fileID: 1654175882956584, guid: 6a35c744e5010405c847fad90282d2be,
+  m_PlanePrefab: {fileID: 1372998203143648, guid: f879aaf3eeb0c467eb22cbaf08dc97a4,
     type: 2}
   m_PlaneLayer: 8
 --- !u!114 &1067626035
@@ -467,7 +477,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1067626031}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37ab97bfa6689994caf97070bd3a37ba, type: 3}
   m_Name: 
@@ -490,6 +500,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1067626037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1067626031}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6c9235e73bea042bda6b2c0539ad63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ARCamera: {fileID: 1753920202}
+  m_PlaneDetection: 1
+  m_LightEstimation: 1
+  m_PointCloud: 1
+  m_Scale: 1
+  pointOfInterest: {x: 0, y: 0, z: 0}
+  m_SendVideo: 1
 --- !u!1 &1215882640
 GameObject:
   m_ObjectHideFlags: 0
