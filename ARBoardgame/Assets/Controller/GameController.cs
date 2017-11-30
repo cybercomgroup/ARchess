@@ -41,7 +41,6 @@ public class GameController : MonoBehaviour
 
         // Imports game sets from the resources dir
         Game.LoadGameSets();
-        
 
         this.PostNotification(GAME_SETS_LOADED, new List<string>(Game.GameSets.Keys));
     }
