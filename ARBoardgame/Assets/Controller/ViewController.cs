@@ -14,9 +14,11 @@ public class ViewController : MonoBehaviour
     public const string OUTSIDE_LMB_CLICKED = "Outside board LMB clicked";
 
     private Dictionary<string, Sprite> gamePieceTypeToSpriteMap;
+	private Dictionary<string, GameObject> gamePieceTypeToModelMap;
 
     private GameObject[,] board;
     private GameObject boardGO;
+	private GameStarted gameStarted;
     // Not really required, just for quicker access
     private Vector3 boardPos;
 
@@ -68,7 +70,31 @@ public class ViewController : MonoBehaviour
     // Should contain info about which game that has been started: game name, list of piece names and board size
     // Is game name really needed though?
     public void OnGameCreated(object sender, object args)
-    {
+	{
+		
+		gamePieceTypeToModelMap = new Dictionary<string, GameObject> ();
+		gameStarted = (GameStarted)args;
+		gameName = gameStarted.Name;
+		// Create the board 
+
+		foreach (string pieceType in gameStarted.GameSet.PieceTypes) {
+
+			gamePieceTypeToModelMap [pieceType] = (GameObject)Resources.Load ("Games/Chess" + pieceType);
+		}
+
+		//	-----------------------------------------------------------------------------------------------------------------
+
+		// 2D - version
+		/*
+		board = new GameObject[gameStarted.GameSet.BoardType.NumCols, gameStarted.GameSet.BoardType.NumRows];
+
+		// Map every available pieceTypes to their respective sprite, later model
+		foreach (string pieceType in gameStarted.GameSet.PieceTypes)
+		{
+			// Use the selected game set's sprite resources for the pieces
+//			gamePieceTypeToSpriteMap[pieceType] = Resources.Load<Sprite>("Games/" + gameName + "/Pieces/" + pieceType);
+		}
+
         gamePieceTypeToSpriteMap = new Dictionary<string, Sprite>();
 
         GameStarted gameStarted = (GameStarted)args;
@@ -81,7 +107,7 @@ public class ViewController : MonoBehaviour
         {
             // Use the selected game set's sprite resources for the pieces
             gamePieceTypeToSpriteMap[pieceType] = Resources.Load<Sprite>("Games/" + gameName + "/Pieces/" + pieceType);
-        }
+        }*/
     }
 
     public void OnBoardPostioned(object sender, object args)
@@ -89,19 +115,39 @@ public class ViewController : MonoBehaviour
         Vector3 pos = (Vector3)args;
         // The currently used solution for determining cursor postion results in a z axis pos on the "camera cutoff plane"
         // Set z axis pos to 0 instead
-        pos.z = 0;
+       
         // Not really required, just for quicker access
         boardPos = pos;
-
         boardGO = new GameObject();
         boardGO.name = "Board";
 
         boardGO.transform.position = pos;
-        boardGO.transform.SetParent(this.transform, true);
+      /*  boardGO.transform.SetParent(this.transform, true);
         // Use the selected game set's board sprite resource. This method means that the board sprite needs to be in Resources/Games/<gameName>/ and have the name board
         boardGO.AddComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Games/" + gameName + "/board");
         // Setting layer for sorting order. Probably not very important for our future real 3D view
         boardGO.GetComponent<Renderer>().sortingLayerName = BOARD_LAYER;
+*/
+		// Spawnar ett bräde från origin för tillfället.
+		pos = Vector3.zero;
+
+		int rows = gameStarted.GameSet.BoardType.NumRows;
+		int cols = gameStarted.GameSet.BoardType.NumCols;
+		GameObject go;
+
+		for (int i = 0; i <= rows; i++) {
+			for (int j = 0; j <= cols; j++) {
+				go = GameObject.CreatePrimitive (PrimitiveType.Quad);
+				go.transform.Rotate (new Vector3 (90, 0, 0));
+				go.transform.position = new Vector3 (pos.x + i, 0, pos.z + j);
+				//go.tag = "Tile";
+				//go.GetComponent<Renderer> ().enabled = false;
+				go.transform.SetParent (boardGO.transform);
+			}
+		}
+
+		// Hämta spelbana här.
+		//GameObject playingField = Resources.Load("Games/" +gameName + "/Playfield");
     }
 
     public void OnLMBClick(object sender, object args)
@@ -109,7 +155,6 @@ public class ViewController : MonoBehaviour
         Vector3 pos = (Vector3)args;
 
         // Debug.Log("ViewController - position left clicked: " + pos + "\n");
-
         SquarePos squarePos = GetSquarePosOfVectPos(pos);
 
         if (squarePos != null)

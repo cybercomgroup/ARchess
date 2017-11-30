@@ -1,5 +1,14 @@
 { "strings": [
-   "pawn",
-   "rook",
-   "knight"
+   "W_Pawn",
+   "W_Bishop",
+   "W_Rook",
+   "W_Knight",
+   "W_King",
+   "W_Queen",
+   "B_Pawn",
+   "B_Bishop",
+   "B_Rook",
+   "B_Knight",
+   "B_King",
+   "B_Queen"
 ] }

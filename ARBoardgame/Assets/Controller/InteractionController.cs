@@ -51,7 +51,7 @@ public class InteractionController : MonoBehaviour
     public void HandleLMBClick()
     {
         Vector3 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
+		Debug.Log("x: " + cursorPos.y + " y: " + cursorPos.y);
         if (BoardPositioned == false)
         {
             this.PostNotification(BOARD_POSITIONED, cursorPos);
