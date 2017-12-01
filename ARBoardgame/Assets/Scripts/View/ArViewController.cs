@@ -49,18 +49,12 @@ public class ArViewController : MonoBehaviour
 	{
 		this.AddObserver(OnLMBClick, ArInteractionController.ARLMB_CLICK);
 		this.AddObserver(OnCameraUpdate, ArInteractionController.ARCAMERA_UPDATE);
-		//this.AddObserver(OnPiecePut, GameController.PIECE_PUT);
-		//this.AddObserver(OnPieceMoved, GameController.PIECE_MOVED);
-		//this.AddObserver(OnPieceRemoved, GameController.PIECE_REMOVED);
 	}
 
 	void OnDisable()
 	{
 		this.RemoveObserver(OnLMBClick, ArInteractionController.ARLMB_CLICK);
 		this.RemoveObserver(OnCameraUpdate, ArInteractionController.ARCAMERA_UPDATE);
-		//this.RemoveObserver(OnPiecePut, GameController.PIECE_PUT);
-		//this.RemoveObserver(OnPieceMoved, GameController.PIECE_MOVED);
-		//this.RemoveObserver(OnPieceRemoved, GameController.PIECE_REMOVED);
 	}
 
 	public void Update()
