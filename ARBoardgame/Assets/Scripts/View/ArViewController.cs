@@ -11,7 +11,6 @@ public class ArViewController : MonoBehaviour
 	public GameObject planePrefab;
 	
 	private List<TrackedPlane> m_newPlanes = new List<TrackedPlane>();
-	private List<TrackedPlane> m_allPlanes = new List<TrackedPlane>();
 
 	private bool BoardPositioned;
 	private GameObject holdingObject;
@@ -33,7 +32,9 @@ public class ArViewController : MonoBehaviour
 		new Color(1.0f, 0.921f, 0.231f),
 		new Color(1.0f, 0.756f, 0.027f)
 	};
-	
+
+	private static readonly Vector3 SCALE = new Vector3(0.8F, 5, 0.8F);
+
 	public const string SQUARE_RMB_CLICKED = "Square RMB clicked";
 	public const string SQUARE_LMB_CLICKED = "Square LMB clicked";
 	public const string OUTSIDE_LMB_CLICKED = "Outside board LMB clicked";
@@ -148,19 +149,26 @@ public class ArViewController : MonoBehaviour
 				if (holdingObject == null && (hitObj.CompareTag(PICKUPABLE) || hitObj.CompareTag(HIGHLIGHPICKUP)))
 				{
 					holdingObject = hitObj;
-					//TODO more pickup stuff
-					
+					holdingObject.transform.parent = transform;
+					holdingObject.transform.localPosition = new Vector3(0, 0.09999F, .2F);
+					holdingObject.transform.localEulerAngles = new Vector3(-20, 0, 0);
 				}
 				else if (holdingObject != null)
-				{
-					//Find position of placement
-					//Get a position of a square
-					/*
-					if (hitObj)
+				{	
+					if (hitObj.CompareTag(PICKUPABLE) || hitObj.CompareTag(HIGHLIGHPICKUP))
 					{
-						
-					}
-					*/
+						//Placed on another piece
+					} 
+					else 
+					{
+						//Verify that it's a square and send info of placement
+						//this.PostNotification(SQUARE_LMB_CLICKED, pos);
+						holdingObject.transform.parent = hitObj.transform;
+						holdingObject.transform.localScale = SCALE;
+						holdingObject.transform.localPosition = new Vector3(0, 0, -2.4F);
+						holdingObject.transform.localEulerAngles = new Vector3(-90, 0, 0);
+					}					
+					
 					holdingObject = null;
 				}
 				
@@ -168,21 +176,6 @@ public class ArViewController : MonoBehaviour
 				return;
 			}
 		}
-
-		// Debug.Log("ViewController - position left clicked: " + pos + "\n");
-
-		/*SquarePos squarePos = GetSquarePosOfVectPos(pos);
-
-		if (squarePos != null)
-		{
-			// Debug.Log("ViewController - square (" + squarePos.Col + "," + squarePos.Row + ") left clicked");
-
-			this.PostNotification(SQUARE_LMB_CLICKED, squarePos);
-		}
-		else
-		{
-			
-		}*/
 		this.PostNotification(OUTSIDE_LMB_CLICKED);
 	}
 }

@@ -8,9 +8,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/GoogleARCore/HelloARExample/Scenes/HelloAR.unity
     guid: e6a6fa04348cb45c9b0221eb19c946da
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/PickupDev.unity
     guid: b2c94f8603147437f8f480b1906fd6e7
-  - enabled: 1
+  - enabled: 0
     path: Assets/UnityARInterface/ARRemote/RemoteDevice.unity
     guid: 20b446302c6bc5a4db8e59fc358aba13
