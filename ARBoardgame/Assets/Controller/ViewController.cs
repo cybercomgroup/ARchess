@@ -14,7 +14,7 @@ public class ViewController : MonoBehaviour
     public const string OUTSIDE_LMB_CLICKED = "Outside board LMB clicked";
 
     private Dictionary<string, Sprite> gamePieceTypeToSpriteMap;
-	private Dictionary<string, GameObject> gamePieceTypeToModelMap;
+	private Dictionary<string, Object> gamePieceTypeToModelMap;
 
     private GameObject[,] board;
     private GameObject boardGO;
@@ -22,6 +22,7 @@ public class ViewController : MonoBehaviour
     // Not really required, just for quicker access
     private Vector3 boardPos;
 
+	float TILE_SIZE = 1.0f;
 
     // Sorting Layers - used by the sprites and won't be required once models are used
     private const string PIECE_LAYER = "PieceLayer";
@@ -72,16 +73,21 @@ public class ViewController : MonoBehaviour
     public void OnGameCreated(object sender, object args)
 	{
 		
-		gamePieceTypeToModelMap = new Dictionary<string, GameObject> ();
+		gamePieceTypeToModelMap = new Dictionary<string, Object> ();
 		gameStarted = (GameStarted)args;
 		gameName = gameStarted.Name;
 		// Create the board 
 
 		foreach (string pieceType in gameStarted.GameSet.PieceTypes) {
+			
+			gamePieceTypeToModelMap [pieceType] = Resources.Load ("Games/Chess/Pieces/" + pieceType);
 
-			gamePieceTypeToModelMap [pieceType] = (GameObject)Resources.Load ("Games/Chess" + pieceType);
 		}
-
+		//Object go = Resources.Load ("Games/Chess/Pieces/W_Pawn");
+		//GameObject go = new GameObject ();
+		//Object go = gamePieceTypeToModelMap ["W_Pawn"];
+	    //Instantiate (go);
+		//Object go = Instantiate (gamePieceTypeToModelMap ["W_Pawn"], new Vector3 (0, 0, 0), Quaternion.Euler (270, 0, 0)) as GameObject;
 		//	-----------------------------------------------------------------------------------------------------------------
 
 		// 2D - version
@@ -112,6 +118,13 @@ public class ViewController : MonoBehaviour
 
     public void OnBoardPostioned(object sender, object args)
     {
+
+		/* TODO (Daniel): 
+		 * Brädet ritas för tillfället inte ut från en pekarposition utan endast från 0,0,0 för debugging.
+		 * Lös så att "defaultspel" läser ifrån en JSON sträng och skapar ett s.k "default spelset" dvs en uppställning av pjäser.
+		 * Ta bort gammal kod som inte används längre ( 2D brädet ).
+		 */
+
         Vector3 pos = (Vector3)args;
         // The currently used solution for determining cursor postion results in a z axis pos on the "camera cutoff plane"
         // Set z axis pos to 0 instead
@@ -121,35 +134,60 @@ public class ViewController : MonoBehaviour
         boardGO = new GameObject();
         boardGO.name = "Board";
 
-        boardGO.transform.position = pos;
+        //boardGO.transform.position = pos;
+
       /*  boardGO.transform.SetParent(this.transform, true);
         // Use the selected game set's board sprite resource. This method means that the board sprite needs to be in Resources/Games/<gameName>/ and have the name board
         boardGO.AddComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Games/" + gameName + "/board");
         // Setting layer for sorting order. Probably not very important for our future real 3D view
         boardGO.GetComponent<Renderer>().sortingLayerName = BOARD_LAYER;
 */
+
 		// Spawnar ett bräde från origin för tillfället.
 		pos = Vector3.zero;
 
 		int rows = gameStarted.GameSet.BoardType.NumRows;
 		int cols = gameStarted.GameSet.BoardType.NumCols;
+
+
+		// Bestämmer hur stort avståndet är mellan varje Quad i världen. Använder TILE_SIZE(konstant).
+		float xOffset = 0;
+		float zOffset = 0;
+
 		GameObject go;
 
 		for (int i = 0; i <= rows; i++) {
 			for (int j = 0; j <= cols; j++) {
 				go = GameObject.CreatePrimitive (PrimitiveType.Quad);
 				go.transform.Rotate (new Vector3 (90, 0, 0));
-				go.transform.position = new Vector3 (pos.x + i, 0, pos.z + j);
-				//go.tag = "Tile";
-				//go.GetComponent<Renderer> ().enabled = false;
+
+				go.transform.position = new Vector3 (xOffset, 0, zOffset);
+				//go.tag = "Tile"; // Sätt tag så att man kan interagera med rutorna.
+
+				go.GetComponent<Renderer> ().enabled = false; 
 				go.transform.SetParent (boardGO.transform);
+				zOffset += TILE_SIZE;
 			}
+			xOffset += TILE_SIZE;
+			zOffset = 0;
 		}
+		//Playinfield 
+		Object[] pf = Resources.LoadAll ("Games/" + gameStarted.Name + "/PlayingField/PlayFieldPrefab");
+		go = (GameObject)Instantiate (pf [0]);
+		go.transform.SetParent (boardGO.transform);
+		go.transform.position = Vector3.zero;
 
-		// Hämta spelbana här.
-		//GameObject playingField = Resources.Load("Games/" +gameName + "/Playfield");
+
+		// Temporär funktion för att få ut lite pjäser så man kan testa storlek och interaktion.
+		LoadDefaultPiecePositions ();
     }
+	public void LoadDefaultPiecePositions(){
+		Object testgo = Instantiate (gamePieceTypeToModelMap ["W_Pawn"], new Vector3 (1, 0, 0), Quaternion.Euler (270, 0, 0)) as GameObject;
+		testgo        = Instantiate (gamePieceTypeToModelMap ["B_Queen"], new Vector3 (1, 0, 1), Quaternion.Euler (270, 0, 0)) as GameObject;
+		testgo        = Instantiate (gamePieceTypeToModelMap ["W_Queen"], new Vector3 (1, 0, 2), Quaternion.Euler (270, 0, 0)) as GameObject;
+		testgo        = Instantiate (gamePieceTypeToModelMap ["B_Queen"], new Vector3 (1, 0, 3), Quaternion.Euler (270, 0, 0)) as GameObject;
 
+	}
     public void OnLMBClick(object sender, object args)
     {
         Vector3 pos = (Vector3)args;
@@ -243,7 +281,6 @@ public class ViewController : MonoBehaviour
         {
             return;
         }
-
         // Remove GameObject at to position if it exists
         if (board[move.ToPos.Col, move.ToPos.Row] != null)
         {

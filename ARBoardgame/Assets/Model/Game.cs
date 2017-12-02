@@ -61,6 +61,7 @@ public class Game
     {
         List<string> gameSetNames = GetListOfGameSets();
 
+
         foreach(string gameSetName in gameSetNames)
         {
             BoardType boardType = ImportBoardType(gameSetName);
