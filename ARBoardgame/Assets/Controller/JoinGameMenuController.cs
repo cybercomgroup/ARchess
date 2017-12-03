@@ -30,4 +30,8 @@ public class JoinGameMenuController : IMenuController {
 		IngameMenuController controller = new IngameMenuController(model);
 		IngameMenuView view = new IngameMenuView(model, controller);
 	}
+
+	public void joinGame(int hostId) {
+		Debug.Log("Joining host " + hostId);
+	}
 }

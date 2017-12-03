@@ -12,9 +12,15 @@ public class JoinGameMenuModel {
 	public void init() {
 		heading.init();
 		// TODO Fetch active games, display them
+		this.AddObserver(onNetworkGameDiscovered, "networkGameDiscovered");
 	}
 
 	public void terminate() {
+		this.RemoveObserver(onNetworkGameDiscovered, "networkGameDiscovered");
 		heading.terminate();
+	}
+
+	public void onNetworkGameDiscovered(object sender, object args) {
+		this.PostNotification("addNetworkGameToList", args);
 	}
 }
