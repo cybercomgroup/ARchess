@@ -4,13 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class JoinGameMenuView {
-	private TextView headingView;
 	private GameObject content;
 	private JoinGameMenuController controller;
 
 	public JoinGameMenuView(JoinGameMenuModel model, JoinGameMenuController controller) {
 		GameObject.Find("Panel").AddComponent(typeof(FadeIn));
-		headingView = new TextView(model.heading, controller);
+		new TextView(model.heading);
 		this.controller = controller;
 
 		model.AddObserver(addNetworkGameToList, "addNetworkGameToList");

@@ -6,15 +6,12 @@ using UnityEngine.UI;
 public class TextView {
 	private Text text;
 	private TextModel model;
-	private IMenuController controller;
 
-	public TextView(TextModel model, IMenuController controller) {
+	public TextView(TextModel model) {
 		this.model = model;
 		// Subscribe to updates from "text"
 		model.AddObserver(onUpdate, "textUpdate");
 		model.AddObserver(onTerminate, "textTerminate");
-
-		this.controller = controller;
 
 		Transform panelTransform = GameObject.Find("Panel").transform;
 		GameObject textObject = GameObject.Instantiate(Resources.Load("MenuText", typeof(GameObject)), panelTransform) as GameObject;

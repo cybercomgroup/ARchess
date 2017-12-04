@@ -34,7 +34,7 @@ public class MainMenuController : IMenuController {
 		yield return new WaitForSeconds(1f);
 		StartGameMenuModel model = new StartGameMenuModel();
 		StartGameMenuController controller = new StartGameMenuController(model);
-		StartGameMenuView view = new StartGameMenuView(model, controller);
+		new StartGameMenuView(model, controller);
 		
 		controller.init();
 	}
@@ -43,7 +43,7 @@ public class MainMenuController : IMenuController {
 		yield return new WaitForSeconds(1f);
 		JoinGameMenuModel model = new JoinGameMenuModel();
 		JoinGameMenuController controller = new JoinGameMenuController(model);
-		JoinGameMenuView view = new JoinGameMenuView(model, controller);
+		new JoinGameMenuView(model, controller);
 		
 		controller.init();
 	}

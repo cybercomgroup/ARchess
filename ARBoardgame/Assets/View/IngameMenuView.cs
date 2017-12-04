@@ -4,15 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class IngameMenuView {
-	private IngameMenuModel model;
-	private IMenuController controller;
-
 	public IngameMenuView(IngameMenuModel model, IngameMenuController controller) {
 		GameObject.Find("Panel").SetActive(false);
 		changeToHorizontalLayout();
-
-		this.model = model;
-		this.controller = controller;
 
 		setupButton(model.multiplayerSprite).onClick.AddListener(onMultiplayerClick);
 		setupButton(model.resetSprite).onClick.AddListener(onResetClick);

@@ -28,7 +28,7 @@ public class JoinGameMenuController : IMenuController {
 		yield return new WaitForSeconds(1f);
 		IngameMenuModel model = new IngameMenuModel();
 		IngameMenuController controller = new IngameMenuController(model);
-		IngameMenuView view = new IngameMenuView(model, controller);
+		new IngameMenuView(model, controller);
 	}
 
 	public void joinGame(int hostId) {

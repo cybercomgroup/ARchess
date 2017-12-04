@@ -8,7 +8,7 @@ public class Menu : MonoBehaviour {
 	void Start () {
 		MainMenuModel mainMenuModel = new MainMenuModel();
 		MainMenuController mainMenuController = new MainMenuController(mainMenuModel);
-		MainMenuView mainMenuView = new MainMenuView(mainMenuModel, mainMenuController);
+		new MainMenuView(mainMenuModel, mainMenuController);
 
 		mainMenuController.init();
 	}
