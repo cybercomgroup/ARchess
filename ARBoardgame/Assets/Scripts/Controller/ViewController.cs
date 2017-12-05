@@ -156,8 +156,8 @@ public class ViewController : MonoBehaviour
 
 		GameObject go;
 
-		for (int i = 0; i <= rows; i++) {
-			for (int j = 0; j <= cols; j++) {
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < cols; j++) {
 				go = GameObject.CreatePrimitive (PrimitiveType.Quad);
 				go.transform.Rotate (new Vector3 (90, 0, 0));
 
