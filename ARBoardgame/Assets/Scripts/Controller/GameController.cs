@@ -96,11 +96,12 @@ public class GameController : MonoBehaviour
         }
         else if (GameInstance.PieceExistsAt(squarePos))
         {
+			
             heldPiece = GameInstance.TakePieceAt(squarePos);
 
             this.PostNotification(PIECE_PICKED_FROM_BOARD, squarePos);
         }
-
+	
         /*
         if (fromPos != null)
         {

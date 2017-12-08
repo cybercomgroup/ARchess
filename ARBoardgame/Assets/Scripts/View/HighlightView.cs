@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HighlightView : MonoBehaviour {
 
-	public bool Highlighted = false;
+	public bool Highlighted = true;
 	public string materialName;
 	public Material material;
 	Material glowMaterial;
@@ -15,7 +15,7 @@ public class HighlightView : MonoBehaviour {
 		normalShader = Shader.Find("Standard");
 		if (material == null)
 		{
-			glowMaterial = Resources.Load<Material>(materialName);
+			glowMaterial = Resources.Load<Material>("BlackMaterialGlow");
 		}
 		else
 		{

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HighlightPickup
   - Highlightable
+  - Piece
   layers:
   - Default
   - TransparentFX

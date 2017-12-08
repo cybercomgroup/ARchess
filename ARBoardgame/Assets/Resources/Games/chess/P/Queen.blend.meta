@@ -17,7 +17,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: unnamed
-    second: {fileID: 2100000, guid: c7fdf11e9b96af84ba33184f34add91a, type: 2}
+    second: {fileID: 2100000, guid: a28ec302ddffc473dbf337594b4f8ee4, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -50,7 +50,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
     importCameras: 1
     importLights: 1

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33658597291736544}
   - component: {fileID: 23866894115596502}
   - component: {fileID: 95421930737331916}
+  - component: {fileID: 114265060675221712}
   m_Layer: 0
   m_Name: B_King
   m_TagString: Untagged
@@ -100,3 +101,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114265060675221712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1850206614348338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2ddd17e42a4b241882020dbe616309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Highlighted: 0
+  materialName: BlackMaterialGlow
+  material: {fileID: 0}

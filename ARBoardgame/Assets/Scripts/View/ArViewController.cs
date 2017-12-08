@@ -161,7 +161,6 @@ public class ArViewController : MonoBehaviour
 #endif
                 BoardPositioned = true;
                 boardGO = new GameObject();
-
                 boardGO = Instantiate(Resources.Load("Board", typeof(GameObject)), pos, Quaternion.identity) as GameObject;
                 boardGO.name = "Board";
                 boardGO.transform.SetParent(this.transform, true);
@@ -222,7 +221,7 @@ public class ArViewController : MonoBehaviour
         }
         else
         {
-            // We are only interested in collisions with tiles and pieces
+			// We are only interested in collisions with tiles and pieces
             int layerMask = 1 << LayerMask.NameToLayer("TilesAndPieces");
             RaycastHit hit;
 
@@ -311,7 +310,7 @@ public class ArViewController : MonoBehaviour
         // pieceToPut.transform.localPosition = pieceToPut.transform.parent.transform.localPosition;
 
         // NOTE: This could probably be improved
-        pieceToPut.transform.localPosition = new Vector3(0, 0, -0.4f);
+        pieceToPut.transform.localPosition = new Vector3(0, 0, 0);
 
 
     }
