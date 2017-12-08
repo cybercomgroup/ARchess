@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class ArInteractionController : ARBase
 {
-    public const string ARLMB_CLICK = "ArLMB click";
-    public const string ARRMB_CLICK = "ArRMB click";
+    public const string AR_CLICK = "AR click";
     public const string ARCAMERA_UPDATE = "ArCamera Update";
 
     //private Vector3 lastFwd;
@@ -17,12 +16,19 @@ public class ArInteractionController : ARBase
     {
         if (Input.GetMouseButtonDown(0))
         {
-            HandleLMBClick();
+            HandleClick();
         }
+
+        if (Input.anyKeyDown)
+        {
+            HandleKeyPress();
+        }
+        /*
         else if(Input.GetMouseButtonDown(1))
         {
             HandleRMBClick();
         }
+        */
         HandleCameraUpdate();
     }
 
@@ -37,14 +43,32 @@ public class ArInteractionController : ARBase
         //}
     }
 
-    public void HandleLMBClick() {
+    public void HandleClick() {
         Camera camera = GetCamera();
         Transform pos = camera.transform;
-        this.PostNotification(ARLMB_CLICK, pos);
+        this.PostNotification(AR_CLICK, pos);
     }
 
+    /*
     public void HandleRMBClick() {
         //Vector3 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         //this.PostNotification(ARRMB_CLICK, cursorPos);
+    }
+    */
+
+    // NOTE: Temp for selecting a piece until menu is in place
+    public void HandleKeyPress()
+    {
+        // Should later come from list in menu
+        string selPi;
+
+        if (Input.GetKeyDown("1"))
+            selPi = "W_Pawn";
+        else if (Input.GetKeyDown("2"))
+            selPi = "B_Queen";
+        else
+            return;
+
+        this.PostNotification(GameController.PIECE_SELECTED_IN_MENU, selPi);
     }
 }

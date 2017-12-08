@@ -22,7 +22,7 @@ public class ViewController : MonoBehaviour
     // Not really required, just for quicker access
     private Vector3 boardPos;
 
-	float TILE_SIZE = 1.0f;
+	private float TILE_SIZE = 1.0f;
 
     // Sorting Layers - used by the sprites and won't be required once models are used
     private const string PIECE_LAYER = "PieceLayer";

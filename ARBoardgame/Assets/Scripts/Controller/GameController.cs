@@ -8,30 +8,44 @@ public class GameController : MonoBehaviour
     //private static Game gameInstance;
     public static Game GameInstance { get; private set; }
 
+    public const string SQUARE_CLICKED = "Square clicked";
+    public const string OUTSIDE_CLICKED = "Outside clicked";
+    public const string PIECE_SELECTED_IN_MENU = "Piece selected in menu";
+    public const string PIECE_PICKED_FROM_MENU = "Piece picked from menu";
+    public const string PIECE_PICKED_FROM_BOARD = "Piece picked from board";
     public const string PIECE_PUT = "Piece put";
+
+
     public const string PIECE_MOVED = "Piece moved";
+
     public const string PIECE_REMOVED = "Piece removed";
     public const string GAME_REQUESTED = "gameRequest";
     public const string GAME_CREATED = "Game created";
     public const string GAME_SETS_LOADED = "Game sets loaded";
+
+    // NOTE: Do we need to keep this
     private SquarePos fromPos;
+
+    private string heldPiece;
 
 
     void OnEnable()
     {
-        this.AddObserver(OnSquareRMBClicked, ViewController.SQUARE_RMB_CLICKED);
-        this.AddObserver(OnSquareLMBClicked, ViewController.SQUARE_LMB_CLICKED);
-        this.AddObserver(OnOutsideLMBClicked, ViewController.OUTSIDE_LMB_CLICKED);
+        //this.AddObserver(OnSquareRMBClicked, ViewController.SQUARE_RMB_CLICKED);
+        this.AddObserver(OnSquareClicked, SQUARE_CLICKED);
+        this.AddObserver(OnOutsideClicked, OUTSIDE_CLICKED);
         this.AddObserver(OnGameRequested, GAME_REQUESTED);
+        this.AddObserver(OnPieceSelectedInMenu, PIECE_SELECTED_IN_MENU);
 
     }
 
     void OnDisable()
     {
-        this.RemoveObserver(OnSquareRMBClicked, ViewController.SQUARE_RMB_CLICKED);
-        this.RemoveObserver(OnSquareLMBClicked, ViewController.SQUARE_LMB_CLICKED);
-        this.RemoveObserver(OnOutsideLMBClicked, ViewController.OUTSIDE_LMB_CLICKED);
+        //this.RemoveObserver(OnSquareRMBClicked, ViewController.SQUARE_RMB_CLICKED);
+        this.RemoveObserver(OnSquareClicked, SQUARE_CLICKED);
+        this.RemoveObserver(OnOutsideClicked, OUTSIDE_CLICKED);
         this.RemoveObserver(OnGameRequested, GAME_REQUESTED);
+        this.RemoveObserver(OnPieceSelectedInMenu, PIECE_SELECTED_IN_MENU);
     }
 
 
@@ -68,10 +82,26 @@ public class GameController : MonoBehaviour
     ///  Handles the Square LMB clicked event.
     ///  ...
     /// </summary> 
-    public void OnSquareLMBClicked(object sender, object args)
+    public void OnSquareClicked(object sender, object args)
     {
         SquarePos squarePos = (SquarePos)args;
 
+        if (heldPiece != null)
+        {
+            GameInstance.PutPieceAt(heldPiece, squarePos);
+
+            this.PostNotification(PIECE_PUT, squarePos);
+
+            heldPiece = null;
+        }
+        else if (GameInstance.PieceExistsAt(squarePos))
+        {
+            heldPiece = GameInstance.TakePieceAt(squarePos);
+
+            this.PostNotification(PIECE_PICKED_FROM_BOARD, squarePos);
+        }
+
+        /*
         if (fromPos != null)
         {
             if (!fromPos.Equals(squarePos))
@@ -87,13 +117,14 @@ public class GameController : MonoBehaviour
         {
             fromPos = squarePos;
         }
+        */
     }
 
     /// <summary>  
     ///  Handles the Outside LMB clicked event.
     ///  If a piece has been clicked previously that piece is removed, otherwise nothing happens.
     /// </summary>  
-    public void OnOutsideLMBClicked(object sender, object args)
+    public void OnOutsideClicked(object sender, object args)
     {
         if (fromPos != null)
         {
@@ -117,5 +148,18 @@ public class GameController : MonoBehaviour
         fromPos = null;
 
         this.PostNotification(GAME_CREATED, new GameStarted(gameName, Game.GameSets[gameName]) );
+    }
+
+    /// <summary>  
+    ///  Handles the Piece selected in menu event.
+    ///  Sets a piece of the given type as held and notifies this
+    /// </summary>  
+    public void OnPieceSelectedInMenu(object sender, object args)
+    {
+        string selectedPiece = (string)args;
+
+        heldPiece = selectedPiece;
+
+        this.PostNotification(PIECE_PICKED_FROM_MENU, heldPiece);
     }
 }

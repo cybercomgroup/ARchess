@@ -54,6 +54,25 @@ public class Game
         return pieceType;
     }
 
+    public void PutPieceAt(string pieceType, SquarePos squarePos)
+    {
+        Board[squarePos.Col, squarePos.Row] = pieceType;
+    }
+
+    public bool PieceExistsAt(SquarePos squarePos)
+    {
+        return Board[squarePos.Col, squarePos.Row] == null ? false : true;
+    }
+
+    public string TakePieceAt(SquarePos squarePos)
+    {
+        string piece = Board[squarePos.Col, squarePos.Row];
+
+        Board[squarePos.Col, squarePos.Row] = null;
+
+        return piece;
+    }
+
     /// <summary>
     /// Loads all GameSets in the Resources directory.
     /// </summary>
