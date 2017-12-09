@@ -53,23 +53,25 @@ public class ArViewController : MonoBehaviour
     // mem leakage, subscribed no longer existing objects
     void OnEnable()
     {
-        this.AddObserver(OnLMBClick, ArInteractionController.AR_CLICK);
+        this.AddObserver(OnClick, ArInteractionController.AR_CLICK);
         this.AddObserver(OnCameraUpdate, ArInteractionController.ARCAMERA_UPDATE);
         this.AddObserver(OnGameCreated, GameController.GAME_CREATED);
         this.AddObserver(OnPiecePickedFromMenu, GameController.PIECE_PICKED_FROM_MENU);
         this.AddObserver(OnPiecePickedFromBoard, GameController.PIECE_PICKED_FROM_BOARD);
         this.AddObserver(OnPiecePut, GameController.PIECE_PUT);
+        this.AddObserver(OnHeldPieceRemoved, GameController.HELD_PIECE_REMOVED);
     }
 
 
     void OnDisable()
     {
-        this.RemoveObserver(OnLMBClick, ArInteractionController.AR_CLICK);
+        this.RemoveObserver(OnClick, ArInteractionController.AR_CLICK);
         this.RemoveObserver(OnCameraUpdate, ArInteractionController.ARCAMERA_UPDATE);
         this.RemoveObserver(OnGameCreated, GameController.GAME_CREATED);
         this.RemoveObserver(OnPiecePickedFromMenu, GameController.PIECE_PICKED_FROM_MENU);
         this.RemoveObserver(OnPiecePickedFromBoard, GameController.PIECE_PICKED_FROM_BOARD);
         this.RemoveObserver(OnPiecePut, GameController.PIECE_PUT);
+        this.RemoveObserver(OnHeldPieceRemoved, GameController.HELD_PIECE_REMOVED);
     }
 
     public void Update()
@@ -132,6 +134,12 @@ public class ArViewController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, float.MaxValue, layerMask))
         {
+            // Move the held piece
+            if (heldPiece != null)
+            {
+                MoveHeldPiece(hit);
+            }
+
             if (hit.collider.gameObject.CompareTag(HIGHLIGHTABLE) || hit.collider.gameObject.CompareTag(HIGHLIGHPICKUP))
             {
                 hit.collider.gameObject.GetComponent<HighlightView>().Highlighted = true;
@@ -139,8 +147,26 @@ public class ArViewController : MonoBehaviour
         }
     }
 
-    public void OnLMBClick(object sender, object args)
+    public void MoveHeldPiece(RaycastHit hit)
     {
+        float step = Vector2.Distance(new Vector2(heldPiece.transform.position.x, heldPiece.transform.position.z), new Vector2(hit.point.x, hit.point.z)) / 15;
+        float stepMin = 0.0005f;
+
+        step = step > stepMin ? step : stepMin;
+
+        heldPiece.transform.position =
+        Vector3.MoveTowards(heldPiece.transform.position,
+            new Vector3(hit.point.x, heldPiece.transform.position.y, hit.point.z), step);
+    }
+
+
+    public void OnClick(object sender, object args)
+    {
+        if (gameStarted == null)
+        {
+            return;
+        }
+
         Transform transform = (Transform)args;
         Ray ray = new Ray(transform.position, transform.forward);
 
@@ -221,7 +247,7 @@ public class ArViewController : MonoBehaviour
         }
         else
         {
-			// We are only interested in collisions with tiles and pieces
+            // We are only interested in collisions with tiles and pieces
             int layerMask = 1 << LayerMask.NameToLayer("TilesAndPieces");
             RaycastHit hit;
 
@@ -268,8 +294,11 @@ public class ArViewController : MonoBehaviour
                 */
                 #endregion
             }
+            else
+            {
+                this.PostNotification(GameController.OUTSIDE_CLICKED);
+            }
         }
-        this.PostNotification(GameController.OUTSIDE_CLICKED);
     }
 
     /// <summary>  
@@ -278,14 +307,24 @@ public class ArViewController : MonoBehaviour
     /// </summary>
     public void OnPiecePickedFromMenu(object sender, object args)
     {
+        // Removes any currently held piece
+        Destroy(heldPiece);
+        heldPiece = null;
+
         heldPiece = Instantiate(pieceTypeToModelMap[(string)args]) as GameObject;
         heldPiece.AddComponent<HighlightView>();
         heldPiece.tag = HIGHLIGHPICKUP;
+        
         // NOTE: At least temp solution for size - scaling
         heldPiece.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
-        heldPiece.transform.parent = Camera.main.transform;
-        heldPiece.transform.localPosition = new Vector3(0.3f, 0.1F, 0.5F);
-        heldPiece.transform.localEulerAngles = new Vector3(-120, 0, 0);
+
+        // NOTE: Do we still need any anchoring to the camera?
+        //heldPiece.transform.parent = Camera.main.transform;
+        //heldPiece.transform.localPosition = new Vector3(0.3f, 0.1F, 0.5F);
+        //heldPiece.transform.localEulerAngles = new Vector3(-120, 0, 0);
+
+        // NOTE: Where does a new piece show up? Currently over the "first" tile.
+        heldPiece.transform.position = boardTiles[0,0].transform.position + new Vector3(0, 0.15F, 0);
     }
 
     /// <summary>  
@@ -325,8 +364,73 @@ public class ArViewController : MonoBehaviour
 
         heldPiece = boardTiles[squarePos.Col, squarePos.Row].transform.GetChild(0).gameObject;
 
-        heldPiece.transform.parent = Camera.main.transform;
-        heldPiece.transform.localPosition = new Vector3(0.3f, 0.1F, 0.5F);
-        //heldPiece.transform.localPosition = heldPiece.transform.parent.localPosition;
+        //heldPiece.transform.parent = Camera.main.transform;
+        heldPiece.transform.parent = null;
+        Vector3 piecePos = heldPiece.transform.position;
+
+        float moveTime = 0.15f;
+        Vector3 upDist = 0.15f * Vector3.up;
+
+        float up = piecePos.y + 0.15f;
+
+
+        Vector3 helPieceDest = piecePos + upDist;
+
+        //StartCoroutine(FloatToPos(heldPiece.transform, helPieceDest, moveTime));
+        StartCoroutine(FloatToYPos(heldPiece.transform, up, moveTime));
+    }
+
+    /// <summary>  
+    ///  Handles the Held piece removed event.
+    ///  Destroys the held piece; has the value null afterwards
+    /// </summary>
+    public void OnHeldPieceRemoved(object sender, object args)
+    {
+        Destroy(heldPiece);
+        heldPiece = null;
+    }
+
+    /// <summary>  
+    ///  Moves a GameObject to a position over time.
+    ///  Takes a Transform of a GameObject, a Vector3 position to move the GameObject to and float
+    ///  moveTime during which the move is to takes place.
+    /// </summary>
+    private IEnumerator FloatToPos(Transform transform, Vector3 toPos, float moveTime)
+    {
+        float timer = 0;
+
+        //Get the start position of the GameObject to be moved
+        Vector3 startPos = transform.position;
+
+        while (timer < moveTime && transform != null)
+        {
+            timer += Time.deltaTime;
+            // Move a bit closer
+            transform.position = Vector3.Lerp(startPos, toPos, timer / moveTime);
+            yield return null;
+        }
+    }
+
+    /// <summary>  
+    ///  Moves a GameObject along the y axis to a y position over time.
+    ///  Takes a Transform of a GameObject, a float y position to move the GameObject to and float
+    ///  moveTime during which the move is to takes place.
+    /// </summary>
+    private IEnumerator FloatToYPos(Transform transform, float toYPos, float moveTime)
+    {
+        float timer = 0;
+
+        //Get the start position of the GameObject to be moved
+        float startYPos = transform.position.y;
+
+        while (timer < moveTime && transform != null)
+        {
+            timer += Time.deltaTime;
+            // Move a bit closer
+
+            transform.position = new Vector3(transform.position.x, Mathf.Lerp(startYPos, toYPos, timer / moveTime), transform.position.z);
+
+            yield return null;
+        }
     }
 }

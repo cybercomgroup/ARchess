@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     public const string PIECE_PICKED_FROM_MENU = "Piece picked from menu";
     public const string PIECE_PICKED_FROM_BOARD = "Piece picked from board";
     public const string PIECE_PUT = "Piece put";
+    public const string HELD_PIECE_REMOVED = "Held piece removed"; 
 
 
     public const string PIECE_MOVED = "Piece moved";
@@ -96,12 +97,12 @@ public class GameController : MonoBehaviour
         }
         else if (GameInstance.PieceExistsAt(squarePos))
         {
-			
+
             heldPiece = GameInstance.TakePieceAt(squarePos);
 
             this.PostNotification(PIECE_PICKED_FROM_BOARD, squarePos);
         }
-	
+
         /*
         if (fromPos != null)
         {
@@ -122,17 +123,25 @@ public class GameController : MonoBehaviour
     }
 
     /// <summary>  
-    ///  Handles the Outside LMB clicked event.
-    ///  If a piece has been clicked previously that piece is removed, otherwise nothing happens.
+    ///  Handles the Outside clicked event.
+    ///  If a piece is Held piece is set to null. That the held piece has been 
     /// </summary>  
     public void OnOutsideClicked(object sender, object args)
     {
+        if(heldPiece != null)
+        {
+            heldPiece = null;
+
+            this.PostNotification(HELD_PIECE_REMOVED);
+        }
+        /*
         if (fromPos != null)
         {
             GameInstance.Board[fromPos.Col, fromPos.Row] = null;
             this.PostNotification(PIECE_REMOVED, fromPos);
             fromPos = null;
         }
+        */
     }
 
     /// <summary>  
@@ -148,7 +157,7 @@ public class GameController : MonoBehaviour
 
         fromPos = null;
 
-        this.PostNotification(GAME_CREATED, new GameStarted(gameName, Game.GameSets[gameName]) );
+        this.PostNotification(GAME_CREATED, new GameStarted(gameName, Game.GameSets[gameName]));
     }
 
     /// <summary>  
