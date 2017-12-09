@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class HighlightView : MonoBehaviour {
 
-	public bool Highlighted = true;
+	public bool Highlighted = false;
 	public string materialName;
 	public Material material;
+	public Material normalMaterial;
 	Material glowMaterial;
-	Shader normalShader;
+	//Shader normalShader;
 	
 	private void Awake()
 	{
+
+		glowMaterial = Resources.Load<Material> ("glowShader");
+
+		/*
+		 *
 		normalShader = Shader.Find("Standard");
 		if (material == null)
 		{
-			glowMaterial = Resources.Load<Material>("BlackMaterialGlow");
+			glowMaterial = Resources.Load<Material>("materialName");
 		}
 		else
 		{
 			glowMaterial = material;
 		}
-		
+		*/
 		if (gameObject.CompareTag("Untagged"))
 		{
 			gameObject.tag = "Highlightable";
@@ -31,13 +37,15 @@ public class HighlightView : MonoBehaviour {
 	void LateUpdate () {
 		if (Highlighted)
 		{
+			GetComponent<Renderer> ().enabled = true;
 			GetComponent<Renderer>().material = glowMaterial;
 		}
 		else
 		{
+			GetComponent<Renderer> ().enabled = false;
 
-			GetComponent<Renderer>().material.shader = normalShader;
 		}
 		Highlighted = false;
+
 	}
 }

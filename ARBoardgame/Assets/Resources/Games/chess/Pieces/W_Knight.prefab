@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33644345745007672}
   - component: {fileID: 23063371219393354}
   - component: {fileID: 95271288504877898}
+  - component: {fileID: 64297323723993826}
   m_Layer: 0
   m_Name: W_Knight
   m_TagString: Untagged
@@ -82,6 +83,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1297662168864646}
+  m_Mesh: {fileID: 4300000, guid: 2cc9134d4ec5bf14aad87fcd3d4c4b0c, type: 3}
+--- !u!64 &64297323723993826
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1297662168864646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 2cc9134d4ec5bf14aad87fcd3d4c4b0c, type: 3}
 --- !u!95 &95271288504877898
 Animator:

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33834240226233226}
   - component: {fileID: 23929933338970650}
   - component: {fileID: 95359743283786716}
+  - component: {fileID: 64845154963124356}
   m_Layer: 0
   m_Name: W_Pawn
   m_TagString: Untagged
@@ -82,6 +83,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1913579085889234}
+  m_Mesh: {fileID: 4300000, guid: d3e8628ab529dd5449edf02f9f82e8f5, type: 3}
+--- !u!64 &64845154963124356
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913579085889234}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: d3e8628ab529dd5449edf02f9f82e8f5, type: 3}
 --- !u!95 &95359743283786716
 Animator:

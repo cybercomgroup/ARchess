@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: MKDemoMat1View1
-  m_Shader: {fileID: 4800000, guid: 3f387b3c7760d5a488b5596b42425701, type: 3}
+  m_Name: glowShader3
+  m_Shader: {fileID: 4800000, guid: 0fc06dbae827e7646bd0850ff121daa5, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
@@ -28,9 +28,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _MKGlowOffSet: 0
-    - _MKGlowPower: 2.2321427
+    - _MKGlowPower: 2.5
     - _MKGlowTexStrength: 10
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _MKGlowColor: {r: 0, g: 0.5448277, b: 1, a: 1}
-    - _MKGlowTexColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MKGlowColor: {r: 0.9448277, g: 1, b: 0, a: 1}
+    - _MKGlowTexColor: {r: 1, g: 0.8896551, b: 0, a: 1}

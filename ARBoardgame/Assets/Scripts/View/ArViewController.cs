@@ -129,7 +129,7 @@ public class ArViewController : MonoBehaviour
     {
         Transform transform = (Transform)args;
         Ray ray = new Ray(transform.position, transform.forward);
-        int layerMask = 1 << LayerMask.NameToLayer("Default");
+        int layerMask = 1 << LayerMask.NameToLayer("TilesAndPieces");
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, float.MaxValue, layerMask))
@@ -139,11 +139,13 @@ public class ArViewController : MonoBehaviour
             {
                 MoveHeldPiece(hit);
             }
-
-            if (hit.collider.gameObject.CompareTag(HIGHLIGHTABLE) || hit.collider.gameObject.CompareTag(HIGHLIGHPICKUP))
-            {
-                hit.collider.gameObject.GetComponent<HighlightView>().Highlighted = true;
-            }
+				
+			if (hit.collider.gameObject.CompareTag (HIGHLIGHPICKUP)) {
+				hit.collider.gameObject.GetComponent<HighlightPiece> ().Highlighted = true;
+			}
+			if (hit.collider.gameObject.CompareTag (HIGHLIGHTABLE)) {
+				hit.collider.gameObject.GetComponent<HighlightView> ().Highlighted = true;
+			} 
         }
     }
 
@@ -213,14 +215,14 @@ public class ArViewController : MonoBehaviour
                     {
                         tileGO = GameObject.CreatePrimitive(PrimitiveType.Quad);
                         boardTiles[i, j] = tileGO;
-                        tileGO.AddComponent<HighlightView>();
+						tileGO.AddComponent<HighlightView>().materialName = "WhiteMaterialGlow";
                         tileGO.tag = HIGHLIGHTABLE;
                         tileGO.name = i + "," + j;
                         tileGO.layer = LayerMask.NameToLayer("TilesAndPieces");
 
                         tileGO.transform.SetParent(playFieldGO.transform, true);
                         //tileGO.transform.localPosition = Vector3.zero;
-                        tileGO.transform.localPosition = new Vector3((i - 4 + 0.5f) / (float)cols, (j - 4 + 0.5f) / (float)rows, 0);
+                        tileGO.transform.localPosition = new Vector3((i - 4 + 0.5f) / (float)cols, (j - 4 + 0.5f) / (float)rows, -0.01f);
                         tileGO.transform.localScale = new Vector3(1 / (float)cols, 1 / (float)rows, 1);
 
                         tileGO.transform.Rotate(new Vector3(90, 0, 0));
@@ -228,7 +230,7 @@ public class ArViewController : MonoBehaviour
                         // NOTE: For showing the positions of the tiles
                         // tileGO.GetComponent<Renderer>().material = (i + j) % 2 == 0 ? Resources.Load<Material>("BlueMaterial") : Resources.Load<Material>("RedMaterial");
                         // Hide the tiles
-                        tileGO.GetComponent<Renderer>().enabled = false;
+						tileGO.GetComponent<Renderer>().enabled = false;
 
                         //go.tag = "Tile"; // Sätt tag så att man kan interagera med rutorna.
 
@@ -312,7 +314,8 @@ public class ArViewController : MonoBehaviour
         heldPiece = null;
 
         heldPiece = Instantiate(pieceTypeToModelMap[(string)args]) as GameObject;
-        heldPiece.AddComponent<HighlightView>();
+		heldPiece.layer = LayerMask.NameToLayer("TilesAndPieces");
+		heldPiece.AddComponent<HighlightPiece> ();
         heldPiece.tag = HIGHLIGHPICKUP;
         
         // NOTE: At least temp solution for size - scaling

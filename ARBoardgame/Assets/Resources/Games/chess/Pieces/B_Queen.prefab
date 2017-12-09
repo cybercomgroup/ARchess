@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33533072283963202}
   - component: {fileID: 23989568370201520}
   - component: {fileID: 95981388363240690}
+  - component: {fileID: 64436487880702104}
   m_Layer: 0
   m_Name: B_Queen
   m_TagString: Untagged
@@ -82,6 +83,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995898498444258}
+  m_Mesh: {fileID: 4300000, guid: 6e6bdf43bf53f954f8148790d6fa58a0, type: 3}
+--- !u!64 &64436487880702104
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995898498444258}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 6e6bdf43bf53f954f8148790d6fa58a0, type: 3}
 --- !u!95 &95981388363240690
 Animator:
