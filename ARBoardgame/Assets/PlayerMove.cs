@@ -21,6 +21,12 @@ public class PlayerMove : NetworkBehaviour {
 
         transform.Translate(x, 0, z);
 
+        var x2 = Input.GetAxis("Horizontal") * 0.2f;
+        var z2 = Input.GetAxis("Vertical") * 0.2f;
+
+        transform.GetChild(0).Translate(x2, 0, z2);
+
+
         if (Input.GetKeyDown(KeyCode.Space)) CmdFire();
 	}
 
