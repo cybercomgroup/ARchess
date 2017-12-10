@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 114479641774463086}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
     i14: 255
     i15: 167
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &114479641774463086
 MonoBehaviour:
   m_ObjectHideFlags: 1

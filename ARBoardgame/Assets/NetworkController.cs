@@ -27,6 +27,7 @@ public class NetworkController : MonoBehaviour {
         {
             net.StartMatchMaker();
         }
+        matches = null;
 
         roomName = "MyRoom";
 	}
@@ -44,7 +45,7 @@ public class NetworkController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.J) && !busy)
         {
             //net.StartClient();
-            if (matches.Count > 0)
+            if (matches != null && matches.Count > 0)
             {
                 busy = true;
                 net.matchMaker.JoinMatch(matches[0].networkId, "", "", "", 0, 0, net.OnMatchJoined);

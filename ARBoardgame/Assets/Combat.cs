@@ -34,4 +34,11 @@ public class Combat : NetworkBehaviour {
             transform.position = Vector3.zero;
         }
     }
+
+    public void OnMouseDown()
+    {
+        var player = GameObject.FindGameObjectWithTag("LocalPlayer");
+        var playerID = player.GetComponent<NetworkIdentity>();
+        player.GetComponent<PlayerMove>().CmdGrab(netId, playerID);
+    }
 }
