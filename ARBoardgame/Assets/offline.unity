@@ -911,6 +911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   net: {fileID: 2075556248}
+  roomSize: 2
 --- !u!114 &2075556248
 MonoBehaviour:
   m_ObjectHideFlags: 0
