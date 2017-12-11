@@ -11,7 +11,7 @@ public class Move
 
     public Move(SquarePos fromPos, SquarePos toPos)
     {
-        FromPos = new SquarePos(fromPos.Col, fromPos.Row);
-        ToPos = new SquarePos(toPos.Col, toPos.Row);
+        FromPos = new SquarePos(fromPos.Col, fromPos.Row, 0);
+        ToPos = new SquarePos(toPos.Col, toPos.Row, 0);
     }
 }

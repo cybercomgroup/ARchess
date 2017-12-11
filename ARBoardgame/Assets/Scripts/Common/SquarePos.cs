@@ -6,13 +6,15 @@ public class SquarePos
 {
     public int Col { get; private set; }
     public int Row { get; private set; }
+    public int Rot { get; set; }
 
     private SquarePos() { }
 
-    public SquarePos(int col, int row)
+    public SquarePos(int col, int row, int rot)
     {
         Col = col;
         Row = row;
+        Rot = rot;
     }
 
     public override bool Equals(object obj)

@@ -14,7 +14,6 @@ public class ArViewController : ARBase
     private string gameName;
     private GameStarted gameStarted;
 
-    public GameObject planeParent;
     public GameObject planePrefab;
 
     private GameObject boardGO;
@@ -52,7 +51,8 @@ public class ArViewController : ARBase
 
     // NOTE: Needed?
     private static readonly Vector3 SCALE = new Vector3(0.8F, 5, 0.8F);
-
+    public const string BOARD_PLACED = "Board Placed";
+    
     public const string HIGHLIGHTABLE = "Highlightable";
     public const string PICKUPABLE = "Pickup";
     public const string HIGHLIGHPICKUP = "HighlightPickup";
@@ -124,10 +124,10 @@ public class ArViewController : ARBase
         // Set up array for board tile references
         boardTiles = new GameObject[gameStarted.GameSet.BoardType.NumCols, gameStarted.GameSet.BoardType.NumRows];
 
-        foreach (string pieceType in gameStarted.GameSet.PieceTypes)
+        foreach (PieceInfo pieceType in gameStarted.GameSet.PieceTypes)
         {
 
-            pieceTypeToModelMap[pieceType] = Resources.Load("Games/" + gameName + "/Pieces/" + pieceType);
+            pieceTypeToModelMap[pieceType.Name] = Resources.Load("Games/" + gameName + "/Pieces/" + pieceType.Name);
 
         }
     }
@@ -269,6 +269,7 @@ public class ArViewController : ARBase
                 Vector3 lookPos = new Vector3(transform.position.x, pos.y, transform.position.z);
                 boardGO.transform.LookAt(lookPos);
                 boardGO.transform.Rotate(0, 180, 0, Space.World);
+                this.PostNotification(BOARD_PLACED);
             }
             return;
         }
@@ -288,7 +289,7 @@ public class ArViewController : ARBase
                 if (hitObj.tag == HIGHLIGHTABLE)
                 {
                     string[] strsPos = hitObj.name.Split(',');
-                    pos = new SquarePos(System.Convert.ToInt32(strsPos[0]), System.Convert.ToInt32(strsPos[1]));
+                    pos = new SquarePos(System.Convert.ToInt32(strsPos[0]), System.Convert.ToInt32(strsPos[1]), 0);
                 } // Get the associate tile pos instead if a piece is hit
                 else
                 {
@@ -418,6 +419,7 @@ public class ArViewController : ARBase
         pieceToPut.transform.parent = boardTiles[squarePos.Col, squarePos.Row].transform;
         pieceToPut.transform.localRotation = pieceToPut.transform.parent.localRotation;
         pieceToPut.transform.localRotation = Quaternion.Euler(180, 0, 0);
+        pieceToPut.transform.Rotate(Vector3.up, squarePos.Rot, Space.World);
         // pieceToPut.transform.localPosition = pieceToPut.transform.parent.transform.localPosition;
         */
 

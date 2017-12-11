@@ -78,9 +78,9 @@ public class ViewController : MonoBehaviour
 		gameName = gameStarted.Name;
 		// Create the board 
 
-		foreach (string pieceType in gameStarted.GameSet.PieceTypes) {
+		foreach (PieceInfo pieceType in gameStarted.GameSet.PieceTypes) {
 			
-			gamePieceTypeToModelMap [pieceType] = Resources.Load ("Games/Chess/Pieces/" + pieceType);
+			gamePieceTypeToModelMap [pieceType.Name] = Resources.Load ("Games/Chess/Pieces/" + pieceType);
 
 		}
 		//Object go = Resources.Load ("Games/Chess/Pieces/W_Pawn");
@@ -322,7 +322,7 @@ public class ViewController : MonoBehaviour
         
         if (col >= 0 && row >= 0 && col <= board.GetUpperBound(0) && row <= board.GetUpperBound(1))
         {
-            return new SquarePos(col, row);
+            return new SquarePos(col, row, 0);
         }
         else
         {

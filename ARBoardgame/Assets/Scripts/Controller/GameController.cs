@@ -37,6 +37,7 @@ public class GameController : MonoBehaviour
         this.AddObserver(OnOutsideClicked, OUTSIDE_CLICKED);
         this.AddObserver(OnGameRequested, GAME_REQUESTED);
         this.AddObserver(OnPieceSelectedInMenu, PIECE_SELECTED_IN_MENU);
+        this.AddObserver(OnBoardPlaced, ArViewController.BOARD_PLACED);
 
     }
 
@@ -47,6 +48,7 @@ public class GameController : MonoBehaviour
         this.RemoveObserver(OnOutsideClicked, OUTSIDE_CLICKED);
         this.RemoveObserver(OnGameRequested, GAME_REQUESTED);
         this.RemoveObserver(OnPieceSelectedInMenu, PIECE_SELECTED_IN_MENU);
+        this.RemoveObserver(OnBoardPlaced, ArViewController.BOARD_PLACED);
     }
 
 
@@ -90,7 +92,8 @@ public class GameController : MonoBehaviour
         if (heldPiece != null)
         {
             GameInstance.PutPieceAt(heldPiece, squarePos);
-
+            int rot = Game.GameSets[GameInstance.Name].PieceTypes.Find(info => info.Name.Equals(heldPiece)).Rot;
+            squarePos.Rot = rot;
             this.PostNotification(PIECE_PUT, squarePos);
 
             heldPiece = null;
@@ -144,6 +147,21 @@ public class GameController : MonoBehaviour
         */
     }
 
+    /// <summary>
+    /// Adds the default pieces to the game
+    /// </summary>
+    public void OnBoardPlaced(object sender, object args)
+    {
+        foreach (DefaultPosition position in Game.GameSets[GameInstance.Name].DefaultPositions)
+        {
+            int rot = Game.GameSets[GameInstance.Name].PieceTypes.Find(info => info.Name.Equals(position.Name)).Rot;
+            SquarePos squarePos = new SquarePos(position.Col, position.Row, rot);
+            this.PostNotification(PIECE_PICKED_FROM_MENU, position.Name);
+            GameInstance.PutPieceAt(position.Name, squarePos);
+            this.PostNotification(PIECE_PUT, squarePos);
+        }
+    }
+    
     /// <summary>  
     ///  Handles the Game requested event.
     ///  Starts a new game of the given game type and notifies observers that a game has been created.
