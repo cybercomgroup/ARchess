@@ -5,6 +5,7 @@ using GoogleARCore;
 using GoogleARCore.HelloAR;
 using UnityARInterface;
 using UnityEngine;
+using UnityEngine.Networking;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
@@ -17,6 +18,8 @@ public class ArViewController : ARBase
     public GameObject planePrefab;
 
     private GameObject boardGO;
+    // NOTE: Might not need references to both here
+    private GameObject playFieldGO;
     private GameObject[,] boardTiles;
 
     private float tileWidth;
@@ -121,8 +124,6 @@ public class ArViewController : ARBase
         // Set up array for board tile references
         boardTiles = new GameObject[gameStarted.GameSet.BoardType.NumCols, gameStarted.GameSet.BoardType.NumRows];
 
-        // NOTE: How this is handled could probably be improved
-
         foreach (string pieceType in gameStarted.GameSet.PieceTypes)
         {
 
@@ -207,11 +208,18 @@ public class ArViewController : ARBase
                 boardGO = Instantiate(Resources.Load("Board", typeof(GameObject)), pos, Quaternion.identity) as GameObject;
                 boardGO.name = "Board";
                 boardGO.transform.SetParent(this.transform, true);
-                GameObject playFieldGO = boardGO.transform.GetChild(0).gameObject;
+
+
+                boardGO.AddComponent<NetworkTransformChild>();
+                boardGO.AddComponent<NetworkTransform>();
+
+                playFieldGO = boardGO.transform.GetChild(0).gameObject;
 
                 //boardGO.transform.GetChild(0).GetComponent<Renderer>().material = Resources.Load<Material>("Games/" + gameName + "/board");
                 playFieldGO.GetComponent<Renderer>().material = Resources.Load<Material>("Games/" + gameName + "/board");
+                
                 playFieldGO.name = "PlayField";
+                
                 //boardGO.GetComponent<Renderer>().material = Resources.Load<Material>("Games/" + gameName + "/board");
                 // boardGO.AddComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Games/" + gameName + "/board");
 
@@ -233,6 +241,8 @@ public class ArViewController : ARBase
 						tileGO.AddComponent<HighlightView>().materialName = "WhiteMaterialGlow";
                         tileGO.tag = HIGHLIGHTABLE;
                         tileGO.name = i + "," + j;
+                        // NOTE: Using class OccupyingPiece to keep track of possible occupying piece
+                        tileGO.AddComponent<Occupant>();
                         tileGO.layer = LayerMask.NameToLayer("TilesAndPieces");
 
                         tileGO.transform.SetParent(playFieldGO.transform, true);
@@ -272,14 +282,20 @@ public class ArViewController : ARBase
             {
                 GameObject hitObj = hit.collider.gameObject;
 
+                SquarePos pos;
+
                 // Using the names of the objects is one way to handle position info...
-                // Get the parent tile GO instead if a piece is hit
-                string[] pos = hitObj.tag == HIGHLIGHTABLE ? hitObj.name.Split(',') : hitObj.transform.parent.name.Split(',');
+                if (hitObj.tag == HIGHLIGHTABLE)
+                {
+                    string[] strsPos = hitObj.name.Split(',');
+                    pos = new SquarePos(System.Convert.ToInt32(strsPos[0]), System.Convert.ToInt32(strsPos[1]));
+                } // Get the associate tile pos instead if a piece is hit
+                else
+                {
+                    pos = hitObj.GetComponent<Tile>().pos;
+                }
 
-                int colPos = System.Convert.ToInt32(pos[0]);
-                int rowPos = System.Convert.ToInt32(pos[1]);
-
-                this.PostNotification(GameController.SQUARE_CLICKED, new SquarePos(colPos, rowPos));
+                this.PostNotification(GameController.SQUARE_CLICKED, pos);
                 #region Hide for now 
                 /*
                 if (holdingObject == null && (hitObj.CompareTag(PICKUPABLE) || hitObj.CompareTag(HIGHLIGHPICKUP)))
@@ -330,21 +346,44 @@ public class ArViewController : ARBase
         Destroy(heldPiece);
         heldPiece = null;
 
+        // Currently pieces are instantiated here, when picked from the menu
         heldPiece = Instantiate(pieceTypeToModelMap[(string)args]) as GameObject;
-		heldPiece.layer = LayerMask.NameToLayer("TilesAndPieces");
+
+        // These can be added dynamically instead
+        // heldPiece.AddComponent<NetworkIdentity>();
+        // heldPiece.GetComponent<NetworkIdentity>().localPlayerAuthority = true;
+        // heldPiece.AddComponent<PieceController>();
+
+        heldPiece.AddComponent<Tile>();
+
+        heldPiece.layer = LayerMask.NameToLayer("TilesAndPieces");
 		heldPiece.AddComponent<HighlightPiece> ();
         heldPiece.tag = HIGHLIGHPICKUP;
         
         // NOTE: At least temp solution for size - scaling
         heldPiece.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
 
-        // NOTE: Do we still need any anchoring to the camera?
+
+        //NOTE: Do we still need any anchoring to the camera?
         //heldPiece.transform.parent = Camera.main.transform;
         //heldPiece.transform.localPosition = new Vector3(0.3f, 0.1F, 0.5F);
         //heldPiece.transform.localEulerAngles = new Vector3(-120, 0, 0);
 
-        // NOTE: Where does a new piece show up? Currently over the "first" tile.
-        heldPiece.transform.position = boardTiles[0,0].transform.position + new Vector3(0, 0.15F, 0);
+        // Piece set to have the board as parent
+        heldPiece.transform.SetParent(boardGO.transform, true);
+
+
+
+        heldPiece.AddComponent<NetworkTransform>();
+        boardGO.GetComponent<NetworkTransformChild>().target = heldPiece.transform;
+
+
+        // NOTE: Where does a new piece show up? Currently in the middle of the playfield.
+        heldPiece.transform.position = playFieldGO.transform.position + new Vector3(0, 0.15F, 0);
+
+        // + boardTiles[0, 0].transform.position;
+
+        //
     }
 
     /// <summary>  
@@ -355,21 +394,35 @@ public class ArViewController : ARBase
     {
         SquarePos squarePos = (SquarePos)args;
 
-        if (boardTiles[squarePos.Col, squarePos.Row].transform.GetChildCount() > 0)
+        // NOTE: Reference to the occupying piece is now kept by this component class instead
+        if (boardTiles[squarePos.Col, squarePos.Row].GetComponent<Occupant>().piece != null)
         {
-            Destroy(boardTiles[squarePos.Col, squarePos.Row].transform.GetChild(0).gameObject, 0);
+            Destroy(boardTiles[squarePos.Col, squarePos.Row].GetComponent<Occupant>().piece, 0);
         }
 
-        GameObject pieceToPut = heldPiece;
+
+
+        //GameObject pieceToPut = heldPiece;
+
+        heldPiece.transform.position = boardTiles[squarePos.Col, squarePos.Row].transform.position;
+
+
+        // NOTE: Since they can't have the parent child relationship, they refer to each other this way instead
+        heldPiece.GetComponent<Tile>().pos = squarePos;
+        boardTiles[squarePos.Col, squarePos.Row].GetComponent<Occupant>().piece = heldPiece;
+
         heldPiece = null;
 
+
+        /*
         pieceToPut.transform.parent = boardTiles[squarePos.Col, squarePos.Row].transform;
         pieceToPut.transform.localRotation = pieceToPut.transform.parent.localRotation;
         pieceToPut.transform.localRotation = Quaternion.Euler(180, 0, 0);
         // pieceToPut.transform.localPosition = pieceToPut.transform.parent.transform.localPosition;
+        */
 
         // NOTE: This could probably be improved
-        pieceToPut.transform.localPosition = new Vector3(0, 0, 0);
+        //pieceToPut.transform.localPosition = new Vector3(0, 0, 0);
 
 
     }
@@ -382,10 +435,17 @@ public class ArViewController : ARBase
     {
         SquarePos squarePos = (SquarePos)args;
 
-        heldPiece = boardTiles[squarePos.Col, squarePos.Row].transform.GetChild(0).gameObject;
+        // heldPiece = boardTiles[squarePos.Col, squarePos.Row].transform.GetChild(0).gameObject;
+
+        // NOTE: Reference to occupying piece is now held by the component class Occupant instead
+        heldPiece = boardTiles[squarePos.Col, squarePos.Row].GetComponent<Occupant>().piece;
+
+        // NOTE: Dereferencing tile and piece from each other
+        boardTiles[squarePos.Col, squarePos.Row].GetComponent<Occupant>().piece = null;
+        heldPiece.GetComponent<Tile>().pos = null;
 
         //heldPiece.transform.parent = Camera.main.transform;
-        heldPiece.transform.parent = null;
+        //heldPiece.transform.parent = null;
         Vector3 piecePos = heldPiece.transform.position;
 
         float moveTime = 0.15f;
