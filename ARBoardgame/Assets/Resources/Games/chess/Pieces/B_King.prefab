@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33658597291736544}
   - component: {fileID: 23866894115596502}
   - component: {fileID: 95421930737331916}
-  - component: {fileID: 114265060675221712}
   - component: {fileID: 64457766342959400}
   m_Layer: 0
   m_Name: B_King
@@ -94,9 +93,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 66dd8afdbbe40e14db9e7a514f9a554e, type: 3}
 --- !u!95 &95421930737331916
@@ -116,17 +115,3 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114265060675221712
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1850206614348338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f2ddd17e42a4b241882020dbe616309, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Highlighted: 0
-  materialName: BlackMaterialGlow
-  material: {fileID: 0}
