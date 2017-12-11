@@ -258,7 +258,9 @@ public class ArViewController : MonoBehaviour
                 GameObject hitObj = hit.collider.gameObject;
 
                 // Using the names of the objects is one way to handle position info...
-                string[] pos = hitObj.name.Split(',');
+                // Get the parent tile GO instead if a piece is hit
+                string[] pos = hitObj.tag == HIGHLIGHTABLE ? hitObj.name.Split(',') : hitObj.transform.parent.name.Split(',');
+
                 int colPos = System.Convert.ToInt32(pos[0]);
                 int rowPos = System.Convert.ToInt32(pos[1]);
 
