@@ -1,0 +1,165 @@
+﻿{
+  "Items": [
+    {
+      "name": "W_Rook",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "name": "W_Knight",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "name": "W_Bishop",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "name": "W_King",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "name": "W_Queen",
+      "row": 0,
+      "col": 4
+    },
+    {
+      "name": "W_Bishop",
+      "row": 0,
+      "col": 5
+    },
+    {
+      "name": "W_Knight",
+      "row": 0,
+      "col": 6
+    },
+    {
+      "name": "W_Rook",
+      "row": 0,
+      "col": 7
+    },
+    {
+      "name": "W_Pawn",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "name": "W_Pawn",
+      "row": 1,
+      "col": 1
+    },
+    {
+      "name": "W_Pawn",
+      "row": 1,
+      "col": 2
+    },
+    {
+      "name": "W_Pawn",
+      "row": 1,
+      "col": 3
+    },
+    {
+      "name": "W_Pawn",
+      "row": 1,
+      "col": 4
+    },
+    {
+      "name": "W_Pawn",
+      "row": 1,
+      "col": 5
+    },
+    {
+      "name": "W_Pawn",
+      "row": 1,
+      "col": 6
+    },
+    {
+      "name": "W_Pawn",
+      "row": 1,
+      "col": 7
+    },
+    {
+      "name": "B_Rook",
+      "row": 7,
+      "col": 0
+    },
+    {
+      "name": "B_Knight",
+      "row": 7,
+      "col": 1
+    },
+    {
+      "name": "B_Bishop",
+      "row": 7,
+      "col": 2
+    },
+    {
+      "name": "B_King",
+      "row": 7,
+      "col": 3
+    },
+    {
+      "name": "B_Queen",
+      "row": 7,
+      "col": 4
+    },
+    {
+      "name": "B_Bishop",
+      "row": 7,
+      "col": 5
+    },
+    {
+      "name": "B_Knight",
+      "row": 7,
+      "col": 6,
+      "rot": 180
+    },
+    {
+      "name": "B_Rook",
+      "row": 7,
+      "col": 7
+    },
+    {
+      "name": "B_Pawn",
+      "row": 6,
+      "col": 0
+    },
+    {
+      "name": "B_Pawn",
+      "row": 6,
+      "col": 1
+    },
+    {
+      "name": "B_Pawn",
+      "row": 6,
+      "col": 2
+    },
+    {
+      "name": "B_Pawn",
+      "row": 6,
+      "col": 3
+    },
+    {
+      "name": "B_Pawn",
+      "row": 6,
+      "col": 4
+    },
+    {
+      "name": "B_Pawn",
+      "row": 6,
+      "col": 5
+    },
+    {
+      "name": "B_Pawn",
+      "row": 6,
+      "col": 6
+    },
+    {
+      "name": "B_Pawn",
+      "row": 6,
+      "col": 7
+    }
+  ]
+}

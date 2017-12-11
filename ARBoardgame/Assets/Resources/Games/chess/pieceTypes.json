@@ -1,14 +1,41 @@
-{ "strings": [
-   "W_Pawn",
-   "W_Bishop",
-   "W_Rook",
-   "W_Knight",
-   "W_King",
-   "W_Queen",
-   "B_Pawn",
-   "B_Bishop",
-   "B_Rook",
-   "B_Knight",
-   "B_King",
-   "B_Queen"
-] }
+{ 
+   "Items": [
+      {
+         "name": "W_Pawn"
+      },
+      {
+         "name": "W_Bishop"
+      },
+      {
+         "name": "W_Rook"
+      },
+      {
+         "name": "W_Knight"
+      },
+      {
+         "name": "W_King"
+      },
+      {
+         "name": "W_Queen"
+      },
+      {
+         "name": "B_Pawn"
+      },
+      {
+         "name": "B_Bishop"
+      },
+      {
+         "name": "B_Rook"
+      },
+      {
+         "name": "B_Knight",
+         "rot": 180
+      },
+      {
+         "name": "B_King"
+      },
+      {
+         "name": "B_Queen"
+      }
+   ] 
+}

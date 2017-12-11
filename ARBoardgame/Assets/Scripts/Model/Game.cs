@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Game
 {
-
-
     public string Name { get; private set; }
     private static Dictionary<string, GameSet> gameSets = new Dictionary<string, GameSet>();
     public static Dictionary<string, GameSet> GameSets
@@ -48,10 +46,10 @@ public class Game
     // Test method
     public string PutSomePieceAt(int col, int row)
     {
-        string pieceType = GameSets[Name].PieceTypes[0];
-        Board[col, row] = pieceType;
+        PieceInfo pieceType = GameSets[Name].PieceTypes[0];
+        Board[col, row] = pieceType.Name;
 
-        return pieceType;
+        return pieceType.Name;
     }
 
     public void PutPieceAt(string pieceType, SquarePos squarePos)
@@ -84,13 +82,13 @@ public class Game
         foreach(string gameSetName in gameSetNames)
         {
             BoardType boardType = ImportBoardType(gameSetName);
-
-            List<string> pieceTypes = ImportPieceTypes(gameSetName);
+            List<PieceInfo> pieceTypes = ImportPieceTypes(gameSetName);
+            List<DefaultPosition> defaultPositions = ImportDefaultPositions(gameSetName);
 
             // Do not add a game set for which creating a boardType has failed (missing boardType.json)
             if (boardType != null)
             {
-                GameSet gameSet = new GameSet(boardType, pieceTypes);
+                GameSet gameSet = new GameSet(boardType, pieceTypes, defaultPositions);
             
                 AddGameSet(gameSetName, gameSet);
             }
@@ -121,9 +119,22 @@ public class Game
     /// <summary>
     /// Import the pieces for the specified game set.
     /// </summary>
-    private static List<string> ImportPieceTypes(string gameSetName)
+    private static List<PieceInfo> ImportPieceTypes(string gameSetName)
     {
-        return ImportStringListFromJSON("Games/" + gameSetName + "/pieceTypes");
+        TextAsset file = Resources.Load("Games/" + gameSetName + "/pieceTypes") as TextAsset;
+        PieceInfo[] infos = JsonHelper.FromJson<PieceInfo>(file.ToString());
+        return new List<PieceInfo>(infos);
+    }
+
+    private static List<DefaultPosition> ImportDefaultPositions(string gameSetName)
+    {
+        TextAsset file = Resources.Load("Games/" + gameSetName + "/defaultSetup") as TextAsset;
+        if (file != null)
+        {
+            DefaultPosition[] defaults = JsonHelper.FromJson<DefaultPosition>(file.ToString());
+            return new List<DefaultPosition>(defaults);
+        }
+        return new List<DefaultPosition>();
     }
 
     /// <summary>
@@ -132,8 +143,8 @@ public class Game
     private static List<string> ImportStringListFromJSON(string jsonFilePath)
     {
         TextAsset file = Resources.Load(jsonFilePath) as TextAsset;
-        StringsJSON stringJSON = JsonUtility.FromJson<StringsJSON>(file.ToString());
+        string[] strings = JsonHelper.FromJson<string>(file.ToString());
 
-        return new List<string>(stringJSON.strings);
+        return new List<string>(strings);
     }
 }

@@ -13,7 +13,6 @@ public class ArViewController : ARBase
     private string gameName;
     private GameStarted gameStarted;
 
-    public GameObject planeParent;
     public GameObject planePrefab;
 
     private GameObject boardGO;
@@ -49,7 +48,8 @@ public class ArViewController : ARBase
 
     // NOTE: Needed?
     private static readonly Vector3 SCALE = new Vector3(0.8F, 5, 0.8F);
-
+    public const string BOARD_PLACED = "Board Placed";
+    
     public const string HIGHLIGHTABLE = "Highlightable";
     public const string PICKUPABLE = "Pickup";
     public const string HIGHLIGHPICKUP = "HighlightPickup";
@@ -123,10 +123,10 @@ public class ArViewController : ARBase
 
         // NOTE: How this is handled could probably be improved
 
-        foreach (string pieceType in gameStarted.GameSet.PieceTypes)
+        foreach (PieceInfo pieceType in gameStarted.GameSet.PieceTypes)
         {
 
-            pieceTypeToModelMap[pieceType] = Resources.Load("Games/" + gameName + "/Pieces/" + pieceType);
+            pieceTypeToModelMap[pieceType.Name] = Resources.Load("Games/" + gameName + "/Pieces/" + pieceType.Name);
 
         }
     }
@@ -259,6 +259,7 @@ public class ArViewController : ARBase
                 Vector3 lookPos = new Vector3(transform.position.x, pos.y, transform.position.z);
                 boardGO.transform.LookAt(lookPos);
                 boardGO.transform.Rotate(0, 180, 0, Space.World);
+                this.PostNotification(BOARD_PLACED);
             }
             return;
         }
@@ -279,7 +280,7 @@ public class ArViewController : ARBase
                 int colPos = System.Convert.ToInt32(pos[0]);
                 int rowPos = System.Convert.ToInt32(pos[1]);
 
-                this.PostNotification(GameController.SQUARE_CLICKED, new SquarePos(colPos, rowPos));
+                this.PostNotification(GameController.SQUARE_CLICKED, new SquarePos(colPos, rowPos, 0));
                 #region Hide for now 
                 /*
                 if (holdingObject == null && (hitObj.CompareTag(PICKUPABLE) || hitObj.CompareTag(HIGHLIGHPICKUP)))
@@ -366,6 +367,7 @@ public class ArViewController : ARBase
         pieceToPut.transform.parent = boardTiles[squarePos.Col, squarePos.Row].transform;
         pieceToPut.transform.localRotation = pieceToPut.transform.parent.localRotation;
         pieceToPut.transform.localRotation = Quaternion.Euler(180, 0, 0);
+        pieceToPut.transform.Rotate(Vector3.up, squarePos.Rot, Space.World);
         // pieceToPut.transform.localPosition = pieceToPut.transform.parent.transform.localPosition;
 
         // NOTE: This could probably be improved
