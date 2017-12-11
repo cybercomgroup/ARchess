@@ -14,15 +14,8 @@ public class HighlightPiece : MonoBehaviour {
 	private void Awake()
 	{
 
-		normalShader = Shader.Find("Standard");
-		if (material == null)
-		{
-			glowMaterial = Resources.Load<Material>("materialName");
-		}
-		else
-		{
-			glowMaterial = material;
-		}
+		material = GetComponent<Renderer> ().material;
+		temp = material.color;
 
 		if (gameObject.CompareTag("Untagged"))
 		{
@@ -33,13 +26,11 @@ public class HighlightPiece : MonoBehaviour {
 	void LateUpdate () {
 		if (Highlighted)
 		{
-			//Just testing, need to be changed to handle shaders later.
-			temp = GetComponent<Renderer> ().material.color;
-			GetComponent<Renderer> ().material.color = Color.red;
+			material.color = Color.red;
 		}
 		else
 		{
-			GetComponent<Renderer> ().material.color = Color.black;
+			GetComponent<Renderer> ().material.color = temp;
 		}
 		Highlighted = false;
 
