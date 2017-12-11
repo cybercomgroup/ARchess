@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 23989568370201520}
   - component: {fileID: 95981388363240690}
   - component: {fileID: 64436487880702104}
+  - component: {fileID: 114468732876364316}
+  - component: {fileID: 114579112916797008}
   m_Layer: 0
   m_Name: B_Queen
   m_TagString: Untagged
@@ -93,9 +95,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 6e6bdf43bf53f954f8148790d6fa58a0, type: 3}
 --- !u!95 &95981388363240690
@@ -115,3 +117,46 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114468732876364316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995898498444258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 114
+    i1: 65
+    i2: 100
+    i3: 156
+    i4: 150
+    i5: 104
+    i6: 188
+    i7: 132
+    i8: 170
+    i9: 30
+    i10: 109
+    i11: 35
+    i12: 43
+    i13: 192
+    i14: 33
+    i15: 240
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &114579112916797008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995898498444258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb8d8b590af6704abc58500ed599128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

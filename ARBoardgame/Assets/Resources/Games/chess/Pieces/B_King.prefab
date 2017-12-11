@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 23866894115596502}
   - component: {fileID: 95421930737331916}
   - component: {fileID: 64457766342959400}
+  - component: {fileID: 114392273721426122}
+  - component: {fileID: 114573858530752288}
   m_Layer: 0
   m_Name: B_King
   m_TagString: Untagged
@@ -115,3 +117,46 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114392273721426122
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1850206614348338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 161
+    i1: 122
+    i2: 210
+    i3: 117
+    i4: 243
+    i5: 148
+    i6: 168
+    i7: 52
+    i8: 184
+    i9: 93
+    i10: 81
+    i11: 38
+    i12: 64
+    i13: 141
+    i14: 65
+    i15: 174
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &114573858530752288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1850206614348338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb8d8b590af6704abc58500ed599128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

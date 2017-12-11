@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45142424, g: 0.5006449, b: 0.57086897, a: 1}
+  m_IndirectSpecularColor: {r: 0.45142376, g: 0.50064445, b: 0.570868, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -127,7 +127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &36509149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 36509148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9aa9c936f156b4aaeb95fc31f4abea, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f9b88ec0fea3374ab489d474e6f6154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_NetworkPort: 7777
@@ -154,7 +154,19 @@ MonoBehaviour:
   m_PlayerSpawnMethod: 0
   m_OfflineScene: 
   m_OnlineScene: 
-  m_SpawnPrefabs: []
+  m_SpawnPrefabs:
+  - {fileID: 1724950445719638, guid: bfb6d8584554e69419f08162f4b52ea8, type: 2}
+  - {fileID: 1850206614348338, guid: a17ad275f394a834b85d5126408d41ae, type: 2}
+  - {fileID: 1307323685283128, guid: 9adfc2d537dcd4e4e901793a8c297f78, type: 2}
+  - {fileID: 1647972175331926, guid: 101a29c588e5bdb4391aec8d0a4ca795, type: 2}
+  - {fileID: 1995898498444258, guid: 7241649c9668bc84aa1e6d232bc021f0, type: 2}
+  - {fileID: 1882365339149978, guid: 2171ac0d4c4222c40b8e97a6916fe0aa, type: 2}
+  - {fileID: 1824216346853366, guid: 3ba02ac023d78064ca361349f963366a, type: 2}
+  - {fileID: 1527228004461056, guid: 9731f8e3783787e48a63a571a6243187, type: 2}
+  - {fileID: 1297662168864646, guid: 1c10586ab5459a649a76705ab00b01b9, type: 2}
+  - {fileID: 1913579085889234, guid: 24ad82d211ba38f42ac0a41ca205f535, type: 2}
+  - {fileID: 1572837757352538, guid: 9220df467a3fc68468be5157fda536d3, type: 2}
+  - {fileID: 1204690416517768, guid: e69e50bb40c756241b210a8fc6695837, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -207,9 +219,11 @@ MonoBehaviour:
   m_MatchHost: mm.unet.unity3d.com
   m_MatchPort: 443
   matchName: default
-  matchSize: 4
+  matchSize: 2
   isNetworkActive: 0
   matchMaker: {fileID: 0}
+  roomName: 
+  roomSize: 0
 --- !u!4 &36509151
 Transform:
   m_ObjectHideFlags: 0

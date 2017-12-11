@@ -4,43 +4,57 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class PlayerController : NetworkBehaviour {
-
-    public const string started = "PlayerController.started";
-    public const string startedLocal = "PlayerController.startedLocal";
-    public const string destroyed = "PlayerController.destroyed"; // player left the game / crashed
-    public const string requestPickup = "PlayerController.requestPickup";
-
-    public bool pickupActive; // true if this player is currently carrying a piece.
-
-    public enum PlayerColor { white, black, none };
-
-    public override void OnStartClient()
-    {
-        base.OnStartClient();
-        this.PostNotification(started);
-    }
+    private GameObject picked;
 
     public override void OnStartLocalPlayer()
     {
         base.OnStartLocalPlayer();
-        this.PostNotification(startedLocal);
+        gameObject.tag = "LocalPlayer";
     }
 
-    void OnDestroy()
+    void Start()
     {
-        this.PostNotification(destroyed);
+        picked = null;
     }
 
     [Command]
-    public void CmdRequestPickup(PlayerColor c, int piece)
+    public void CmdGrab(NetworkInstanceId objectId, NetworkIdentity player)
     {
-        if (c == PlayerColor.none) return; // ignore
-        if (true /*c == activeColor*/) RpcPickup(c, piece);
+        Debug.Log("CmdGrab called!");
+        var iObject = NetworkServer.FindLocalObject(objectId);
+        var networkIdentity = iObject.GetComponent<NetworkIdentity>();
+        var otherOwner = networkIdentity.clientAuthorityOwner;
+
+        if (otherOwner == player.connectionToClient)
+        {
+            Debug.Log("CmdGrab: Already has authority!");
+            return;
+        }
+        else
+        {
+            if (otherOwner != null)
+            {
+                networkIdentity.RemoveClientAuthority(otherOwner);
+            }
+            networkIdentity.AssignClientAuthority(player.connectionToClient);
+            RpcGrab(objectId);
+        }
+        Debug.Log("CmdGrab finished!");
     }
 
     [ClientRpc]
-    void RpcPickup(PlayerColor c, int piece)
+    void RpcGrab(NetworkInstanceId objectId)
     {
-
+        Debug.Log("RpcGrab called!");
+        var iObject = ClientScene.FindLocalObject(objectId);
+        if (isLocalPlayer)
+        {
+            picked = iObject; // called on client that owns this player
+            // I am now free to edit this object.
+        }
+        else
+        {
+            if (picked == iObject) picked = null; // called on client that doesnt own this player.
+        }
     }
 }

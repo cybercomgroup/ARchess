@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 23060102052164434}
   - component: {fileID: 95537184434920608}
   - component: {fileID: 64452004650122862}
+  - component: {fileID: 114946226437722498}
+  - component: {fileID: 114346664231778904}
   m_Layer: 0
   m_Name: W_King
   m_TagString: Untagged
@@ -93,9 +95,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 66dd8afdbbe40e14db9e7a514f9a554e, type: 3}
 --- !u!95 &95537184434920608
@@ -115,3 +117,46 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114346664231778904
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1527228004461056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb8d8b590af6704abc58500ed599128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114946226437722498
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1527228004461056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 151
+    i1: 49
+    i2: 248
+    i3: 227
+    i4: 120
+    i5: 55
+    i6: 135
+    i7: 228
+    i8: 138
+    i9: 99
+    i10: 165
+    i11: 113
+    i12: 166
+    i13: 36
+    i14: 49
+    i15: 135
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0

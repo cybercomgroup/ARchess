@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 23299775367838032}
   - component: {fileID: 95913745993969788}
   - component: {fileID: 64305063925525854}
+  - component: {fileID: 114644791636319080}
+  - component: {fileID: 114921919168607912}
   m_Layer: 0
   m_Name: W_Rook
   m_TagString: Untagged
@@ -93,9 +95,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 334ebd479efb0b747b67b73b74087e91, type: 3}
 --- !u!95 &95913745993969788
@@ -115,3 +117,46 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114644791636319080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1204690416517768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 230
+    i1: 158
+    i2: 80
+    i3: 187
+    i4: 64
+    i5: 199
+    i6: 86
+    i7: 36
+    i8: 27
+    i9: 33
+    i10: 10
+    i11: 143
+    i12: 198
+    i13: 105
+    i14: 88
+    i15: 55
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &114921919168607912
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1204690416517768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb8d8b590af6704abc58500ed599128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
