@@ -1,14 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using GoogleARCore;
 using GoogleARCore.HelloAR;
+using UnityARInterface;
 using UnityEngine;
+using Object = UnityEngine.Object;
+using Random = UnityEngine.Random;
 
-public class ArViewController : MonoBehaviour
+public class ArViewController : ARBase
 {
     private string gameName;
     private GameStarted gameStarted;
 
+    public GameObject planeParent;
     public GameObject planePrefab;
 
     private GameObject boardGO;
@@ -96,8 +101,9 @@ public class ArViewController : MonoBehaviour
             GameObject planeObject = Instantiate(planePrefab, Vector3.zero, Quaternion.identity,
                 transform);
             planeObject.GetComponent<TrackedPlaneVisualizer>().SetTrackedPlane(m_newPlanes[i]);
+            planeObject.layer = 10;
             foreach (var collider in planeObject.GetComponentsInChildren<Collider>())
-                collider.gameObject.layer = 8;
+                collider.gameObject.layer = 10;
 
             // Apply a random color and grid rotation.
             planeObject.GetComponent<Renderer>().material.SetColor("_GridColor", m_planeColors[Random.Range(0,
@@ -174,19 +180,28 @@ public class ArViewController : MonoBehaviour
 
         if (!BoardPositioned)
         {
-#if UNITY_EDITOR
-            int layerMask = 1 << LayerMask.NameToLayer("ARGameObject");
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, float.MaxValue, layerMask))
+            Vector3 pos = Vector3.zero;
+            if (Application.isEditor)
             {
-                Vector3 pos = hit.point;
-#else
-			TrackableHitFlag raycastFilter = TrackableHitFlag.PlaneWithinBounds | TrackableHitFlag.PlaneWithinPolygon;
-			TrackableHit trackHit;
-			if (Session.Raycast(ray, raycastFilter, out trackHit))
-			{
-				Vector3 pos = trackHit.Point;
-#endif
+                int layerMask = 1 << LayerMask.NameToLayer("ARGameObject");
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, float.MaxValue, layerMask))
+                {
+                    pos = hit.point;
+                }
+            }
+            else
+            {
+                TrackableHitFlag raycastFilter = TrackableHitFlag.PlaneWithinBounds | TrackableHitFlag.PlaneWithinPolygon;
+                TrackableHit trackHit;
+                if (Session.Raycast(ray, raycastFilter, out trackHit))
+                {
+                    pos = trackHit.Point;
+                }
+            }
+            if (pos != Vector3.zero)
+            {
+                GetCamera().cullingMask = GetCamera().cullingMask & ~(1 << 10);
                 BoardPositioned = true;
                 boardGO = new GameObject();
                 boardGO = Instantiate(Resources.Load("Board", typeof(GameObject)), pos, Quaternion.identity) as GameObject;
