@@ -36,8 +36,8 @@ public class NetworkController : NetworkManager {
     void OnEnable()
     {
         this.AddObserver(HostGame, BEGIN_HOST);
-        this.AddObserver(JoinGame, BEGIN_FIND_GAMES);
-        this.AddObserver(FindGames, BEGIN_JOIN_GAME);
+        this.AddObserver(JoinGame, BEGIN_JOIN_GAME);
+        this.AddObserver(FindGames, BEGIN_FIND_GAMES);
     }
 
     void OnDisable()

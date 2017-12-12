@@ -18,13 +18,6 @@ public class JoinGameMenuView {
 		createScrollView();
 
 		this.PostNotification(NetworkController.BEGIN_FIND_GAMES);
-
-		// TODO Remove the following when the network component broadcasts games properly
-		//addNetworkGameToList(null, new NetworkGame(0, "Jonte", "Chess"));
-		//addNetworkGameToList(null, new NetworkGame(1, "Jeppe", "Go"));
-		//addNetworkGameToList(null, new NetworkGame(2, "Nisse", "Chess"));
-		//addNetworkGameToList(null, new NetworkGame(3, "Bosse", "Chess"));
-		//addNetworkGameToList(null, new NetworkGame(4, "Lasse", "Reversi"));
 	}
 
 	public void createScrollView() {
