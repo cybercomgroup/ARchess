@@ -6,22 +6,23 @@ using UnityEngine.UI;
 public class JoinGameMenuView {
 	private GameObject content;
 	private JoinGameMenuController controller;
+    public static string ADD_NETWORK_GAME_TO_LIST = "addNetworkGameToList";
 
 	public JoinGameMenuView(JoinGameMenuModel model, JoinGameMenuController controller) {
 		GameObject.Find("Panel").AddComponent(typeof(FadeIn));
 		new TextView(model.heading);
 		this.controller = controller;
 
-		model.AddObserver(addNetworkGameToList, "addNetworkGameToList");
+		model.AddObserver(addNetworkGameToList, ADD_NETWORK_GAME_TO_LIST);
 
 		createScrollView();
 
 		// TODO Remove the following when the network component broadcasts games properly
-		addNetworkGameToList(null, new NetworkGame(0, "Jonte", "Chess"));
-		addNetworkGameToList(null, new NetworkGame(1, "Jeppe", "Go"));
-		addNetworkGameToList(null, new NetworkGame(2, "Nisse", "Chess"));
-		addNetworkGameToList(null, new NetworkGame(3, "Bosse", "Chess"));
-		addNetworkGameToList(null, new NetworkGame(4, "Lasse", "Reversi"));
+		//addNetworkGameToList(null, new NetworkGame(0, "Jonte", "Chess"));
+		//addNetworkGameToList(null, new NetworkGame(1, "Jeppe", "Go"));
+		//addNetworkGameToList(null, new NetworkGame(2, "Nisse", "Chess"));
+		//addNetworkGameToList(null, new NetworkGame(3, "Bosse", "Chess"));
+		//addNetworkGameToList(null, new NetworkGame(4, "Lasse", "Reversi"));
 	}
 
 	public void createScrollView() {

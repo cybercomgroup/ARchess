@@ -52,6 +52,7 @@ public class ArViewController : ARBase
     // NOTE: Needed?
     private static readonly Vector3 SCALE = new Vector3(0.8F, 5, 0.8F);
     public const string BOARD_PLACED = "Board Placed";
+    public const string BOARD_AVAILABLE = "Board Available"; // NETWORKING
 
     public const string HIGHLIGHTABLE = "Highlightable";
     public const string PICKUPABLE = "Pickup";
@@ -68,6 +69,7 @@ public class ArViewController : ARBase
         this.AddObserver(OnPiecePickedFromBoard, GameController.PIECE_PICKED_FROM_BOARD);
         this.AddObserver(OnPiecePut, GameController.PIECE_PUT);
         this.AddObserver(OnHeldPieceRemoved, GameController.HELD_PIECE_REMOVED);
+        this.AddObserver(OnBoardAvailable, ArViewController.BOARD_AVAILABLE); // NETWORKING
     }
 
 
@@ -113,6 +115,11 @@ public class ArViewController : ARBase
                 m_planeColors.Length - 1)]);
             planeObject.GetComponent<Renderer>().material.SetFloat("_UvRotation", Random.Range(0.0f, 360.0f));
         }
+    }
+
+    public void OnBoardAvailable(object sender, object arbs)
+    {
+
     }
 
     public void OnGameCreated(object sender, object args)

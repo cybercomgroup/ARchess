@@ -57,4 +57,20 @@ public class PlayerController : NetworkBehaviour {
             if (picked == iObject) picked = null; // called on client that doesnt own this player.
         }
     }
+
+    [Command]
+    public void CmdSpawnBoard()
+    {
+        // spawn board
+        BoardSpawned();
+    }
+
+    [ClientRpc]
+    void BoardSpawned() // might wanna pass id of board.
+    {
+        if (isLocalPlayer)
+        {
+            // board is spawned, make visible and put in correct position
+        }
+    }
 }
