@@ -52,7 +52,7 @@ public class ArViewController : ARBase
     // NOTE: Needed?
     private static readonly Vector3 SCALE = new Vector3(0.8F, 5, 0.8F);
     public const string BOARD_PLACED = "Board Placed";
-    
+
     public const string HIGHLIGHTABLE = "Highlightable";
     public const string PICKUPABLE = "Pickup";
     public const string HIGHLIGHPICKUP = "HighlightPickup";
@@ -146,13 +146,15 @@ public class ArViewController : ARBase
             {
                 MoveHeldPiece(hit);
             }
-				
-			if (hit.collider.gameObject.CompareTag (HIGHLIGHPICKUP)) {
-				hit.collider.gameObject.GetComponent<HighlightPiece> ().Highlighted = true;
-			}
-			if (hit.collider.gameObject.CompareTag (HIGHLIGHTABLE)) {
-				hit.collider.gameObject.GetComponent<HighlightView> ().Highlighted = true;
-			} 
+
+            if (hit.collider.gameObject.CompareTag(HIGHLIGHPICKUP))
+            {
+                hit.collider.gameObject.GetComponent<HighlightPiece>().Highlighted = true;
+            }
+            if (hit.collider.gameObject.CompareTag(HIGHLIGHTABLE))
+            {
+                hit.collider.gameObject.GetComponent<HighlightView>().Highlighted = true;
+            }
         }
     }
 
@@ -209,7 +211,6 @@ public class ArViewController : ARBase
                 boardGO.name = "Board";
                 boardGO.transform.SetParent(this.transform, true);
 
-
                 boardGO.AddComponent<NetworkTransformChild>();
                 boardGO.AddComponent<NetworkTransform>();
 
@@ -217,9 +218,9 @@ public class ArViewController : ARBase
 
                 //boardGO.transform.GetChild(0).GetComponent<Renderer>().material = Resources.Load<Material>("Games/" + gameName + "/board");
                 playFieldGO.GetComponent<Renderer>().material = Resources.Load<Material>("Games/" + gameName + "/board");
-                
+
                 playFieldGO.name = "PlayField";
-                
+
                 //boardGO.GetComponent<Renderer>().material = Resources.Load<Material>("Games/" + gameName + "/board");
                 // boardGO.AddComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Games/" + gameName + "/board");
 
@@ -238,7 +239,7 @@ public class ArViewController : ARBase
                     {
                         tileGO = GameObject.CreatePrimitive(PrimitiveType.Quad);
                         boardTiles[i, j] = tileGO;
-						tileGO.AddComponent<HighlightView>().materialName = "WhiteMaterialGlow";
+                        tileGO.AddComponent<HighlightView>().materialName = "WhiteMaterialGlow";
                         tileGO.tag = HIGHLIGHTABLE;
                         tileGO.name = i + "," + j;
                         // NOTE: Using class OccupyingPiece to keep track of possible occupying piece
@@ -255,7 +256,7 @@ public class ArViewController : ARBase
                         // NOTE: For showing the positions of the tiles
                         // tileGO.GetComponent<Renderer>().material = (i + j) % 2 == 0 ? Resources.Load<Material>("BlueMaterial") : Resources.Load<Material>("RedMaterial");
                         // Hide the tiles
-						tileGO.GetComponent<Renderer>().enabled = false;
+                        tileGO.GetComponent<Renderer>().enabled = false;
 
                         //go.tag = "Tile"; // Sätt tag så att man kan interagera med rutorna.
 
@@ -358,9 +359,9 @@ public class ArViewController : ARBase
         heldPiece.AddComponent<Tile>();
 
         heldPiece.layer = LayerMask.NameToLayer("TilesAndPieces");
-		heldPiece.AddComponent<HighlightPiece> ();
+        heldPiece.AddComponent<HighlightPiece>();
         heldPiece.tag = HIGHLIGHPICKUP;
-        
+
         // NOTE: At least temp solution for size - scaling
         heldPiece.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
 
@@ -427,6 +428,20 @@ public class ArViewController : ARBase
         //pieceToPut.transform.localPosition = new Vector3(0, 0, 0);
 
 
+    }
+
+    /// <summary>  
+    ///  Handles the Piece on board selected event
+    ///  Moves the held game object, the piece, to the specified tile
+    /// </summary>
+    /// 
+    public void OnPieceOnBoardSelected(object sender, object args)
+    {
+        SquarePos squarePos = (SquarePos)args;
+
+        GameObject selectedPiece = boardTiles[squarePos.Col, squarePos.Row].GetComponent<Occupant>().piece;
+
+        selectedPiece.GetComponent<PieceController>().OnGrab();
     }
 
     /// <summary>  
