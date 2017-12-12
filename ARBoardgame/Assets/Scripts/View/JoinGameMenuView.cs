@@ -17,6 +17,8 @@ public class JoinGameMenuView {
 
 		createScrollView();
 
+		this.PostNotification(NetworkController.BEGIN_FIND_GAMES);
+
 		// TODO Remove the following when the network component broadcasts games properly
 		//addNetworkGameToList(null, new NetworkGame(0, "Jonte", "Chess"));
 		//addNetworkGameToList(null, new NetworkGame(1, "Jeppe", "Go"));
@@ -59,6 +61,6 @@ public class JoinGameMenuView {
 		btnObj.GetComponentInChildren<Text>().text = networkGame.hostName + " | " + networkGame.gameType;
 
 		// Register button listener for the games
-		btnObj.GetComponent<Button>().onClick.AddListener(delegate{controller.joinGame(networkGame.hostId);});
+		btnObj.GetComponent<Button>().onClick.AddListener(delegate{controller.joinGame(networkGame);});
 	}
 }

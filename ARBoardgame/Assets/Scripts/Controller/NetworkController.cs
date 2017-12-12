@@ -13,9 +13,9 @@ public class NetworkController : NetworkManager {
     public string roomName;
     public uint roomSize;
 
-    public const string BEGIN_HOST = "BEGIN HOST";
-    public const string BEGIN_FIND_GAMES = "BEGIN FIND GAMES";
-    public const string BEGIN_JOIN_GAME = "BEGIN JOIN GAME"; // TAKES ID OF MATCH TO JOIN
+    public static string BEGIN_HOST = "BEGIN HOST";
+    public static string BEGIN_FIND_GAMES = "BEGIN FIND GAMES";
+    public static string BEGIN_JOIN_GAME = "BEGIN JOIN GAME"; // TAKES ID OF MATCH TO JOIN
     
 	void Start () {
         if (base.matchMaker == null)

@@ -62,11 +62,11 @@ public class PlayerController : NetworkBehaviour {
     public void CmdSpawnBoard()
     {
         // spawn board
-        BoardSpawned();
+        RpcBoardSpawned();
     }
 
     [ClientRpc]
-    void BoardSpawned() // might wanna pass id of board.
+    void RpcBoardSpawned() // might wanna pass id of board.
     {
         if (isLocalPlayer)
         {

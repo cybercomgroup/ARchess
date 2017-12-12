@@ -25,7 +25,8 @@ public class IngameMenuView {
 	}
 
 	private void onMultiplayerClick() {
-		Debug.Log("LMAO STARTING MULTIPLAYER HOSTING");
+		Debug.Log("Starting multiplayer hosting.");
+		this.PostNotification(NetworkController.BEGIN_HOST);
 	}
 
 	private void onResetClick() {
