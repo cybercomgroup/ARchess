@@ -16,6 +16,7 @@ public class JoinGameMenuModel {
 	}
 
 	public void terminate() {
+		this.PostNotification("joinGameMenuTerminate");
 		this.RemoveObserver(onNetworkGameDiscovered, "networkGameDiscovered");
 		heading.terminate();
 	}

@@ -32,8 +32,13 @@ public class JoinGameMenuController : IMenuController {
 	}
 
 	public void joinGame(NetworkGame game) {
+		this.model.terminate();
 		Debug.Log("Joining host " + game.hostId);
 		this.PostNotification("gameRequest", game.gameType.ToLower());
 		this.PostNotification(NetworkController.BEGIN_JOIN_GAME, game.hostId);
+
+		IngameMenuModel model = new IngameMenuModel();
+		IngameMenuController controller = new IngameMenuController(model);
+		new IngameMenuView(model, controller);
 	}
 }

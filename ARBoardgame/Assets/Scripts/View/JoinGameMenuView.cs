@@ -12,6 +12,7 @@ public class JoinGameMenuView {
 		GameObject.Find("Panel").AddComponent(typeof(FadeIn));
 		new TextView(model.heading);
 		this.controller = controller;
+		model.AddObserver(terminate, "joinGameMenuTerminate");
 
 		model.AddObserver(addNetworkGameToList, ADD_NETWORK_GAME_TO_LIST);
 
@@ -55,5 +56,11 @@ public class JoinGameMenuView {
 
 		// Register button listener for the games
 		btnObj.GetComponent<Button>().onClick.AddListener(delegate{controller.joinGame(networkGame);});
+	}
+
+	public void terminate(object sender, object args) {
+		this.RemoveObserver(terminate, "joinGameMenuTerminate");
+		this.RemoveObserver(addNetworkGameToList, ADD_NETWORK_GAME_TO_LIST);
+		Object.Destroy(GameObject.Find("Panel"));
 	}
 }
