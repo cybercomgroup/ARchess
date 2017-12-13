@@ -473,9 +473,9 @@ public class ArViewController : ARBase
         Vector3 piecePos = heldPiece.transform.position;
 
         float moveTime = 0.15f;
-        Vector3 upDist = 0.15f * Vector3.up;
+        Vector3 upDist = 0.07f * Vector3.up;
 
-        float up = piecePos.y + 0.15f;
+        float up = piecePos.y + 0.07f;
 
 
         Vector3 helPieceDest = piecePos + upDist;

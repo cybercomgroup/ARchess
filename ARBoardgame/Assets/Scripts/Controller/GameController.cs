@@ -55,7 +55,8 @@ public class GameController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        Screen.fullScreen = false;
+        
         // Imports game sets from the resources dir
         Game.LoadGameSets();
 
