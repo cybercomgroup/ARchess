@@ -8,7 +8,9 @@ public class ArInteractionController : ARBase
     public const string AR_CLICK = "AR click";
     public const string ARCAMERA_UPDATE = "ArCamera Update";
 
-    //private Vector3 lastFwd;
+    public const string CLICK_HELD_ENDED = "Click held ended";
+
+    private bool clickHeld;
 
 
     // Update is called once per frame
@@ -17,18 +19,21 @@ public class ArInteractionController : ARBase
         if (Input.GetMouseButtonDown(0))
         {
             HandleClick();
+
+            clickHeld = true;
         }
 
         if (Input.anyKeyDown)
         {
             HandleKeyPress();
         }
-        /*
-        else if(Input.GetMouseButtonDown(1))
+
+        if (Input.GetMouseButton(0) == false && clickHeld)
         {
-            HandleRMBClick();
+            this.PostNotification(CLICK_HELD_ENDED);
+            clickHeld = false;
         }
-        */
+
         HandleCameraUpdate();
     }
 

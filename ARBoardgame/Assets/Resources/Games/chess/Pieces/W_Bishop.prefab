@@ -23,8 +23,6 @@ GameObject:
   - component: {fileID: 23343187340919668}
   - component: {fileID: 95833861458997292}
   - component: {fileID: 64410049795187980}
-  - component: {fileID: 114874941418576624}
-  - component: {fileID: 114062798207158392}
   m_Layer: 0
   m_Name: W_Bishop
   m_TagString: Untagged
@@ -95,9 +93,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 55b3a9c9902338b44ba1dd7693416ebb, type: 3}
 --- !u!95 &95833861458997292
@@ -117,46 +115,3 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114062798207158392
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1824216346853366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fb8d8b590af6704abc58500ed599128, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114874941418576624
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1824216346853366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 59
-    i1: 160
-    i2: 42
-    i3: 192
-    i4: 35
-    i5: 215
-    i6: 128
-    i7: 100
-    i8: 202
-    i9: 54
-    i10: 19
-    i11: 73
-    i12: 249
-    i13: 99
-    i14: 54
-    i15: 106
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0

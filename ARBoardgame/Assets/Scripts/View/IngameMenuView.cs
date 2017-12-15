@@ -7,10 +7,11 @@ public class IngameMenuView {
 	public IngameMenuView(IngameMenuModel model, IngameMenuController controller) {
 		GameObject.Find("Panel").SetActive(false);
 		changeToHorizontalLayout();
-
+        /*
 		setupButton(model.multiplayerSprite).onClick.AddListener(onMultiplayerClick);
 		setupButton(model.resetSprite).onClick.AddListener(onResetClick);
 		setupButton(model.piecesSprite).onClick.AddListener(onPiecesClick);
+        */
 	}
 
 	private void changeToHorizontalLayout() {

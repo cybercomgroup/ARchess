@@ -23,8 +23,6 @@ GameObject:
   - component: {fileID: 23063371219393354}
   - component: {fileID: 95271288504877898}
   - component: {fileID: 64297323723993826}
-  - component: {fileID: 114632540975096450}
-  - component: {fileID: 114556630589643614}
   m_Layer: 0
   m_Name: W_Knight
   m_TagString: Untagged
@@ -95,9 +93,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 2cc9134d4ec5bf14aad87fcd3d4c4b0c, type: 3}
 --- !u!95 &95271288504877898
@@ -117,46 +115,3 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114556630589643614
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1297662168864646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fb8d8b590af6704abc58500ed599128, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114632540975096450
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1297662168864646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 28
-    i1: 16
-    i2: 88
-    i3: 106
-    i4: 181
-    i5: 69
-    i6: 154
-    i7: 100
-    i8: 154
-    i9: 118
-    i10: 112
-    i11: 90
-    i12: 176
-    i13: 11
-    i14: 1
-    i15: 185
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0

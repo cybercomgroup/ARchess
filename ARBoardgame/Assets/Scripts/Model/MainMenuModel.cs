@@ -16,7 +16,8 @@ public class MainMenuModel {
 	public void init() {
 		startGameButtonModel.init();
 		joinGameButtonModel.init();
-		helpButtonModel.init();
+        joinGameButtonModel.enabled = false;
+        helpButtonModel.init();
 	}
 
 	public void terminate() {

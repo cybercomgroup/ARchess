@@ -63,6 +63,7 @@ public class ArViewController : ARBase
     void OnEnable()
     {
         this.AddObserver(OnClick, ArInteractionController.AR_CLICK);
+        this.AddObserver(OnClickHeldEnded, ArInteractionController.CLICK_HELD_ENDED);
         this.AddObserver(OnCameraUpdate, ArInteractionController.ARCAMERA_UPDATE);
         this.AddObserver(OnGameCreated, GameController.GAME_CREATED);
         this.AddObserver(OnPiecePickedFromMenu, GameController.PIECE_PICKED_FROM_MENU);
@@ -76,6 +77,7 @@ public class ArViewController : ARBase
     void OnDisable()
     {
         this.RemoveObserver(OnClick, ArInteractionController.AR_CLICK);
+        this.RemoveObserver(OnClickHeldEnded, ArInteractionController.CLICK_HELD_ENDED);
         this.RemoveObserver(OnCameraUpdate, ArInteractionController.ARCAMERA_UPDATE);
         this.RemoveObserver(OnGameCreated, GameController.GAME_CREATED);
         this.RemoveObserver(OnPiecePickedFromMenu, GameController.PIECE_PICKED_FROM_MENU);
@@ -218,9 +220,6 @@ public class ArViewController : ARBase
                 boardGO.name = "Board";
                 boardGO.transform.SetParent(this.transform, true);
 
-                boardGO.AddComponent<NetworkTransformChild>();
-                boardGO.AddComponent<NetworkTransform>();
-
                 playFieldGO = boardGO.transform.GetChild(0).gameObject;
 
                 //boardGO.transform.GetChild(0).GetComponent<Renderer>().material = Resources.Load<Material>("Games/" + gameName + "/board");
@@ -340,7 +339,9 @@ public class ArViewController : ARBase
             }
             else
             {
-                this.PostNotification(GameController.OUTSIDE_CLICKED);
+                //this.PostNotification(GameController.OUTSIDE_CLICKED);
+                // Instead wait a short while before removing the piece
+                ClickAimedOutsideBoard();
             }
         }
     }
@@ -357,11 +358,6 @@ public class ArViewController : ARBase
 
         // Currently pieces are instantiated here, when picked from the menu
         heldPiece = Instantiate(pieceTypeToModelMap[(string)args]) as GameObject;
-
-        // These can be added dynamically instead
-        // heldPiece.AddComponent<NetworkIdentity>();
-        // heldPiece.GetComponent<NetworkIdentity>().localPlayerAuthority = true;
-        // heldPiece.AddComponent<PieceController>();
 
         heldPiece.AddComponent<Tile>();
 
@@ -381,10 +377,6 @@ public class ArViewController : ARBase
         // Piece set to have the board as parent
         heldPiece.transform.SetParent(boardGO.transform, true);
 
-
-
-        heldPiece.AddComponent<NetworkTransform>();
-        boardGO.GetComponent<NetworkTransformChild>().target = heldPiece.transform;
 
 
         // NOTE: Where does a new piece show up? Currently in the middle of the playfield.
@@ -419,6 +411,10 @@ public class ArViewController : ARBase
         // NOTE: Since they can't have the parent child relationship, they refer to each other this way instead
         heldPiece.GetComponent<Tile>().pos = squarePos;
         boardTiles[squarePos.Col, squarePos.Row].GetComponent<Occupant>().piece = heldPiece;
+
+        // Give the piece the HIGHLIGHPICKUP tag and layer TilesAndPieces again
+        heldPiece.tag = HIGHLIGHPICKUP;
+        heldPiece.layer = LayerMask.NameToLayer("TilesAndPieces");
 
         heldPiece = null;
 
@@ -467,6 +463,10 @@ public class ArViewController : ARBase
         // NOTE: Dereferencing tile and piece from each other
         boardTiles[squarePos.Col, squarePos.Row].GetComponent<Occupant>().piece = null;
         heldPiece.GetComponent<Tile>().pos = null;
+
+        // Remove the HIGHLIGHPICKUP tag so that the held piece cannot be targetted
+        heldPiece.tag = "Untagged";
+        heldPiece.layer = LayerMask.NameToLayer("Default");
 
         //heldPiece.transform.parent = Camera.main.transform;
         //heldPiece.transform.parent = null;
@@ -536,5 +536,35 @@ public class ArViewController : ARBase
 
             yield return null;
         }
+    }
+
+    Coroutine WaitAndRemoveHeldPieceCoroutine;
+
+    public void ClickAimedOutsideBoard()
+    {
+        WaitAndRemoveHeldPieceCoroutine = StartCoroutine(WaitAndRemoveHeldPiece());
+    }
+
+    public void OnClickHeldEnded(object sender, object args)
+    {
+        if (WaitAndRemoveHeldPieceCoroutine != null)
+        {
+            StopCoroutine(WaitAndRemoveHeldPieceCoroutine);
+        }
+    }
+
+    private IEnumerator WaitAndRemoveHeldPiece()
+    {
+        float timeBeforeDeletion = 1.2f;
+
+        float timer = 0;
+
+        while (timer < timeBeforeDeletion /*&& heldPiece != null */)
+        {
+            timer += Time.deltaTime;
+
+            yield return null;
+        }
+        this.PostNotification(GameController.OUTSIDE_CLICKED);
     }
 }
