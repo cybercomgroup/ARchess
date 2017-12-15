@@ -21,8 +21,8 @@ public class MainMenuController : IMenuController {
 			mb.StartCoroutine(startGameMenu());
 		} else if(identifier == "joinGameButton") {
 			mb.StartCoroutine(joinGameMenu());
-		} else if(identifier == "helpButton") {
-			// TODO
+		} else if(identifier == "helpButton"){
+			mb.StartCoroutine(helpMenu());
 		}
 	}
 
@@ -44,6 +44,15 @@ public class MainMenuController : IMenuController {
 		JoinGameMenuModel model = new JoinGameMenuModel();
 		JoinGameMenuController controller = new JoinGameMenuController(model);
 		new JoinGameMenuView(model, controller);
+		
+		controller.init();
+	}
+	
+	private IEnumerator helpMenu() {
+		yield return new WaitForSeconds(1f);
+		HelpMenuModel model = new HelpMenuModel();
+		HelpMenuController controller = new HelpMenuController(model);
+		new HelpMenuView(model, controller);
 		
 		controller.init();
 	}

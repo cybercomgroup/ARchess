@@ -9,6 +9,7 @@ public class ArInteractionController : ARBase
     public const string ARCAMERA_UPDATE = "ArCamera Update";
 
     public const string CLICK_HELD_ENDED = "Click held ended";
+    public const string BACK_CLICKED = "Back Clicked";
 
     private bool clickHeld;
 
@@ -64,6 +65,11 @@ public class ArInteractionController : ARBase
     // NOTE: Temp for selecting a piece until menu is in place
     public void HandleKeyPress()
     {
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            this.PostNotification(BACK_CLICKED);
+        }
         // Should later come from list in menu
         string selPi;
 

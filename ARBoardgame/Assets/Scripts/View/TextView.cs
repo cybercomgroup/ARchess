@@ -7,6 +7,8 @@ public class TextView {
 	private Text text;
 	private TextModel model;
 
+	private int textSize = 0;
+
 	public TextView(TextModel model) {
 		this.model = model;
 		// Subscribe to updates from "text"
@@ -16,7 +18,16 @@ public class TextView {
 		Transform panelTransform = GameObject.Find("Panel").transform;
 		GameObject textObject = GameObject.Instantiate(Resources.Load("MenuText", typeof(GameObject)), panelTransform) as GameObject;
 		text = textObject.GetComponent(typeof(Text)) as Text;
+		if (textSize != 0)
+		{
+			text.fontSize = textSize;
+		}
 		textObject.AddComponent(typeof(FadeIn));
+	}
+
+	public void setTextSize(int size)
+	{
+		textSize = size;
 	}
 
 	public void onUpdate(object sender, object args) {
